@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://trt6l47mivlv"]
+[gd_scene load_steps=13 format=3 uid="uid://trt6l47mivlv"]
 
 [ext_resource type="Texture2D" uid="uid://bf3rvtstwjlbl" path="res://assets/main character/ant_front.png" id="1_073kj"]
+[ext_resource type="Texture2D" uid="uid://ce61rajvecmsp" path="res://assets/main character/ant_shadow.png" id="1_ebg2o"]
 [ext_resource type="Texture2D" uid="uid://cg4y5idffc5bl" path="res://assets/main character/ant_back.png" id="2_etoir"]
 [ext_resource type="Texture2D" uid="uid://d2710svts7me2" path="res://assets/main character/ant_side.png" id="3_ebg2o"]
 
@@ -1573,6 +1574,11 @@ _data = {
 }
 
 [node name="main_ant" type="Node2D"]
+
+[node name="AntShadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.5568628)
+position = Vector2(-6, 116)
+texture = ExtResource("1_ebg2o")
 
 [node name="front" type="Node2D" parent="."]
 position = Vector2(-9, -87)
