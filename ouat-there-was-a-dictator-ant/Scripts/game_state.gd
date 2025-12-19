@@ -44,7 +44,7 @@ func pick_up_item(item: Resource):
 
 func give_item(gift: Resource, amount: int):
 	# TODO: (maybe) give items to npc - might be handled elsewhere
-	var matching_items: Array[String] = []
+	var matching_items: Array[Resource] = []
 	for item in held_items:
 		if item == gift:
 			matching_items.push_back(item)
@@ -59,11 +59,13 @@ func give_item(gift: Resource, amount: int):
 			if held_items[i] == gift and removed_count < to_remove:
 				held_items.remove_at(i)
 				removed_count += 1
+	update_item_display()
+
 
 func drop_item(location: Vector2):
 	# TODO: function to drop the item on the ground at "location"
-	update_item_display()
 	held_items[0].erase()
+	update_item_display()
 
 
 
