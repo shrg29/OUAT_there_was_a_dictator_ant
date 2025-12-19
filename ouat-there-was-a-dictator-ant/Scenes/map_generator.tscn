@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://buxq4savjtg61"]
 
-[ext_resource type="Script" uid="uid://b5nbhpcynnw4b" path="res://Scripts/ant_hill_generator.gd" id="1_803pc"]
+[ext_resource type="Script" uid="uid://dff7uy0wh6fx7" path="res://Scripts/map_generator.gd" id="1_803pc"]
 
 [node name="map generator" type="Node2D"]
 script = ExtResource("1_803pc")

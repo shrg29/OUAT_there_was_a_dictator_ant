@@ -20,10 +20,7 @@ var dead_ends = []
 func _ready() -> void:
 	generate_map()
 	set_process(true)
-
-
-func _process(_delta: float) -> void:
-	queue_redraw()
+	_draw()
 
 
 func _draw() -> void:
@@ -101,7 +98,9 @@ func _draw() -> void:
 		#print(rooms.size())
 		#print("x: ", current.x, " y: ", current.y)
 		#map_step()
-	
+
+func getGrid():
+	return maze
 
 
 #region maze logic
@@ -133,7 +132,7 @@ func generate_map():
 			print(d.x, ", ", d.y)
 
 		# Stop when we have enough dead ends
-		if dead_ends.size() >= 5:
+		if dead_ends.size() >= 5 && steps == 0:
 			spread_rooms()
 			break
 
@@ -176,7 +175,6 @@ func map_step():
 	make_walls(last_room)
 
 
-
 func init_start_room(): #choose a random start room and add 4 neighbors as rooms to it
 	start_room = maze.get_cell((randi() % size_x -2)+1, (randi() % size_y -2)+1)
 	start_room.type = tile_type.ROOM #make it a room until the end
@@ -188,6 +186,7 @@ func init_start_room(): #choose a random start room and add 4 neighbors as rooms
 		n.type = tile_type.ROOM
 		n.visited = true
 		make_walls(n)
+
 
 func make_walls(node: Grid_Node):
 	var neighbors = get_node_neighbors(node)
@@ -232,6 +231,7 @@ func get_node_neighbors(node: Grid_Node):
 
 	return neighbors
 
+
 func get_room_neighbors(node: Grid_Node) -> Array:
 	var neighbors := []
 
@@ -270,7 +270,6 @@ func spread_rooms():
 	
 	start_room.type = tile_type.START
 	print("start set")
-
 
 
 func find_dead_ends():
@@ -371,6 +370,7 @@ func find_furthest_dead_end_from_start(start: Grid_Node) -> Grid_Node:
 
 #endregion
 
+
 #region classes
 #Grid
 class Grid:
@@ -391,6 +391,7 @@ class Grid:
 	
 	func get_cell(_x: int, _y: int):
 		return arr[_x][_y]
+
 
 #Node
 class Grid_Node:
