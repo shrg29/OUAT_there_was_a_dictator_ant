@@ -76,7 +76,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2, 24)]
+"values": [Vector2(-3, -29)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -462,6 +462,30 @@ tracks/37/keys = {
 "update": 0,
 "values": [Vector2(39.000004, -24.928589)]
 }
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("side/controller/right_leg:position")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 147)]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("side/controller/left_leg:position")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 121)]
+}
 
 [sub_resource type="Animation" id="Animation_ebg2o"]
 resource_name = "back_idle"
@@ -622,6 +646,30 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.1833171]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("side/controller/right_leg:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 147)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("side/controller/left_leg:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 121)]
 }
 
 [sub_resource type="Animation" id="Animation_k38el"]
@@ -1253,7 +1301,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.10000001, 0.36666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(16, 10), Vector2(16, 16)]
+"values": [Vector2(16, -54.331635), Vector2(16, -48.285736)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1314,6 +1362,30 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.26877815]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("side/controller/left_leg:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("side/controller/right_leg:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_t710t"]
@@ -1573,7 +1645,7 @@ region_enabled = true
 region_rect = Rect2(126.22737, 95.97305, 60.285004, 106.32878)
 
 [node name="head" type="Sprite2D" parent="front/controller/upper_body"]
-position = Vector2(2, 24)
+position = Vector2(-3, -29)
 texture = ExtResource("1_073kj")
 offset = Vector2(-2, -32)
 region_enabled = true
