@@ -129,3 +129,4 @@ shape = SubResource("RectangleShape2D_2a2fd")
 [connection signal="area_entered" from="Loading_Zones/South" to="." method="_on_south_area_entered"]
 [connection signal="area_entered" from="Loading_Zones/East" to="." method="_on_east_area_entered"]
 [connection signal="area_entered" from="Loading_Zones/West" to="." method="_on_west_area_entered"]
+[connection signal="body_entered" from="Loading_Zones/West" to="." method="_on_west_body_entered"]
