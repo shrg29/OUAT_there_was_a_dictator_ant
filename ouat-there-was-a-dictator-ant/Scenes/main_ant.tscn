@@ -4,191 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cg4y5idffc5bl" path="res://assets/main character/ant_back.png" id="2_etoir"]
 [ext_resource type="Texture2D" uid="uid://d2710svts7me2" path="res://assets/main character/ant_side.png" id="3_ebg2o"]
 
-[sub_resource type="Animation" id="Animation_073kj"]
-resource_name = "front_idle"
-length = 0.50000334
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("front:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("front/controller/right_leg:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-23, 175)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("front/controller/left_leg:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(24, 179)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("front/controller/bottom_body:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.23333335),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 121), Vector2(0, 126)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("front/controller/upper_body:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.03333333, 0.26666668),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(5, 60), Vector2(5, 66)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("front/controller/upper_body/head:position")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.1, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-3, -34), Vector2(-3, -30)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("back:visible")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("side:visible")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("front/controller/upper_body/scarf:rotation")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.23333333, 0.43333337),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.071544126, 0.15853626]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("front/controller/upper_body/arm_right:rotation")
-tracks/9/interp = 2
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.1, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.12709558, 0.019730285]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("front/controller/upper_body/arm_left:rotation")
-tracks/10/interp = 2
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0.16666667, 0.43333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.07455159, 0.06905744]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("front/controller/bottom_body/small_arm_right:rotation")
-tracks/11/interp = 2
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0.033333335, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.18014336]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("front/controller/bottom_body/small_arm_left:rotation")
-tracks/12/interp = 2
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0.13333334, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.07089031, -0.18508644]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("front/controller/upper_body/head/antenna_right:rotation")
-tracks/13/interp = 2
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0.13333334, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.16791305, 0.17304578]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("front/controller/upper_body/head/antenna_left:rotation")
-tracks/14/interp = 2
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0.1, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.105175935, -0.19691965]
-}
-
 [sub_resource type="Animation" id="Animation_pljma"]
 length = 0.001
 tracks/0/type = "value"
@@ -648,143 +463,6 @@ tracks/37/keys = {
 "values": [Vector2(39.000004, -24.928589)]
 }
 
-[sub_resource type="Animation" id="Animation_etoir"]
-resource_name = "side_idle"
-length = 0.50000334
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("front:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("back:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("side:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("side/controller/bottom_body:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.23333335),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1, 121), Vector2(-1, 126)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("side/controller/upper_body:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.06666667, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(5, 60), Vector2(5, 65)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("side/controller/upper_body/head:position")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.10000001, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(16, 10), Vector2(16, 16)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("side/controller/upper_body/head/antenna_left:rotation")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.16666667, 0.43333337),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.14391214]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("side/controller/upper_body/head/antenna_right:rotation")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.12215018, -0.08597267]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("side/controller/upper_body/scarf:rotation")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.13333334, 0.4666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.11861544]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("side/controller/bottom_body/small_arm_left:rotation")
-tracks/9/interp = 2
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.033333335, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.20201102]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("side/controller/upper_body/arm_right:rotation")
-tracks/10/interp = 2
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0.06666666, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.26877815]
-}
-
 [sub_resource type="Animation" id="Animation_ebg2o"]
 resource_name = "back_idle"
 length = 0.50000334
@@ -1131,6 +809,191 @@ tracks/14/keys = {
 "values": [-0.064952195, -0.42089656]
 }
 
+[sub_resource type="Animation" id="Animation_073kj"]
+resource_name = "front_idle"
+length = 0.50000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("front:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front/controller/right_leg:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-23, 175)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("front/controller/left_leg:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, 179)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("front/controller/bottom_body:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 121), Vector2(0, 126)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("front/controller/upper_body:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.03333333, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 60), Vector2(5, 66)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("front/controller/upper_body/head:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, -34), Vector2(-3, -30)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("back:visible")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("side:visible")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("front/controller/upper_body/scarf:rotation")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.23333333, 0.43333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.071544126, 0.15853626]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("front/controller/upper_body/arm_right:rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.12709558, 0.019730285]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("front/controller/upper_body/arm_left:rotation")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.16666667, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.07455159, 0.06905744]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("front/controller/bottom_body/small_arm_right:rotation")
+tracks/11/interp = 2
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.18014336]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("front/controller/bottom_body/small_arm_left:rotation")
+tracks/12/interp = 2
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.13333334, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.07089031, -0.18508644]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("front/controller/upper_body/head/antenna_right:rotation")
+tracks/13/interp = 2
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.13333334, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.16791305, 0.17304578]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("front/controller/upper_body/head/antenna_left:rotation")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.105175935, -0.19691965]
+}
+
 [sub_resource type="Animation" id="Animation_uhvvt"]
 resource_name = "front_walk"
 length = 0.50000334
@@ -1316,6 +1179,143 @@ tracks/14/keys = {
 "values": [-0.10129834, 0.11846299]
 }
 
+[sub_resource type="Animation" id="Animation_etoir"]
+resource_name = "side_idle"
+length = 0.50000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("front:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("back:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("side:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("side/controller/bottom_body:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 121), Vector2(-1, 126)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("side/controller/upper_body:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.06666667, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 60), Vector2(5, 65)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("side/controller/upper_body/head:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.10000001, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 10), Vector2(16, 16)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("side/controller/upper_body/head/antenna_left:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.16666667, 0.43333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.14391214]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("side/controller/upper_body/head/antenna_right:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.12215018, -0.08597267]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("side/controller/upper_body/scarf:rotation")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.13333334, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.11861544]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("side/controller/bottom_body/small_arm_left:rotation")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.033333335, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.20201102]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("side/controller/upper_body/arm_right:rotation")
+tracks/10/interp = 2
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.06666666, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.26877815]
+}
+
 [sub_resource type="Animation" id="Animation_t710t"]
 resource_name = "side_walk"
 length = 0.50000334
@@ -1378,7 +1378,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.23333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.48584297, -0.50330395]
+"values": [0.48584297, -0.5033039500000001]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
