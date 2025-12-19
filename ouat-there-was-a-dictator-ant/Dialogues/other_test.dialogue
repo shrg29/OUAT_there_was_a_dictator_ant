@@ -1,0 +1,24 @@
+~ start
+Antony: [[Hi|Hello|Howdy]], The queen wants to force me into war! I'm scared.
+- I am trying to recruit enough of us to overthrow her
+	You: I am trying to recruit enough of us to overthrow her.
+	Anthony: Oh, that sounds great, consider me recruited.
+	do GameState.recruited_ant("Anthony")
+- Tough Luck buddy
+	You: Tough Luck buddy.
+	Anthony: Fuck you.
+	Anthony: I am going to make sure she recruits you along with me!
+	- Oh no, I didn't mean it.
+		You: Oh no, I didn't mean it.
+		You: I am trying to recruit enough of us to overthrow her.
+		Anthony: Pfft, no thanks.
+	- Okay
+		You: Okay
+		set GameState.failed_game = true
+if GameState.failed_game == true:
+	System: End of dialogue. Outcome: failed game
+elif GameState.recruited_ants.has("Anthony")
+	System: End of dialogue. Outcome: successfully recruited
+else:
+	System: End of dialogue. Outcome: failed to recruit
+=> END
