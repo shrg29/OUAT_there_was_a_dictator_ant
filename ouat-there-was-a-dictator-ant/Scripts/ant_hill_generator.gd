@@ -16,14 +16,15 @@ var dead_ends = []
 @export var size_y = 6
 @export var block_size_x = 40 # to keep 16:9 ratio
 @export var block_size_y = 40
+@export var map_transparency = 0.5
 
 func _ready() -> void:
 	generate_map()
-	set_process(true)
-	_draw()
+	#set_process(true)
+	#draw()
 
 
-func _draw() -> void:
+func draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, get_viewport_rect().size), Color.WHITE)
 
 	# Draw maze walls and unvisited blocks
@@ -99,8 +100,38 @@ func _draw() -> void:
 		#print("x: ", current.x, " y: ", current.y)
 		#map_step()
 
-func getGrid():
+func get_grid():
 	return maze
+
+func get_mini_map() -> ImageTexture:
+	var img := Image.create(size_x * block_size_x, size_y * block_size_y, false, Image.FORMAT_RGBA8)
+	var tex
+
+	for x in range(size_x):
+		for y in range(size_y):
+			var n = maze.get_cell(x, y)
+
+			var c := Color.TRANSPARENT
+			match n.type:
+				tile_type.WALL:      c = Color.TRANSPARENT
+				tile_type.ROOM:      c = Color(0.408, 0.246, 0.076, map_transparency)
+				tile_type.START:     c = Color(0.401, 0.065, 0.632, map_transparency)
+				tile_type.QUEEN:     c = Color(1.0, 0.004, 0.0, map_transparency)
+				tile_type.NURSERY:   c = Color(0.79, 0.214, 0.53, map_transparency)
+				tile_type.CARPENTER: c = Color(0.652, 0.467, 0.144, map_transparency)
+				tile_type.WATER:     c = Color(0.209, 0.477, 0.685, map_transparency)
+				tile_type.FOOD:      c = Color(0.302, 0.455, 0.203, map_transparency)
+				_:
+					c = Color.TRANSPARENT
+
+			for x_b in range(block_size_x):
+				for y_b in range(block_size_y):
+					img.set_pixel(x * block_size_x + x_b, y * block_size_y + y_b, c)
+			#img.set_pixel(x, y, c)
+		#img.resize(size_x, size_y, Image.INTERPOLATE_NEAREST)
+
+	tex = ImageTexture.create_from_image(img)
+	return tex
 
 
 #region maze logic

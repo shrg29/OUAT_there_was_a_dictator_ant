@@ -1,6 +1,19 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
+
+@export var map_transparency = 0.5
+@onready var mini_map = $TextureRect
+
+
+
+
+
+func generate_mini_map():
+	AntHillGenerator.map_transparency = self.map_transparency
+	mini_map.texture = AntHillGenerator.get_mini_map()
+	
+
+
 func _ready() -> void:
-	AntHillGenerator._draw()
+	generate_mini_map()

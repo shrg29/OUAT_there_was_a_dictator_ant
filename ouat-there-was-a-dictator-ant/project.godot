@@ -17,3 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 AntHillGenerator="*res://Scripts/ant_hill_generator.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
