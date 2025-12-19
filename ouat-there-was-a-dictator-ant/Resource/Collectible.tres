@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Collectible" load_steps=2 format=3 uid="uid://m2ppchnt6wib"]
+
+[ext_resource type="Script" uid="uid://d0b4qq8bpkfrt" path="res://Scripts/collectible.gd" id="1_jux0b"]
+
+[resource]
+script = ExtResource("1_jux0b")
