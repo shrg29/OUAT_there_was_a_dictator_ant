@@ -5,9 +5,8 @@ extends CharacterBody2D
 
 
 #sound
-@onready var audio_player = $AudioStreamPlayer2D
+@onready var audio_player = AudioStreamPlayer.new()
 #region SFX files
-@export var audio_stuff: Resource
 #var sound_attack_1 = preload("res://assets/SFX/player noises/attack_blub_voice.wav") 
 #var sound_attack_2 = preload("res://assets/SFX/player noises/attack_blub_voice_2.wav") 
 #var sound_attack_3 = preload("res://assets/SFX/player noises/attack_blub.wav")
@@ -19,7 +18,7 @@ extends CharacterBody2D
 #var sound_joy = preload("res://assets/SFX/player noises/wahahuu.wav")
 #endregion
 
-@export var speed: int = 600
+@export var speed: int = 400
 
 #animations
 @onready var animations = $main_ant/AnimationPlayer
