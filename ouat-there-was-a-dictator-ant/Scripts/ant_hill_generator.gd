@@ -159,8 +159,6 @@ func generate_map():
 		# Detect dead ends
 		find_dead_ends()
 		
-		for d in dead_ends:
-			print(d.x, ", ", d.y)
 
 		# Stop when we have enough dead ends
 		if dead_ends.size() >= 5 && steps == 0:
@@ -276,31 +274,25 @@ func get_room_neighbors(node: Grid_Node) -> Array:
 
 func spread_rooms():
 	dead_ends[0].type = tile_type.QUEEN #0 is already the furthest so remove it
-	print("Queen set at: ", dead_ends[0].x, ", ", dead_ends[0].y)
 	dead_ends.remove_at(0) #remove from rooms
 	
 	var i = randi_range(0, dead_ends.size()-1)
 	dead_ends[i].type = tile_type.WATER
-	print("water set at: ", dead_ends[i].x, ", ", dead_ends[i].y)
 	dead_ends.remove_at(i)
 	
 	i = randi_range(0, dead_ends.size()-1)
 	dead_ends[i].type = tile_type.CARPENTER
-	print("Carpenter set at: ", dead_ends[i].x, ", ", dead_ends[i].y)
 	dead_ends.remove_at(i)
 	
 	i = randi_range(0, dead_ends.size()-1)
 	dead_ends[i].type = tile_type.NURSERY
-	print("Nursery set at: ", dead_ends[i].x, ", ", dead_ends[i].y)
 	dead_ends.remove_at(i)
 	
 	i = randi_range(0, dead_ends.size()-1)
 	dead_ends[i].type = tile_type.FOOD
-	print("Food set at: ", dead_ends[i].x, ", ", dead_ends[i].y)
 	dead_ends.remove_at(i)
 	
 	start_room.type = tile_type.START
-	print("start set")
 
 
 func find_dead_ends():

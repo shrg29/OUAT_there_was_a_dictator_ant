@@ -19,7 +19,7 @@ extends CharacterBody2D
 #var sound_joy = preload("res://assets/SFX/player noises/wahahuu.wav")
 #endregion
 
-@export var speed: int = 250
+@export var speed: int = 600
 
 #animations
 @onready var animations = $main_ant/AnimationPlayer
