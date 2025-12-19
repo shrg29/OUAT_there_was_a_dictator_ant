@@ -13,3 +13,16 @@ config_version=5
 config/name="OUAT There was a Dictator Ant"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameState="*res://Scripts/game_state.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogues/testing.dialogue", "res://Dialogues/other_test.dialogue")
