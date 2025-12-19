@@ -4,23 +4,20 @@ enum tile_type {ROOM, WALL, NONE, START, NURSERY, WATER, CARPENTER, FOOD, QUEEN}
 
 var maze
 var current
-@export var initial_steps = 20
+@export var initial_steps = 12
 var steps = 0
-@export var chance_to_branch = 0.2
+@export var chance_to_branch = 0.7
 var start_room
 var start_branches = []
 var rooms = []
 var walls = []
 var dead_ends = []
-@export var size_x = 10
-@export var size_y = 10
-var block_size_x = 2 * 16 # to keep 16:9 ratio
-var block_size_y = 2 * 9
+@export var size_x = 6
+@export var size_y = 6
+@export var block_size_x = 40 # to keep 16:9 ratio
+@export var block_size_y = 40
 
 func _ready() -> void:
-	
-	block_size_x = float(get_viewport_rect().size.x) / size_x
-	block_size_y = float(get_viewport_rect().size.y) / size_y
 	generate_map()
 	set_process(true)
 
@@ -40,7 +37,7 @@ func _draw() -> void:
 			if not n.visited:
 				draw_rect(
 					Rect2(x * block_size_x, y * block_size_y, block_size_x, block_size_y),
-					Color(0.5, 0.5, 0.5)
+					Color(0.5, 0.5, 0.5, 0.0)
 				)
 			
 			if n.type == tile_type.ROOM:
@@ -52,7 +49,7 @@ func _draw() -> void:
 			if n.type == tile_type.WALL:
 				draw_rect(
 					Rect2(x * block_size_x, y * block_size_y, block_size_x, block_size_y),
-					Color(0.23, 0.126, 0.049, 1.0)
+					Color(0.23, 0.126, 0.049, 0.0)
 				)
 				
 			if n.type == tile_type.QUEEN:
@@ -77,7 +74,7 @@ func _draw() -> void:
 			if n.type == tile_type.CARPENTER:
 				draw_rect(
 					Rect2(x * block_size_x, y * block_size_y, block_size_x, block_size_y),
-					Color(0.313, 0.318, 0.065, 1.0)
+					Color(0.652, 0.467, 0.144, 1.0)
 				)
 			
 			if n.type == tile_type.WATER:
@@ -108,6 +105,8 @@ func _draw() -> void:
 
 
 #region maze logic
+
+
 func _init_maze(mx: int, my: int) -> void:
 	rooms.clear()
 	walls.clear()
@@ -117,6 +116,7 @@ func _init_maze(mx: int, my: int) -> void:
 	#start with random cell away from borders
 	init_start_room()
 	current = start_room
+
 
 func generate_map():
 	while true:
@@ -136,7 +136,6 @@ func generate_map():
 		if dead_ends.size() >= 5:
 			spread_rooms()
 			break
-
 
 
 func map_step():
