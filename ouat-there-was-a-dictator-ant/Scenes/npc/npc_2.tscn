@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnvpr65b4wag1"]
+
+[ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="1_0q3uk"]
+[ext_resource type="Texture2D" uid="uid://8f5br3fmyk2y" path="res://assets/npc/npc3.png" id="2_dyi55"]
+
+[node name="npc_2" instance=ExtResource("1_0q3uk")]
+
+[node name="left_leg" parent="controller" index="0"]
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(70.090034, 4.3147964, 45.96331, 75.64794)
+
+[node name="right_leg" parent="controller" index="1"]
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(120.08777, 23.885187, 41.907135, 74.28174)
+
+[node name="bottom body" parent="controller" index="2"]
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(205.71255, 174.54214, 135.6413, 112.07529)
+
+[node name="arm right" parent="controller/bottom body" index="0"]
+position = Vector2(-69, 3)
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(65.64416, 102.50572, 48.75058, 52.89279)
+
+[node name="arm left" parent="controller/bottom body" index="1"]
+position = Vector2(15.999996, 1.000001)
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(156.90425, 97.51229, 44.927017, 58.753914)
+
+[node name="top body" parent="controller" index="3"]
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(2.2760315, 51.97638, 67.412895, 106.12265)
+
+[node name="arm right" parent="controller/top body" index="0"]
+position = Vector2(-19.999996, -20.67749)
+texture = ExtResource("2_dyi55")
+offset = Vector2(-19.75066, 28.87994)
+region_rect = Rect2(206.3599, 84.76639, 64.157166, 84.9843)
+
+[node name="top body" type="Sprite2D" parent="controller/top body" index="1"]
+position = Vector2(0, 0.67749023)
+texture = ExtResource("2_dyi55")
+region_enabled = true
+region_rect = Rect2(2.2760315, 51.97638, 67.412895, 106.12265)
+
+[node name="arm left" parent="controller/top body" index="2"]
+position = Vector2(20, -2.842855)
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(280.1598, 80.29074, 60.566284, 84.7449)
+
+[node name="head" parent="controller/top body" index="3"]
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(164.21742, 6.596653, 95.27818, 74.211655)
+
+[node name="right_antenna" parent="controller/top body/head" index="0"]
+position = Vector2(-16, -10)
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(1.9116211, 159.54315, 73.369, 105.59598)
+
+[node name="left_antenna" parent="controller/top body/head" index="1"]
+position = Vector2(31, 2)
+texture = ExtResource("2_dyi55")
+region_rect = Rect2(117.278175, 182.18756, 87.026344, 103.20218)

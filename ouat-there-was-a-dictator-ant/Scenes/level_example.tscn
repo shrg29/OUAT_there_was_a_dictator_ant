@@ -1,0 +1,131 @@
+[gd_scene load_steps=13 format=3 uid="uid://gt0w78sd75w4"]
+
+[ext_resource type="Texture2D" uid="uid://x33ndk77ub5h" path="res://assets/level_art/level_example.png" id="1_0cy7k"]
+[ext_resource type="Script" path="res://Scripts/level_example.gd" id="1_h0u58"]
+[ext_resource type="Texture2D" uid="uid://3um65mcplynd" path="res://assets/level_art/level_top_example.png" id="2_o3jh7"]
+[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="3_xe2kl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3jh7"]
+size = Vector2(457, 1156)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe2kl"]
+size = Vector2(907.5, 413)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0u58"]
+size = Vector2(927, 220)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c833k"]
+size = Vector2(357, 731.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0ok4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpqmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b510r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2a2fd"]
+
+[node name="level_example" type="Node2D"]
+scale = Vector2(0.38, 0.38)
+script = ExtResource("1_h0u58")
+
+[node name="LevelExample" type="Sprite2D" parent="."]
+position = Vector2(2739.4736, 1417.9999)
+texture = ExtResource("1_0cy7k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1783.4735, 987.9999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-256.5, -423)
+shape = SubResource("RectangleShape2D_o3jh7")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(199, 1668.5)
+shape = SubResource("RectangleShape2D_xe2kl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(236.75, -657)
+shape = SubResource("RectangleShape2D_xe2kl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1751.5, -589)
+shape = SubResource("RectangleShape2D_h0u58")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2184, -204)
+shape = SubResource("RectangleShape2D_c833k")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-241.5, 1169.75)
+shape = SubResource("RectangleShape2D_c833k")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2189, 1178)
+shape = SubResource("RectangleShape2D_c833k")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1784, 1664)
+shape = SubResource("RectangleShape2D_xe2kl")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-645, 343)
+shape = SubResource("RectangleShape2D_o3jh7")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2597, 410)
+shape = SubResource("RectangleShape2D_o3jh7")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(946.87714, -1213.6139)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_o3jh7")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(987, 2089)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_o3jh7")
+
+[node name="LevelExample2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(2739.4736, 1417.9999)
+texture = ExtResource("2_o3jh7")
+
+[node name="player" parent="." instance=ExtResource("3_xe2kl")]
+position = Vector2(3363.158, 1813.1578)
+motion_mode = 1
+
+[node name="Loading_Zones" type="Node2D" parent="."]
+
+[node name="North" type="Area2D" parent="Loading_Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading_Zones/North"]
+position = Vector2(2723.684, -42.105263)
+scale = Vector2(60.34167, -11.6371155)
+shape = SubResource("RectangleShape2D_i0ok4")
+
+[node name="South" type="Area2D" parent="Loading_Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading_Zones/South"]
+position = Vector2(2757.8945, 2881.5789)
+scale = Vector2(65.27174, 13.798314)
+shape = SubResource("RectangleShape2D_mpqmn")
+
+[node name="East" type="Area2D" parent="Loading_Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading_Zones/East"]
+position = Vector2(4213.1577, 1450)
+scale = Vector2(11.401407, 43.203358)
+shape = SubResource("RectangleShape2D_b510r")
+
+[node name="West" type="Area2D" parent="Loading_Zones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loading_Zones/West"]
+position = Vector2(1239.4738, 1344.7367)
+scale = Vector2(11.786455, 68.880005)
+shape = SubResource("RectangleShape2D_2a2fd")
+
+[connection signal="area_entered" from="Loading_Zones/North" to="." method="_on_north_area_entered"]
+[connection signal="area_entered" from="Loading_Zones/South" to="." method="_on_south_area_entered"]
+[connection signal="area_entered" from="Loading_Zones/East" to="." method="_on_east_area_entered"]
+[connection signal="area_entered" from="Loading_Zones/West" to="." method="_on_west_area_entered"]
