@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://lv7767crf5m1"]
+[gd_scene load_steps=66 format=3 uid="uid://lv7767crf5m1"]
 
 [ext_resource type="PackedScene" uid="uid://bd778p2c8x55d" path="res://Scenes/level design/terrain_cube.tscn" id="1_xya7e"]
 [ext_resource type="PackedScene" uid="uid://cq6nfcen2xyl1" path="res://Scenes/level design/wall_cube.tscn" id="2_ekove"]
@@ -59,7 +59,9 @@
 [ext_resource type="PackedScene" path="res://Scenes/level design/nursery.tscn" id="56_p0jfs"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/water.tscn" id="57_p0jfs"]
 [ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="57_um2fi"]
+[ext_resource type="PackedScene" uid="uid://brobnf1be5yw6" path="res://Scenes/level design/queen.tscn" id="58_4thcj"]
 [ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="58_uv45s"]
+[ext_resource type="Texture2D" uid="uid://dxpra8js036a5" path="res://assets/level_art/level_design/food_station.png" id="59_5anxw"]
 [ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="59_8q85r"]
 [ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="60_p0jfs"]
 [ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="61_4thcj"]
@@ -287,6 +289,13 @@ position = Vector2(2571, 756)
 
 [node name="water" parent="specific rooms assets" instance=ExtResource("57_p0jfs")]
 position = Vector2(921, 1608)
+
+[node name="queen" parent="specific rooms assets" instance=ExtResource("58_4thcj")]
+position = Vector2(2464, 1544)
+
+[node name="food" type="Sprite2D" parent="specific rooms assets"]
+position = Vector2(-395, 1434)
+texture = ExtResource("59_5anxw")
 
 [node name="npcs" type="Node2D" parent="."]
 
