@@ -51,7 +51,7 @@ var failed_game: bool = false # Game over check
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
-	#pick_up_item(water_item)
+	pick_up_item(water_item)
 	#pick_up_item(water_item)
 	pass # Replace with function body.
 
