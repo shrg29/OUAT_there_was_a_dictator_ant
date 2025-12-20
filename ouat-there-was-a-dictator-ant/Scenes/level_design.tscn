@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://lv7767crf5m1"]
+
+[ext_resource type="PackedScene" uid="uid://bd778p2c8x55d" path="res://Scenes/level design/terrain_cube.tscn" id="1_xya7e"]
+[ext_resource type="PackedScene" uid="uid://cq6nfcen2xyl1" path="res://Scenes/level design/wall_cube.tscn" id="2_ekove"]
+[ext_resource type="PackedScene" uid="uid://1uobr5mjx3d0" path="res://Scenes/level design/door_north.tscn" id="4_pw6wb"]
+[ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_4s7yf"]
+[ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_7d3h0"]
+[ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_pw6wb"]
+[ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="7_ycmeu"]
+[ext_resource type="PackedScene" uid="uid://dmollusy6dodq" path="res://Scenes/level design/walls_rectangle.tscn" id="8_60ird"]
+
+[node name="LevelDesign" type="Node2D"]
+
+[node name="cube" type="Node2D" parent="."]
+visible = false
+
+[node name="terrain" parent="cube" instance=ExtResource("1_xya7e")]
+position = Vector2(949, 539)
+
+[node name="WallCube" parent="cube" instance=ExtResource("2_ekove")]
+position = Vector2(956, 541)
+
+[node name="doors_cube" type="Node2D" parent="cube"]
+
+[node name="door north" parent="cube/doors_cube" instance=ExtResource("4_pw6wb")]
+position = Vector2(944, 96)
+
+[node name="door south" parent="cube/doors_cube" instance=ExtResource("5_4s7yf")]
+position = Vector2(938, 1004)
+
+[node name="door east" parent="cube/doors_cube" instance=ExtResource("6_7d3h0")]
+position = Vector2(1405, 531)
+
+[node name="door west" parent="cube/doors_cube" instance=ExtResource("7_pw6wb")]
+position = Vector2(432, 525)
+
+[node name="rectangle" type="Node2D" parent="."]
+
+[node name="terrain1" parent="rectangle" instance=ExtResource("7_ycmeu")]
+position = Vector2(960, 540)
+
+[node name="WallsRectangle" parent="rectangle" instance=ExtResource("8_60ird")]
+position = Vector2(960, 540)
+
+[node name="doors_rectangle" type="Node2D" parent="rectangle"]
+
+[node name="door north" parent="rectangle/doors_rectangle" instance=ExtResource("4_pw6wb")]
+position = Vector2(944, 96)
+
+[node name="door south" parent="rectangle/doors_rectangle" instance=ExtResource("5_4s7yf")]
+position = Vector2(938, 1004)
+
+[node name="door east" parent="rectangle/doors_rectangle" instance=ExtResource("6_7d3h0")]
+position = Vector2(1826, 531)
+
+[node name="door west" parent="rectangle/doors_rectangle" instance=ExtResource("7_pw6wb")]
+position = Vector2(90, 525)

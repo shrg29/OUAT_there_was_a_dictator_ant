@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq6nfcen2xyl1"]
+
+[ext_resource type="Texture2D" uid="uid://2rc5ntnnclqw" path="res://assets/level_art/level_design/wall_cube.png" id="1_axx2d"]
+
+[node name="WallCube" type="Sprite2D"]
+texture = ExtResource("1_axx2d")
