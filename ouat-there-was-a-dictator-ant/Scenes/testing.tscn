@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0urdp2ca6qh3"]
+[gd_scene load_steps=6 format=3 uid="uid://d0urdp2ca6qh3"]
 
 [ext_resource type="Script" uid="uid://bqu48pevwmi4n" path="res://Scripts/testing.gd" id="1_lq4et"]
 [ext_resource type="PackedScene" uid="uid://bs4j75o23dak5" path="res://Scenes/player.tscn" id="2_siu27"]
 [ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="3_4ppfb"]
 [ext_resource type="Resource" uid="uid://hpk13ubic3hb" path="res://Resource/Item Resources/stick.tres" id="4_4ppfb"]
+[ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="4_8si1v"]
 
 [node name="Testing" type="Node2D"]
 script = ExtResource("1_lq4et")
@@ -12,5 +13,41 @@ script = ExtResource("1_lq4et")
 position = Vector2(1320, 752)
 
 [node name="ItemInstance" parent="." instance=ExtResource("3_4ppfb")]
-position = Vector2(1741, 126)
+position = Vector2(1968, 619)
 item_type = ExtResource("4_4ppfb")
+
+[node name="ItemInstance10" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1870, 835)
+item_type = ExtResource("4_4ppfb")
+
+[node name="ItemInstance2" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1319, 263)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance3" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1672, 493)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance4" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1854, 247)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance5" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1598, 258)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance6" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1564, 37)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance7" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1781, 387)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance8" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1475, 379)
+item_type = ExtResource("4_8si1v")
+
+[node name="ItemInstance9" parent="." instance=ExtResource("3_4ppfb")]
+position = Vector2(1422, 126)
+item_type = ExtResource("4_8si1v")

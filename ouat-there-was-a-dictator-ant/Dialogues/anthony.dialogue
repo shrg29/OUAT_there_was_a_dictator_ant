@@ -33,6 +33,7 @@ elif GameState.has_met_anthony == false:
 ~ quest
 if GameState.count_item(GameState.anthony_demand_item) >= GameState.anthony_demand_amount:
 	- Here you go (Give him {{GameState.anthony_demand_amount}} {{GameState.anthony_demand_item.item_name}}).
+		do GameState.give_item(GameState.anthony_demand_item, GameState.anthony_demand_amount)
 		do GameState.recruit_ant("Anthony")
 		do AudioManager.play_sfx("task_completed")
 		=> resolve
