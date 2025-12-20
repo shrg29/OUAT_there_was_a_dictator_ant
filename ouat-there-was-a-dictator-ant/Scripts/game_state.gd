@@ -99,5 +99,6 @@ func _process(delta: float) -> void:
 
 func recruit_ant(name: String) -> Array[String]:
 	recruited_ants.push_back(name)
-	print("Recruited ANts: ", recruited_ants)
+	if print_mode:
+		print("Recruited ANts: ", recruited_ants)
 	return recruited_ants

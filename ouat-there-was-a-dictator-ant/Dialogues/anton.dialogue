@@ -1,10 +1,11 @@
 ~ start
 if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
-	Anton: [[Greetings|Hoy|]], I heard about your idea. I will join if you give me {{GameState.anton_demand_amount}} {{GameState.anton_demand_item.item_name}}.
+	Anton: [[Greetings|Hoy]], I heard about your idea. I will join if you give me {{GameState.anton_demand_amount}} {{GameState.anton_demand_item.item_name}}.
 	if GameState.count_item(GameState.anton_demand_item) >= GameState.anton_demand_amount:
 		- Give Water
 			Player: Here you go
 			do GameState.give_item(GameState.anton_demand_item, GameState.anton_demand_amount)
+			set GameState.anton_demand_amount = 0
 			do GameState.recruit_ant("Anton")
 		- I will come back
 			System: Not yet implemented

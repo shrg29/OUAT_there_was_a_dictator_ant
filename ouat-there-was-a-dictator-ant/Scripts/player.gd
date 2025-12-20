@@ -175,7 +175,6 @@ func handleInput():
 				GameState.current_state = GameState.state.TALKING
 	
 	if Input.is_action_just_pressed("drop_item"):
-		print(nearby_items)
 		if GameState.current_state != GameState.state.TALKING: # only pickup if not in dialogue
 			if current_item: # only pickup if there is a current item
 				current_item.interact()
