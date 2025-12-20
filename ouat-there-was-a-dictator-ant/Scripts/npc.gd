@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var print_mode: bool = true
+@export var print_mode: bool = false
 
 @export var npc_name: String = ""
 @export var npc_dialogue: DialogueResource

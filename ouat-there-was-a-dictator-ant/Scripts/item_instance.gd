@@ -1,6 +1,6 @@
 extends Node2D
 
-var print_mode: bool = true
+var print_mode: bool = false
 
 @export var item_type: ItemResource = null
 @onready var item_title: String

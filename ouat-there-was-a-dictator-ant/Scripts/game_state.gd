@@ -1,7 +1,7 @@
 extends Node
 
 
-var print_mode: bool = true
+var print_mode: bool = false
 
 
 var water_item: ItemResource = preload("res://Resource/Item Resources/water.tres")
