@@ -5,6 +5,7 @@ var print_mode: bool = true
 
 
 #region Item Preloads
+var beer_item: ItemResource = preload("res://Resource/Item Resources/beer.tres")
 var coin_item: ItemResource = preload("res://Resource/Item Resources/coin.tres")
 var stick_item: ItemResource = preload("res://Resource/Item Resources/stick.tres")
 var stone_item: ItemResource = preload("res://Resource/Item Resources/stone.tres")
@@ -38,6 +39,10 @@ var kasantra_demand_item: ItemResource = water_item
 var kasantra_demand_amount: int = 6
 var kasantra_second_item: ItemResource = stick_item
 var kasantra_second_amount: int = 1
+
+var has_met_samantha: bool = false
+var samantha_demand_item: ItemResource = beer_item
+var samantha_demand_amount: int = 1
 
 enum anton_opinion {HATE, FINE}
 var anton_current_opinion: anton_opinion = anton_opinion.FINE

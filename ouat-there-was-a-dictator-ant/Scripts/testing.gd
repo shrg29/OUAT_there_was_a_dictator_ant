@@ -6,11 +6,12 @@ var dialogue_anton: DialogueResource = preload("res://Dialogues/anton.dialogue")
 var dialogue_anthony: DialogueResource = preload("res://Dialogues/anthony.dialogue")
 var dialogue_antonia: DialogueResource = preload("res://Dialogues/antonia.dialogue")
 var dialogue_kasantra: DialogueResource = preload("res://Dialogues/kasantra.dialogue")
+var dialogue_samantha: DialogueResource = preload("res://Dialogues/Samantha.dialogue")
 
 
 func _ready() -> void:
 	spawn_npc("Anthony", dialogue_anthony, 100, 100, true)
-	#spawn_npc("Anton", dialogue_anton, 1000, 1000)
+	spawn_npc("Samantha", dialogue_samantha, 1000, 1000, true)
 	spawn_npc("Antonia", dialogue_antonia, 1000, 100, true)
 	spawn_npc("Kasantra", dialogue_kasantra, 100, 1000, true)
 
