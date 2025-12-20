@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8f5br3fmyk2y" path="res://assets/npc/npc3.png" id="2_dyi55"]
 
 [node name="npc_2" instance=ExtResource("1_0q3uk")]
+scale = Vector2(0.6, 0.6)
 
 [node name="left_leg" parent="controller" index="0"]
 texture = ExtResource("2_dyi55")

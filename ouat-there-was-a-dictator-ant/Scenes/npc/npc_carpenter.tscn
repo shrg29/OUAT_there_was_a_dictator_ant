@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://db3pisyt8t6ne"]
+[gd_scene load_steps=5 format=3 uid="uid://dcioych7p8gul"]
 
 [ext_resource type="Texture2D" uid="uid://cqqrentben3br" path="res://assets/npc/carpenter.png" id="1_eh6vg"]
 
@@ -257,6 +257,7 @@ _data = {
 }
 
 [node name="npc_carpenter" type="Node2D"]
+scale = Vector2(0.6, 0.6)
 
 [node name="controller" type="Node2D" parent="."]
 
