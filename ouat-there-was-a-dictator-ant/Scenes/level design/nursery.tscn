@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv0dsc1u2ealr"]
+
+[ext_resource type="Texture2D" uid="uid://bbwxyycpu6ku" path="res://assets/level_art/level_design/nursery_station.png" id="1_1jvkf"]
+
+[node name="nursery" type="Sprite2D"]
+texture = ExtResource("1_1jvkf")
