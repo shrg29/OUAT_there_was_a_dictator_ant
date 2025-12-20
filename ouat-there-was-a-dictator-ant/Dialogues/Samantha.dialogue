@@ -12,12 +12,12 @@ else:
 		- Speaking of queen...
 			Samantha: I've wanted to kick her behind for a while now...
 			Samantha: But, could you do me a favour first?
-			Samantha: The Fisherman keeps hoarding the beer, you know?
+			Samantha: The [wave]Fisherman[/wave] keeps hoarding the beer, you know?
 			=> quest
 		- I got lost.
 			Samantha: No need to pretend, I heard what you're up to.
 			Samantha: I'm willing to help for a small favour.
-			Samantha: The Fisherman keeps hoarding the beer, you know?
+			Samantha: The [wave]Fisherman[/wave] keeps hoarding the beer, you know?
 			=> quest
 		- Goodbye
 			=> resolve
