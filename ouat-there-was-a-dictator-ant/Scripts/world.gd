@@ -227,6 +227,3 @@ func choose_three_door_rooms():
 		current_room.scene = three_door_tunnels[2]
 	if adjacent_rooms[dir.W] == null:
 		current_room.scene = three_door_tunnels[3]
-
-func _process(delta: float) -> void:
-	pass

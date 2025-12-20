@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://t2b3f5iyhdds"]
+[gd_scene load_steps=22 format=3 uid="uid://t2b3f5iyhdds"]
 
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="1_jmk4f"]
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_wfi1i"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="5_mx6rf"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="6_j1g03"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="8_1g66u"]
+[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="9_rr0t5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(31.88815, 20)
@@ -143,3 +144,10 @@ shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="player" parent="." instance=ExtResource("8_1g66u")]
 position = Vector2(963, 521)
+
+[node name="map generator" parent="." instance=ExtResource("9_rr0t5")]
+
+[connection signal="area_entered" from="Loading_Zones/North" to="." method="_on_north_area_entered"]
+[connection signal="area_entered" from="Loading_Zones/South" to="." method="_on_south_area_entered"]
+[connection signal="area_entered" from="Loading_Zones/East" to="." method="_on_east_area_entered"]
+[connection signal="area_entered" from="Loading_Zones/West" to="." method="_on_west_area_entered"]
