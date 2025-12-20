@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://crun75527jmiw"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_buafi"]
+
+[node name="branch3" type="Sprite2D"]
+texture = ExtResource("1_buafi")
+region_enabled = true
+region_rect = Rect2(286.16547, 196.65298, 135.53732, 91.90091)

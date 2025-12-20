@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://p2janly4s7wb"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_v755u"]
+
+[node name="coin" type="Sprite2D"]
+texture = ExtResource("1_v755u")
+region_enabled = true
+region_rect = Rect2(232.63626, 42.007355, 122.69415, 117.726776)
