@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmollusy6dodq"]
+
+[ext_resource type="Texture2D" uid="uid://dw450s8c014gh" path="res://assets/level_art/level_design/walls screen.png" id="1_2yn1x"]
+
+[node name="WallsRectangle" type="Sprite2D"]
+texture = ExtResource("1_2yn1x")

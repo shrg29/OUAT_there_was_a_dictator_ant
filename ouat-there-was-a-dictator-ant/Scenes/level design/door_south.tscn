@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50fcrcf248pp"]
+
+[ext_resource type="Texture2D" uid="uid://jycg83src5wi" path="res://assets/level_art/level_design/doors.png" id="1_6wbvo"]
+[ext_resource type="Texture2D" uid="uid://bwvtlb3k54446" path="res://assets/level_art/level_design/door_top.png" id="2_gmh5a"]
+
+[node name="door south" type="Sprite2D"]
+texture = ExtResource("1_6wbvo")
+region_enabled = true
+region_rect = Rect2(720.9851, 913.97687, 440.5713, 177.31036)
+
+[node name="top" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-5, 18)
+texture = ExtResource("2_gmh5a")
+region_enabled = true
+region_rect = Rect2(738.3279, 944.19006, 396.39648, 153.49182)
