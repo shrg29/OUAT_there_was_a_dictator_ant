@@ -21,4 +21,6 @@ elif GameState.recruited_ants.has("Anthony")
 	System: End of dialogue. Outcome: successfully recruited
 else:
 	System: End of dialogue. Outcome: failed to recruit
+
+set GameState.current_state = GameState.state.WALKING
 => END

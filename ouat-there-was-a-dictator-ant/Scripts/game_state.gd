@@ -1,9 +1,12 @@
 extends Node
 
+
 var print_mode: bool = true
 
-var recruited_ants: Array[String] = ["Player"] # Array holding all successfully recruited ants
+enum state {TALKING, WALKING}
+var current_state: state = state.WALKING
 
+var recruited_ants: Array[String] = ["Player"] # Array holding all successfully recruited ants
 var held_items: Array[Resource] = [] # Array holding all items we are currently carrying
 
 var failed_game: bool = false # Game over check

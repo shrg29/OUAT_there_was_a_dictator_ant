@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var npc_name: String = ""
 @export var npc_dialogue: Resource
 
+@export var is_interactable: bool = true
+
 @export var demand_item: Resource
 @export var demand_amount: int
 
@@ -22,6 +24,9 @@ func _ready():
 	interaction_area.body_entered.connect(_on_body_entered)
 	interaction_area.body_exited.connect(_on_body_exited)
 	
+	await get_tree().process_frame
+	for p in get_tree().get_nodes_in_group("player"):
+		p.inform_current_interactable.connect(_on_becoming_target)
 	#interact() # testing purposes
 
 
@@ -38,6 +43,16 @@ func _on_body_exited(body):
 		if print_mode:
 			print(npc_name, ": interaction disabled signal emitted")
 
+
+func _on_becoming_target(target):
+	if self == target:
+		if print_mode:
+			print(npc_name, " is the current target")
+		# TODO: Add visual indicator for interaction
+	else:
+		if print_mode:
+			print(npc_name, " is not the current target")
+		# TODO: Remove visual indicator for interaction
 
 func interact():
 	if print_mode:

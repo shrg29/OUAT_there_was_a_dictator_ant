@@ -10,6 +10,7 @@ var dialogue_anthony = preload("res://Dialogues/anthony.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_npc("Anthony", dialogue_anthony, 100, 100)
+	spawn_npc("Anton", dialogue_anthony, 1000, 1000)
 	#DialogueManager.show_dialogue_balloon(test_dialogue_two)
 	pass # Replace with function body.
 

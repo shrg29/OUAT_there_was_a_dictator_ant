@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 
-var nearby_interactables = []  # Track ALL nearby NPCs
+#region Interaction variables
+var nearby_interactables = []  # Track all nearby NPCs
 var current_interactable: Node2D = null
 
+signal inform_current_interactable(npc)
+#endregion
 
 #sound
 @onready var audio_player = AudioStreamPlayer.new()
@@ -78,7 +81,7 @@ func _connect_to_npc(npc): # Connecting to NPC signals
 
 
 func _on_interactable_entered(npc): # Tracking nearby interactable NPCs
-	if npc not in nearby_interactables:
+	if npc not in nearby_interactables and npc.is_interactable == true:
 		nearby_interactables.append(npc)
 	_update_current_interactable()
 
@@ -93,6 +96,7 @@ func _update_current_interactable(): # Keeping current interactable clean
 		current_interactable = null
 	else:
 		current_interactable = _get_closest_interactable()
+	inform_current_interactable.emit(current_interactable)
 
 
 func _get_closest_interactable(): # setting closest npc as current interactable
@@ -115,7 +119,9 @@ func handleInput():
 	
 	if Input.is_action_just_pressed("interact"):
 		if current_interactable: # only interact if there is a current_interactable npc
-			current_interactable.interact()
+			if GameState.current_state != GameState.state.TALKING: # only interact if not already talking
+				current_interactable.interact()
+				GameState.current_state = GameState.state.TALKING
 
 
 func _physics_process(delta):
