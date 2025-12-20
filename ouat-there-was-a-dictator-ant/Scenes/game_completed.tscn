@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbfy7fhjrbwch"]
+
+[ext_resource type="Script" uid="uid://cld56ux13h6uk" path="res://Scripts/main_menu.gd" id="1_87ogc"]
+[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="2_0ril2"]
+
+[node name="GameCompleted" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87ogc")
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 640.0
+offset_right = 542.0
+offset_bottom = 768.0
+texture_normal = ExtResource("2_0ril2")
+stretch_mode = 3
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
