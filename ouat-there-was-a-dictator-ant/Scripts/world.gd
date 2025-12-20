@@ -115,7 +115,9 @@ func find_adjacent_rooms():
 	
 	if current_room.y - 1 >= 0: # North/Up
 		var N = world_grid.get_cell(current_room.x, current_room.y - 1)
-		adjacent_rooms[dir.N] = N
+		if N.type != AntHillGenerator.tile_type.WALL && N.type != AntHillGenerator.tile_type.NONE:
+			adjacent_rooms[dir.N] = N
+
 
 	if current_room.y + 1 < world_grid.y: # South/Down
 		var S = world_grid.get_cell(current_room.x, current_room.y + 1)
