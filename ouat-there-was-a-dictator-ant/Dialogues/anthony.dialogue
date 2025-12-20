@@ -15,15 +15,15 @@ elif GameState.has_met_anthony == false:
 
 	- What should we do?
 		Anthony: You are popular here, maybe we can overthrow her?
-		- That could work I suppose. But we will need to be intimidating.
+		- That could work. But we will need to be intimidating.
 			Anthony: Can you bring me a weapon, like {{GameState.anthony_demand_amount}} {{GameState.anthony_demand_item.item_name}}?
 			=> quest
 		- Are you crazy?
 			Anthony: What other choice is there?
-			- Hm, I suppose you are right. But we will need to be intimidating.
+			- You may be right. But we will need to be intimidating.
 				Anthony: Can you bring me a weapon, like {{GameState.anthony_demand_amount}} {{GameState.anthony_demand_item.item_name}}?
 				=> quest
-			- I think we should just give up. Or maybe we get lucky and win and survive the war.
+			- I give up. Maybe we get lucky and survive the war.
 				set GameState.failed_game = true
 				=> resolve
 		- I am reporting you to the queen, traitor!
