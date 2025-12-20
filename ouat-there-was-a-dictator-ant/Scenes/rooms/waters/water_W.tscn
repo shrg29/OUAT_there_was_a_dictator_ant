@@ -158,6 +158,7 @@ shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="water" parent="Cosmetics" instance=ExtResource("9_r25fx")]
 position = Vector2(926, 513)
+scale = Vector2(-1, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/water"]
 
@@ -169,8 +170,8 @@ shape = SubResource("RectangleShape2D_h37sp")
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="npc_2" parent="NPCs" instance=ExtResource("10_cvi0p")]
-position = Vector2(310, 549)
-scale = Vector2(-0.6, 0.6)
+position = Vector2(1572, 545)
+scale = Vector2(0.6, 0.6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_2"]
 

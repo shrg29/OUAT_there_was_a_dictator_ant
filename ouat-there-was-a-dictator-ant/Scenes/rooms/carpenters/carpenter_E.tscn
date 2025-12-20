@@ -154,12 +154,14 @@ shape = SubResource("RectangleShape2D_hqi7j")
 [node name="Cosmetics" type="Node2D" parent="."]
 
 [node name="carpenter" parent="Cosmetics" instance=ExtResource("9_hcxio")]
-position = Vector2(935, 570)
+position = Vector2(735, 562)
+scale = Vector2(-1, 1)
 
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="npc_carpenter" parent="NPCs" instance=ExtResource("10_hcxio")]
-position = Vector2(1027, 503)
+position = Vector2(804, 387.00003)
+scale = Vector2(-0.6, 0.6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_carpenter"]
 

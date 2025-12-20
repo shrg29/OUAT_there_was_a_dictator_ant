@@ -1,23 +1,22 @@
-[gd_scene load_steps=26 format=3 uid="uid://gxvkgm81rnkr"]
+[gd_scene load_steps=25 format=3 uid="uid://cx77j6yjudpps"]
 
-[ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_hsuo8"]
-[ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_ax5oe"]
-[ext_resource type="PackedScene" uid="uid://dmollusy6dodq" path="res://Scenes/level design/walls_rectangle.tscn" id="3_bnb57"]
-[ext_resource type="PackedScene" uid="uid://1uobr5mjx3d0" path="res://Scenes/level design/door_north.tscn" id="4_gkit3"]
-[ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_0qb68"]
-[ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_2cujw"]
-[ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_vla0f"]
-[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_vpd72"]
-[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_lahta"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/bottle_cap.tscn" id="10_ax5oe"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/leaf_1.tscn" id="11_gkit3"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/leaf_3.tscn" id="12_0qb68"]
+[ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_b1hem"]
+[ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_6u35p"]
+[ext_resource type="PackedScene" uid="uid://dmollusy6dodq" path="res://Scenes/level design/walls_rectangle.tscn" id="3_7u7mx"]
+[ext_resource type="PackedScene" uid="uid://1uobr5mjx3d0" path="res://Scenes/level design/door_north.tscn" id="4_2bgtn"]
+[ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_1s800"]
+[ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_0efsp"]
+[ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_kdfwp"]
+[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_ixarh"]
+[ext_resource type="Texture2D" uid="uid://dxpra8js036a5" path="res://assets/level_art/level_design/food_station.png" id="9_b2g3g"]
+[ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="11_huckc"]
+[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_l250a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(30.209827, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bct23"]
-size = Vector2(31.764645, 56.914764)
+size = Vector2(36.831486, 34.204308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5krk"]
 size = Vector2(19.054073, 16.636623)
@@ -32,7 +31,7 @@ size = Vector2(20.047398, 13.047675)
 size = Vector2(16.937202, 17.500801)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t84hy"]
-size = Vector2(30.888489, 25.441826)
+size = Vector2(31.172089, 42.930935)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jliad"]
 size = Vector2(28.225464, 20)
@@ -48,35 +47,35 @@ size = Vector2(22.65213, 27.866898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cujw"]
-size = Vector2(124.5, 106.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2g3g"]
+size = Vector2(107.00003, 132.04169)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_hsuo8")
+script = ExtResource("1_b1hem")
 
 [node name="rectangle" type="Node2D" parent="."]
 
-[node name="terrain1" parent="rectangle" instance=ExtResource("2_ax5oe")]
+[node name="terrain1" parent="rectangle" instance=ExtResource("2_6u35p")]
 position = Vector2(960, 540)
 
-[node name="WallsRectangle" parent="rectangle" instance=ExtResource("3_bnb57")]
+[node name="WallsRectangle" parent="rectangle" instance=ExtResource("3_7u7mx")]
 position = Vector2(960, 540)
 
 [node name="doors_rectangle" type="Node2D" parent="rectangle"]
 
-[node name="door north" parent="rectangle/doors_rectangle" instance=ExtResource("4_gkit3")]
+[node name="door north" parent="rectangle/doors_rectangle" instance=ExtResource("4_2bgtn")]
 visible = false
 position = Vector2(944, 96)
 
-[node name="door south" parent="rectangle/doors_rectangle" instance=ExtResource("5_0qb68")]
+[node name="door south" parent="rectangle/doors_rectangle" instance=ExtResource("5_1s800")]
 visible = false
 position = Vector2(938, 1004)
 
-[node name="door east" parent="rectangle/doors_rectangle" instance=ExtResource("6_2cujw")]
+[node name="door east" parent="rectangle/doors_rectangle" instance=ExtResource("6_0efsp")]
+visible = false
 position = Vector2(1826, 531)
 
-[node name="door west" parent="rectangle/doors_rectangle" instance=ExtResource("7_vla0f")]
-visible = false
+[node name="door west" parent="rectangle/doors_rectangle" instance=ExtResource("7_kdfwp")]
 position = Vector2(90, 525)
 
 [node name="collision" type="StaticBody2D" parent="."]
@@ -87,7 +86,7 @@ scale = Vector2(32.17496, 4.285013)
 shape = SubResource("RectangleShape2D_of7bs")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="collision"]
-position = Vector2(134.5, 390.50003)
+position = Vector2(144.39584, 261.41516)
 scale = Vector2(3.1166725, 11.367875)
 shape = SubResource("RectangleShape2D_bct23")
 
@@ -112,7 +111,7 @@ scale = Vector2(46.116337, -5.085484)
 shape = SubResource("RectangleShape2D_s4hcj")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="collision"]
-position = Vector2(1798.9412, 282.12067)
+position = Vector2(1798.4999, 413.5)
 scale = Vector2(3.1117566, 15.02413)
 shape = SubResource("RectangleShape2D_t84hy")
 
@@ -150,29 +149,28 @@ shape = SubResource("RectangleShape2D_qsm1c")
 position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
-[node name="map generator" parent="." instance=ExtResource("8_vpd72")]
+[node name="map generator" parent="." instance=ExtResource("8_ixarh")]
 
 [node name="Cosmetics" type="Node2D" parent="."]
 
-[node name="bottle_cap" parent="Cosmetics" instance=ExtResource("10_ax5oe")]
-position = Vector2(355, 273)
+[node name="food" type="Sprite2D" parent="Cosmetics"]
+position = Vector2(1104, 525)
+texture = ExtResource("9_b2g3g")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/bottle_cap"]
+[node name="NPCs" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/bottle_cap/StaticBody2D"]
-position = Vector2(-4.25, 6.75)
-shape = SubResource("RectangleShape2D_2cujw")
+[node name="npc_1" parent="NPCs" instance=ExtResource("11_huckc")]
+position = Vector2(1176, 510)
+scale = Vector2(-1, 1)
 
-[node name="leaf1" parent="Cosmetics" instance=ExtResource("11_gkit3")]
-position = Vector2(405, 729)
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_1"]
 
-[node name="leaf3" parent="Cosmetics" instance=ExtResource("12_0qb68")]
-position = Vector2(1452, 355)
-rotation = 0.6528815
-scale = Vector2(0.9909766, 1.3726056)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_1/StaticBody2D"]
+position = Vector2(-1.5, 97.020874)
+shape = SubResource("RectangleShape2D_b2g3g")
 
-[node name="player" parent="." instance=ExtResource("9_lahta")]
-position = Vector2(990, 545)
+[node name="player" parent="." instance=ExtResource("11_l250a")]
+position = Vector2(1674, -241)
 
 [connection signal="area_entered" from="Loading_Zones/North" to="." method="_on_north_area_entered"]
 [connection signal="area_entered" from="Loading_Zones/South" to="." method="_on_south_area_entered"]

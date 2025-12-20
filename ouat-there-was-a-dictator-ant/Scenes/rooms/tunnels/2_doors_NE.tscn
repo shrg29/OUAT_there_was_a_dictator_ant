@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjp7tplveqaa1"]
+[gd_scene load_steps=26 format=3 uid="uid://cjp7tplveqaa1"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_8guil"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_8x1a6"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_raivp"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_uyw5k"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_5xwlj"]
-[ext_resource type="PackedScene" uid="uid://bs4j75o23dak5" path="res://Scenes/player.tscn" id="9_xhwte"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_colklectable.tscn" id="9_8x1a6"]
+[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_xhwte"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/blanket.tscn" id="10_6oyy6"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/sign.tscn" id="11_tx8w8"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/water_puddle.tscn" id="12_5xinr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(22.53305, 20)
@@ -144,6 +148,22 @@ position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="map generator" parent="." instance=ExtResource("8_5xwlj")]
+
+[node name="Cosmetics" type="Node2D" parent="."]
+
+[node name="food_colklectable" parent="Cosmetics" instance=ExtResource("9_8x1a6")]
+position = Vector2(359.00006, 817)
+rotation = 0.3440333
+
+[node name="blanket" parent="Cosmetics" instance=ExtResource("10_6oyy6")]
+position = Vector2(1539, 742)
+rotation = 0.35375133
+
+[node name="sign" parent="Cosmetics" instance=ExtResource("11_tx8w8")]
+position = Vector2(454, 172)
+
+[node name="water puddle" parent="Cosmetics" instance=ExtResource("12_5xinr")]
+position = Vector2(1169, 428)
 
 [node name="player" parent="." instance=ExtResource("9_xhwte")]
 position = Vector2(990, 545)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbr15hc76rku5"]
+[gd_scene load_steps=35 format=3 uid="uid://bbr15hc76rku5"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_qyyc2"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_25jv2"]
@@ -9,6 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_8cr64"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_7iltf"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_fvi75"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/water_puddle.tscn" id="9_xqaon"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/waterpuddle_2.tscn" id="10_vep1y"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/sugar.tscn" id="11_p68xo"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/gear.tscn" id="12_s6qh0"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/spill_1.tscn" id="13_k1noe"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/spill_4.tscn" id="14_vlxhp"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/screw.tscn" id="15_2obuk"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/scre_2.tscn" id="16_kk8fe"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/gem.tscn" id="17_funk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(22.53305, 20)
@@ -44,6 +53,18 @@ size = Vector2(22.65213, 27.866898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26hrx"]
+size = Vector2(205.35239, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5cv5"]
+size = Vector2(20, 68.88394)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu3hs"]
+size = Vector2(20, 92.02243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_waco7"]
+size = Vector2(74.7003, 22.090393)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qyyc2")
@@ -144,6 +165,66 @@ position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="map generator" parent="." instance=ExtResource("8_7iltf")]
+
+[node name="Cosmetics" type="Node2D" parent="."]
+
+[node name="water puddle" parent="Cosmetics" instance=ExtResource("9_xqaon")]
+position = Vector2(1502, 338)
+rotation = 1.8325958
+
+[node name="waterpuddle2" parent="Cosmetics" instance=ExtResource("10_vep1y")]
+position = Vector2(462, 338)
+
+[node name="sugar" parent="Cosmetics" instance=ExtResource("11_p68xo")]
+position = Vector2(1215, 207)
+
+[node name="gear" parent="Cosmetics" instance=ExtResource("12_s6qh0")]
+position = Vector2(382, 804)
+rotation = 0.2617994
+
+[node name="spill1" parent="Cosmetics" instance=ExtResource("13_k1noe")]
+position = Vector2(667, 609)
+
+[node name="spill4" parent="Cosmetics" instance=ExtResource("14_vlxhp")]
+position = Vector2(1473, 750)
+
+[node name="screw" parent="Cosmetics" instance=ExtResource("15_2obuk")]
+position = Vector2(1562, 852)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/screw"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/screw/StaticBody2D"]
+position = Vector2(5.606079, 12.791382)
+rotation = 0.14857298
+shape = SubResource("RectangleShape2D_26hrx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cosmetics/screw/StaticBody2D"]
+position = Vector2(-100.0918, -5.933777)
+rotation = 0.16074651
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_b5cv5")
+
+[node name="scre2" parent="Cosmetics" instance=ExtResource("16_kk8fe")]
+position = Vector2(768, 852)
+rotation = 0.2617994
+scale = Vector2(0.79013306, 0.9822167)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/scre2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/scre2/StaticBody2D"]
+position = Vector2(-11.897256, 3.6184509)
+rotation = 0.5235988
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_xu3hs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cosmetics/scre2/StaticBody2D"]
+position = Vector2(12.147339, -27.621399)
+rotation = 0.52359873
+scale = Vector2(0.9999998, 0.9999999)
+shape = SubResource("RectangleShape2D_waco7")
+
+[node name="gem" parent="Cosmetics" instance=ExtResource("17_funk4")]
+position = Vector2(1605.5, 506.5)
 
 [node name="player" parent="." instance=ExtResource("9_fvi75")]
 position = Vector2(990, 545)

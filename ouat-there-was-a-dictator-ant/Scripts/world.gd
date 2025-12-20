@@ -95,8 +95,12 @@ func fill_room_arrays():
 	nurseries.append("res://Scenes/rooms/nurseries/nursery_W.tscn")
 	
 	
-	#foods.append()
-	foods = one_door_tunnels
+	foods.append("res://Scenes/rooms/foods/food_N.tscn")
+	foods.append("res://Scenes/rooms/foods/food_E.tscn")
+	foods.append("res://Scenes/rooms/foods/food_S.tscn")
+	foods.append("res://Scenes/rooms/foods/food_W.tscn")
+	
+	
 	
 	carpenters.append("res://Scenes/rooms/carpenters/carpenter_N.tscn")
 	carpenters.append("res://Scenes/rooms/carpenters/carpenter_E.tscn")
@@ -104,8 +108,13 @@ func fill_room_arrays():
 	carpenters.append("res://Scenes/rooms/carpenters/carpenter_W.tscn")
 	
 	
-	#queens.append()
-	queens = one_door_tunnels
+	
+	queens.append("res://Scenes/rooms/queens/queen_N.tscn")
+	queens.append("res://Scenes/rooms/queens/queen_E.tscn")
+	queens.append("res://Scenes/rooms/queens/queen_S.tscn")
+	queens.append("res://Scenes/rooms/queens/queen_W.tscn")
+	
+	
 	
 	waters.append("res://Scenes/rooms/waters/water_N.tscn")
 	waters.append("res://Scenes/rooms/waters/water_E.tscn")
@@ -196,11 +205,11 @@ func assign_rooms():
 						2: choose_two_door_rooms()
 						3: choose_three_door_rooms()
 						4: current_room.scene = four_door_tunnels.pick_random()
-				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms("tunnel")
+				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms("queen")
 				AntHillGenerator.tile_type.NURSERY:		choose_one_door_rooms("nursery")
 				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms("carpenter")
 				AntHillGenerator.tile_type.WATER:		choose_one_door_rooms("water")
-				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms("tunnel")
+				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms("food")
 				_:										current_room.scene = null
 	current_room = start_room #set it to start room so we can start in the right room... maybe we should use something else but whatever
 

@@ -53,9 +53,9 @@
 [ext_resource type="PackedScene" path="res://Scenes/level design/seed_2.tscn" id="51_y2c5s"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/tissue_1.tscn" id="52_0agpm"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/tissue_2.tscn" id="53_flsew"]
-[ext_resource type="PackedScene" path="res://Scenes/npc/queen.tscn" id="54_1sqge"]
+[ext_resource type="PackedScene" uid="uid://ce6pjae377nhv" path="res://Scenes/npc/queen.tscn" id="54_1sqge"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/carpenter.tscn" id="55_8q85r"]
-[ext_resource type="PackedScene" path="res://Scenes/npc/npc_carpenter.tscn" id="56_lssb3"]
+[ext_resource type="PackedScene" uid="uid://dcioych7p8gul" path="res://Scenes/npc/npc_carpenter.tscn" id="56_lssb3"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/nursery.tscn" id="56_p0jfs"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/water.tscn" id="57_p0jfs"]
 [ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="57_um2fi"]
@@ -238,7 +238,7 @@ position = Vector2(686, 128)
 position = Vector2(847, 131)
 
 [node name="spill2" parent="assets" instance=ExtResource("41_adwfq")]
-position = Vector2(854, 194)
+position = Vector2(847, 193)
 
 [node name="spill3" parent="assets" instance=ExtResource("42_kdmf5")]
 position = Vector2(991, 131)
@@ -247,13 +247,13 @@ position = Vector2(991, 131)
 position = Vector2(1121, 120)
 
 [node name="leaf1" parent="assets" instance=ExtResource("44_qr65p")]
-position = Vector2(1235, 139)
+position = Vector2(1232, 139)
 
 [node name="leaf2" parent="assets" instance=ExtResource("45_tx3da")]
 position = Vector2(1360, 132)
 
 [node name="leaf3" parent="assets" instance=ExtResource("46_fhs66")]
-position = Vector2(1475, 137)
+position = Vector2(1472, 137)
 
 [node name="screw" parent="assets" instance=ExtResource("47_jupki")]
 position = Vector2(865, 282)
@@ -310,7 +310,7 @@ scale = Vector2(1, 1)
 position = Vector2(-157, 376)
 
 [node name="npc_3" parent="npcs" instance=ExtResource("59_8q85r")]
-position = Vector2(-382, 779)
+position = Vector2(-386, 779)
 
 [node name="npc_4" parent="npcs" instance=ExtResource("60_p0jfs")]
 position = Vector2(-157, 756)
