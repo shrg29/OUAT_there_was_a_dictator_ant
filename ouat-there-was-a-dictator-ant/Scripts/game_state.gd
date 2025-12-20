@@ -19,7 +19,7 @@ var high: float = 0.9
 enum state {TALKING, WALKING}
 var current_state: state = state.WALKING
 
-var recruited_ants: Array[String] = ["Player", "Another Ant"] # Array holding all successfully recruited ants
+var recruited_ants: Array[String] = ["Player", "Kasantra"] # Array holding all successfully recruited ants
 var held_items: Array[ItemResource] = [] # Array holding all items we are currently carrying
 
 
@@ -28,6 +28,9 @@ var held_items: Array[ItemResource] = [] # Array holding all items we are curren
 var anthony_demand_item: ItemResource = stick_item
 var anthony_demand_amount: int = 1
 var has_met_anthony: bool = false
+
+var has_met_antonia: bool = false
+var got_antonia_quest: bool = false
 
 enum anton_opinion {HATE, FINE}
 var anton_current_opinion: anton_opinion = anton_opinion.FINE

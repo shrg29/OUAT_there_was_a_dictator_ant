@@ -35,10 +35,14 @@ if GameState.count_item(GameState.anthony_demand_item) >= GameState.anthony_dema
 	- Here you go (Give him {{GameState.anthony_demand_amount}} {{GameState.anthony_demand_item.item_name}}).
 		do GameState.recruit_ant("Anthony")
 		do AudioManager.play_sfx("task_completed")
+		=> resolve
 	- Maybe later.
+		=> resolve
 else:
 	- I will go look for one.
+		=> resolve
 	- Maybe later.
+		=> resolve
 
 ~ resolve
 set GameState.current_state = GameState.state.WALKING
