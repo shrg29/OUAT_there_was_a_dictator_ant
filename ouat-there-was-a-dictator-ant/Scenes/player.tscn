@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bs4j75o23dak5"]
 
 [ext_resource type="Script" uid="uid://bwrb5eglvr0fa" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="PackedScene" path="res://Scenes/main_ant.tscn" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://trt6l47mivlv" path="res://Scenes/main_ant.tscn" id="2_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
