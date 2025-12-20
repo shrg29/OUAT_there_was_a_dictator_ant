@@ -32,78 +32,198 @@ var adjacent_rooms = {
 func _ready() -> void:
 	world_grid = AntHillGenerator.get_grid()
 	start_room = AntHillGenerator.start_room
-	print("world grid 00 type: ",world_grid.get_cell(0,0).type)
+	current_room = start_room
 	fill_room_arrays()
 	
 	assign_rooms()
 	
-	current_room = start_room
+	print_grid()
 	
 	find_adjacent_rooms()
-	
-	#TransitionScene.change_scene(start_room.scene)
+	print("start room at: ", start_room.x, ", ", start_room.y)
+	TransitionScene.change_scene(start_room.scene)
+
+func print_grid():
+	print("Grid Map (Scenes):")
+	for y in range(world_grid.y):
+		var row = ""
+		for x in range(world_grid.x):
+			var cell = world_grid.get_cell(x, y)
+			if cell.scene == null:
+				row += "X "
+			elif "1_doors" in cell.scene:
+				row += "1 "
+			elif "2_doors" in cell.scene:
+				row += "2 "
+			elif "3_doors" in cell.scene:
+				row += "3 "
+			elif "4_doors" in cell.scene:
+				row += "4 "
+			else:
+				row += "? "
+		print(row)
 
 func fill_room_arrays():
-	four_door_tunnels.append("res://Scenes/level_example.tscn")
-	nurseries.append("res://Scenes/level_example.tscn")
-	foods.append("res://Scenes/level_example.tscn")
-	carpenters.append("res://Scenes/level_example.tscn")
-	queens.append("res://Scenes/level_example.tscn")
-	waters.append("res://Scenes/level_example.tscn")
-	one_door_tunnels.append("res://Scenes/level_example.tscn")
-	two_door_tunnels.append("res://Scenes/level_example.tscn")
-	three_door_tunnels.append("res://Scenes/level_example.tscn")
-	four_door_tunnels.append("res://Scenes/level_example.tscn")
-	start_room.scene = "res://Scenes/level_example.tscn"
+	#-----------------one door in following order: N, E, S, W
+	one_door_tunnels.append("res://Scenes/rooms/tunnels/1_doors_N.tscn")
+	one_door_tunnels.append("res://Scenes/rooms/tunnels/1_doors_E.tscn")
+	one_door_tunnels.append("res://Scenes/rooms/tunnels/1_doors_S.tscn")
+	one_door_tunnels.append("res://Scenes/rooms/tunnels/1_doors_W.tscn")
+	
+	#-------------- two doors in following order: NE, NS, NW, SE, SW, EW
+	two_door_tunnels.append("res://Scenes/rooms/tunnels/2_doors_NE.tscn")
+	two_door_tunnels.append("res://Scenes/rooms/tunnels/2_doors_NS.tscn")
+	two_door_tunnels.append("res://Scenes/rooms/tunnels/2_doors_NW.tscn")
+	two_door_tunnels.append("res://Scenes/rooms/tunnels/2_doors_SE.tscn")
+	two_door_tunnels.append("res://Scenes/rooms/tunnels/2_doors_SW.tscn")
+	two_door_tunnels.append("res://Scenes/rooms/tunnels/2_doors_EW.tscn")
+	
+	#----------------3 rooms in following order: N, E, S, W
+	three_door_tunnels.append("res://Scenes/rooms/tunnels/3_doors_N.tscn")
+	three_door_tunnels.append("res://Scenes/rooms/tunnels/3_doors_E.tscn")
+	three_door_tunnels.append("res://Scenes/rooms/tunnels/3_doors_S.tscn")
+	three_door_tunnels.append("res://Scenes/rooms/tunnels/3_doors_W.tscn")
+	
+	four_door_tunnels.append("res://Scenes/rooms/tunnels/4_doors.tscn")
+	
+	
+	#the rest are basically one door tunnels
+	#nurseries.append()
+	nurseries = one_door_tunnels
+	
+	#foods.append()
+	foods = one_door_tunnels
+	
+	#carpenters.append()
+	carpenters = one_door_tunnels
+	
+	#queens.append()
+	queens = one_door_tunnels
+	
+	#waters.append()
+	waters = one_door_tunnels
+	
+	# dont know what to do with start, 4 room always at least i guess
+	start_room.scene = "res://Scenes/rooms/tunnels/4_doors.tscn"
+
 
 func find_adjacent_rooms():
-	#check if we can index there and then add the room as adjacent
-	if current_room.x - 1 >= 0: # up
-		var N = world_grid.get_cell(current_room.x -1, current_room.y)
-		adjacent_rooms[dir.N] = N
+	adjacent_rooms[dir.N] = null
+	adjacent_rooms[dir.S] = null
+	adjacent_rooms[dir.E] = null
+	adjacent_rooms[dir.W] = null
+	
+	if current_room.y - 1 >= 0: # North/Up
+		var N = world_grid.get_cell(current_room.x, current_room.y - 1)
+		if N.type != AntHillGenerator.tile_type.WALL && N.type != AntHillGenerator.tile_type.NONE:
+			adjacent_rooms[dir.N] = N
 
-	if current_room.x + 1 < world_grid.x: # down
-		var S = world_grid.get_cell(current_room.x +1, current_room.y)
-		adjacent_rooms[dir.S] = S
+	if current_room.y + 1 < world_grid.y: # South/Down
+		var S = world_grid.get_cell(current_room.x, current_room.y + 1)
+		if S.type != AntHillGenerator.tile_type.WALL && S.type != AntHillGenerator.tile_type.NONE:
+			adjacent_rooms[dir.S] = S
 
-	if current_room.y + 1 >= 0: # right
-		var E = world_grid.get_cell(current_room.x, current_room.y +1)
-		adjacent_rooms[dir.E] = E
+	if current_room.x + 1 < world_grid.x: # East/Right
+		var E = world_grid.get_cell(current_room.x + 1, current_room.y)
+		if E.type != AntHillGenerator.tile_type.WALL && E.type != AntHillGenerator.tile_type.NONE:
+			adjacent_rooms[dir.E] = E
 
-	if current_room.y - 1 < world_grid.y: #left
-		var W = world_grid.get_cell(current_room.x, current_room.y -1)
-		adjacent_rooms[dir.W] = W
+	if current_room.x - 1 >= 0: # West/Left
+		var W = world_grid.get_cell(current_room.x - 1, current_room.y)
+		if W.type != AntHillGenerator.tile_type.WALL && W.type != AntHillGenerator.tile_type.NONE:
+			adjacent_rooms[dir.W] = W
+
+
+func print_adjacent_rooms():
+	print(adjacent_rooms[dir.N].scene, " at: ", adjacent_rooms[dir.N].x, ", ", adjacent_rooms[dir.N].y)
+	print(adjacent_rooms[dir.S].scene, " at: ", adjacent_rooms[dir.S].x, ", ", adjacent_rooms[dir.S].y)
+	print(adjacent_rooms[dir.E].scene, " at: ", adjacent_rooms[dir.E].x, ", ", adjacent_rooms[dir.E].y)
+	print(adjacent_rooms[dir.W].scene, " at: ", adjacent_rooms[dir.W].x, ", ", adjacent_rooms[dir.W].y)
 
 
 func load_room(direction: String):
 	#we load here to always get the right room
-	print(adjacent_rooms[dir.N].scene)
+	find_adjacent_rooms()
+	#print_adjacent_rooms()
+	var next_room
+	
 	match direction:
-		"N":	TransitionScene.change_scene(adjacent_rooms[dir.N].scene)
-		"S":	TransitionScene.change_scene(adjacent_rooms[dir.S].scene)
-		"E":	TransitionScene.change_scene(adjacent_rooms[dir.E].scene)
-		"W":	TransitionScene.change_scene(adjacent_rooms[dir.W].scene)
-
+		"N":	
+			next_room = adjacent_rooms[dir.N]
+		"S":
+			next_room = adjacent_rooms[dir.S]
+		"E":
+			next_room = adjacent_rooms[dir.E]
+		"W":	
+			next_room = adjacent_rooms[dir.W]
+	if(next_room != null) :
+		TransitionScene.change_scene(next_room.scene)
+		current_room = next_room
+		print("current room at: ", current_room.x, ", ", current_room.y)
+	else:
+		print("next room is null!")
 
 func assign_rooms():
 	for x in range(AntHillGenerator.size_x):
 		for y in range(AntHillGenerator.size_y):
-			match world_grid.get_cell(x, y).type:
-				AntHillGenerator.tile_type.WALL:		world_grid.get_cell(x, y).scene = null
+			current_room = world_grid.get_cell(x, y)
+			find_adjacent_rooms()
+			match current_room.type:
+				AntHillGenerator.tile_type.WALL:		current_room.scene = null
 				AntHillGenerator.tile_type.ROOM:
-					match AntHillGenerator.get_room_neighbor_amount(world_grid.get_cell(x, y)):
-						1: world_grid.get_cell(x, y).scene = one_door_tunnels.pick_random() # change this for the right door
-						2: world_grid.get_cell(x, y).scene = two_door_tunnels.pick_random() # change this to check for the right doors
-						3: world_grid.get_cell(x, y).scene = three_door_tunnels.pick_random() # change this for the right doors
-						4: world_grid.get_cell(x, y).scene = four_door_tunnels.pick_random() # only one that does not need to change for the right door
-				AntHillGenerator.tile_type.START:		world_grid.get_cell(x, y).scene = start_room
-				AntHillGenerator.tile_type.QUEEN:		world_grid.get_cell(x, y).scene = queens[0]
-				AntHillGenerator.tile_type.NURSERY:		world_grid.get_cell(x, y).scene = nurseries[0]
-				AntHillGenerator.tile_type.CARPENTER:	world_grid.get_cell(x, y).scene = carpenters[0]
-				AntHillGenerator.tile_type.WATER:		world_grid.get_cell(x, y).scene = waters[0]
-				AntHillGenerator.tile_type.FOOD:		world_grid.get_cell(x, y).scene = foods[0]
-				_:										world_grid.get_cell(x, y).scene = null
+					match AntHillGenerator.get_room_neighbor_amount(current_room):
+						1: choose_one_door_rooms()
+						2: choose_two_door_rooms()
+						3: choose_three_door_rooms()
+						4: current_room.scene = four_door_tunnels.pick_random() # only one that does not need to change for the right door
+				AntHillGenerator.tile_type.START:
+					match AntHillGenerator.get_room_neighbor_amount(current_room):
+						1: choose_one_door_rooms()
+						2: choose_two_door_rooms()
+						3: choose_three_door_rooms()
+						4: current_room.scene = four_door_tunnels.pick_random()
+				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms()
+				AntHillGenerator.tile_type.NURSERY:		choose_one_door_rooms()
+				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms()
+				AntHillGenerator.tile_type.WATER:		choose_one_door_rooms()
+				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms()
+				_:										current_room.scene = null
+	current_room = start_room #set it to start room so we can start in the right room... maybe we should use something else but whatever
 
+func choose_one_door_rooms():
+	if adjacent_rooms[dir.N] != null:
+		current_room.scene = one_door_tunnels[0]
+	if adjacent_rooms[dir.E] != null:
+		current_room.scene = one_door_tunnels[1]
+	if adjacent_rooms[dir.S] != null:
+		current_room.scene = one_door_tunnels[2]
+	if adjacent_rooms[dir.W] != null:
+		current_room.scene = one_door_tunnels[3]
 
-func _process(delta: float) -> void:
-	pass
+func choose_two_door_rooms():
+	if adjacent_rooms[dir.N] != null:
+		if adjacent_rooms[dir.E] != null:
+			current_room.scene = two_door_tunnels[0]
+		if adjacent_rooms[dir.S] != null:
+			current_room.scene = two_door_tunnels[1]
+		if adjacent_rooms[dir.W] != null:
+			current_room.scene = two_door_tunnels[2]
+	
+	if adjacent_rooms[dir.S] != null:
+		if adjacent_rooms[dir.E] != null:
+			current_room.scene = two_door_tunnels[3]
+		if adjacent_rooms[dir.W] != null:
+			current_room.scene = two_door_tunnels[4]
+	
+	if adjacent_rooms[dir.E] != null && adjacent_rooms[dir.W] != null:
+		current_room.scene = two_door_tunnels[5]
+
+func choose_three_door_rooms():
+	if adjacent_rooms[dir.N] == null:
+		current_room.scene = three_door_tunnels[0]
+	if adjacent_rooms[dir.E] == null:
+		current_room.scene = three_door_tunnels[1]
+	if adjacent_rooms[dir.S] == null:
+		current_room.scene = three_door_tunnels[2]
+	if adjacent_rooms[dir.W] == null:
+		current_room.scene = three_door_tunnels[3]
