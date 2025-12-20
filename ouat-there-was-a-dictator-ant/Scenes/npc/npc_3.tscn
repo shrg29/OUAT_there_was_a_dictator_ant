@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfrmlrv288ir0"]
+
+[ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="1_0dvrq"]
+[ext_resource type="Texture2D" uid="uid://dra50ro8kg1w3" path="res://assets/npc/npc4.png" id="2_s5dq2"]
+
+[node name="npc_3" instance=ExtResource("1_0dvrq")]
+
+[node name="left_leg" parent="controller" index="0"]
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(129.4612, 51.161842, 33.969772, 108.22929)
+
+[node name="right_leg" parent="controller" index="1"]
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(164.42084, 50.647915, 30.704468, 101.38269)
+
+[node name="bottom body" parent="controller" index="2"]
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(2.061081, -0.21655273, 128.77165, 157.30191)
+
+[node name="arm right" parent="controller/bottom body" index="0"]
+position = Vector2(-17, 21)
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(-0.1657486, 265.42285, 64.36353, 58.30954)
+
+[node name="arm left" parent="controller/bottom body" index="1"]
+position = Vector2(48.999996, 19)
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(82.766945, 268.03165, 47.7947, 52.574158)
+
+[node name="top body" parent="controller" index="3"]
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(198.48157, 7.800558, 71.54721, 99.64469)
+
+[node name="arm right" parent="controller/top body" index="0"]
+position = Vector2(-15.000001, -7.5585384)
+texture = ExtResource("2_s5dq2")
+offset = Vector2(-20.036549, 35.101223)
+region_rect = Rect2(3.044983, 157.40167, 73.285194, 106.0173)
+
+[node name="arm left" parent="controller/top body" index="1"]
+position = Vector2(26, -1)
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(95.105316, 157.26036, 50.990585, 103.41753)
+
+[node name="head" parent="controller/top body" index="2"]
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(197.10217, 107.596664, 79.47827, 89.29335)
+
+[node name="right_antenna" parent="controller/top body/head" index="0"]
+position = Vector2(-6, -50)
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(146.71796, 197.69205, 71.05478, 126.81528)
+
+[node name="left_antenna" parent="controller/top body/head" index="1"]
+position = Vector2(19, -49)
+texture = ExtResource("2_s5dq2")
+region_rect = Rect2(238.6824, 208.08435, 57.353638, 110.65195)
