@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://buxq4savjtg61"]
+
+[ext_resource type="Script" uid="uid://dff7uy0wh6fx7" path="res://Scripts/map_generator.gd" id="1_803pc"]
+
+[node name="map generator" type="Node2D"]
+script = ExtResource("1_803pc")
+map_transparency = 0.75
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1022.0
+offset_top = 14.0
+offset_right = 1062.0
+offset_bottom = 54.0
+scale = Vector2(2.8429947, 3.1725516)
+expand_mode = 3
