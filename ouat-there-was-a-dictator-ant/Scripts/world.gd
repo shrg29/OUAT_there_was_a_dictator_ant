@@ -13,6 +13,7 @@ var two_door_tunnels  = []# maybe another way to store them or note the order
 var three_door_tunnels = []
 var four_door_tunnels = []
 var start_room
+var came_from
 
 var current_room
 enum dir{
@@ -150,15 +151,20 @@ func load_room(direction: String):
 	match direction:
 		"N":	
 			next_room = adjacent_rooms[dir.N]
+			came_from = "S"
 		"S":
 			next_room = adjacent_rooms[dir.S]
+			came_from = "N"
 		"E":
 			next_room = adjacent_rooms[dir.E]
+			came_from = "W"
 		"W":	
 			next_room = adjacent_rooms[dir.W]
+			came_from = "E"
 	if(next_room != null) :
 		TransitionScene.change_scene(next_room.scene)
 		current_room = next_room
+		#here somehow get access to the current player and set its position to where we came from
 		print("current room at: ", current_room.x, ", ", current_room.y)
 	else:
 		print("next room is null!")
