@@ -1,9 +1,9 @@
 ~ start
-Antony: [[Hi|Hello|Howdy]], The queen wants to force me into war! I'm scared.
+Anthony: [[Hi|Hello|Howdy]], The queen wants to force me into war! I'm scared.
 - I am trying to recruit enough of us to overthrow her
 	You: I am trying to recruit enough of us to overthrow her.
 	Anthony: Oh, that sounds great, consider me recruited.
-	do GameState.recruited_ant("Anthony")
+	do GameState.recruit_ant("Anthony")
 - Tough Luck buddy
 	You: Tough Luck buddy.
 	Anthony: Fuck you.
@@ -21,4 +21,6 @@ elif GameState.recruited_ants.has("Anthony")
 	System: End of dialogue. Outcome: successfully recruited
 else:
 	System: End of dialogue. Outcome: failed to recruit
+
+set GameState.current_state = GameState.state.WALKING
 => END
