@@ -1,8 +1,19 @@
 extends CharacterBody2D
 
 
+#region Interaction variables
+var nearby_interactables = []  # Track all nearby NPCs
+var current_interactable: Node2D = null
 
+signal inform_current_interactable(npc)
+#endregion
 
+#region Item variables
+var nearby_items = []  # Track all nearby NPCs
+var current_item: Node2D = null
+
+signal inform_current_item(item)
+#endregion
 
 #sound
 @onready var audio_player = AudioStreamPlayer.new()
@@ -53,12 +64,122 @@ var isHurt = false
 
 
 func _ready() -> void:
-	pass
+	add_to_group("player")
+	
+	await get_tree().process_frame
+	
+	# Connecting to existing and later NPCs & items
+	for npc in get_tree().get_nodes_in_group("npc"):
+		_connect_to_npc(npc)
+	
+	for item in get_tree().get_nodes_in_group("item"):
+		_connect_to_item(item)
+	
+	get_tree().node_added.connect(_on_node_added)
 
+
+#region Interaction
+func _on_node_added(node): # newly added NPCs
+	if node.is_in_group("npc"):
+		_connect_to_npc(node)
+	elif node.is_in_group("item"):
+		_connect_to_item(node)
+
+
+func _connect_to_npc(npc): # Connecting to NPC signals
+	if not npc.interactable_entered.is_connected(_on_interactable_entered):
+		npc.interactable_entered.connect(_on_interactable_entered)
+		npc.interactable_exited.connect(_on_interactable_exited)
+
+
+func _on_interactable_entered(npc): # Tracking nearby interactable NPCs
+	if npc not in nearby_interactables and npc.is_interactable == true:
+		nearby_interactables.append(npc)
+	_update_current_interactable()
+
+
+func _on_interactable_exited(npc): # Removing NPCs upon exiting interaction range
+	nearby_interactables.erase(npc)
+	_update_current_interactable()
+
+
+func _update_current_interactable(): # Keeping current interactable clean
+	if nearby_interactables.is_empty():
+		current_interactable = null
+	else:
+		current_interactable = _get_closest_interactable()
+	inform_current_interactable.emit(current_interactable)
+
+
+func _get_closest_interactable(): # setting closest npc as current interactable
+	var closest = nearby_interactables[0]
+	var closest_dist = global_position.distance_to(closest.global_position)
+	
+	for npc in nearby_interactables:
+		var dist = global_position.distance_to(npc.global_position)
+		if dist < closest_dist:
+			closest = npc
+			closest_dist = dist
+	
+	return closest
+#endregion
+
+
+#region Item Pickup
+func _connect_to_item(item): # Connecting to item signals
+	if not item.item_area_entered.is_connected(_on_item_area_entered):
+		item.item_area_entered.connect(_on_item_area_entered)
+		item.item_area_exited.connect(_on_item_area_exited)
+
+
+func _on_item_area_entered(item): # Tracking nearby items
+	if item not in nearby_items:
+		nearby_items.append(item)
+	_update_current_item()
+
+
+func _on_item_area_exited(item): # Removing items upon exiting interaction range
+	nearby_items.erase(item)
+	_update_current_item()
+
+
+func _update_current_item(): # Keeping current item clean
+	if nearby_items.is_empty():
+		current_item = null
+	else:
+		current_item = _get_closest_item()
+	inform_current_item.emit(current_item)
+
+
+func _get_closest_item(): # setting closest item as current interactable
+	var closest = nearby_items[0]
+	var closest_dist = global_position.distance_to(closest.global_position)
+	
+	for item in nearby_items:
+		var dist = global_position.distance_to(item.global_position)
+		if dist < closest_dist:
+			closest = item
+			closest_dist = dist
+	
+	return closest
+#endregion
 
 func handleInput():
 	move_direction = Input.get_vector(walk_left, walk_right, walk_up, walk_down)
 	velocity = move_direction.normalized()*speed
+	
+	if Input.is_action_just_pressed("interact"):
+		if current_interactable: # only interact if there is a current_interactable npc
+			if GameState.current_state != GameState.state.TALKING: # only interact if not already talking
+				current_interactable.interact()
+				GameState.current_state = GameState.state.TALKING
+	
+	if Input.is_action_just_pressed("drop_item"):
+		if GameState.current_state != GameState.state.TALKING: # only pickup if not in dialogue
+			if current_item: # only pickup if there is a current item
+				current_item.interact()
+			elif GameState.held_items.size() >= 1:
+				GameState.drop_item(global_position)
 
 
 func _physics_process(delta):

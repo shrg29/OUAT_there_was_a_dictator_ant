@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bhriuh2vm64md"
+path="res://.godot/imported/anthony.dialogue-78afea0ec60d20bac657ebd403f928d6.tres"
+
+[deps]
+
+source_file="res://Dialogues/anthony.dialogue"
+dest_files=["res://.godot/imported/anthony.dialogue-78afea0ec60d20bac657ebd403f928d6.tres"]
+
+[params]
+
+defaults=true

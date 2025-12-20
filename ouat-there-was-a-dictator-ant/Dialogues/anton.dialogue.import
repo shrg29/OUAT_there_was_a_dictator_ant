@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://xev08k4xn5ii"
+path="res://.godot/imported/anton.dialogue-2063f20b43f91e40b97e45b4097a14df.tres"
+
+[deps]
+
+source_file="res://Dialogues/anton.dialogue"
+dest_files=["res://.godot/imported/anton.dialogue-2063f20b43f91e40b97e45b4097a14df.tres"]
+
+[params]
+
+defaults=true
