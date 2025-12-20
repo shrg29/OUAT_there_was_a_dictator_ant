@@ -29,7 +29,7 @@ signal inform_current_item(item)
 #var sound_joy = preload("res://assets/SFX/player noises/wahahuu.wav")
 #endregion
 
-@export var speed: int = 400
+@export var speed: int = 600
 
 #animations
 @onready var animations = $main_ant/AnimationPlayer

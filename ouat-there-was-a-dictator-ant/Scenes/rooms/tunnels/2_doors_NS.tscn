@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://tvnemom1br78"]
+[gd_scene load_steps=29 format=3 uid="uid://tvnemom1br78"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_xfvvm"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_4pu83"]
@@ -8,7 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_alc7e"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_0m2se"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_74qji"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_3.tscn" id="9_0m2se"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_vkhll"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_4.tscn" id="10_74qji"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_5.tscn" id="11_vkhll"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/wood_1.tscn" id="12_js58n"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_9.tscn" id="13_4k2mc"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/wood_4.tscn" id="14_gjnst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(22.53305, 20)
@@ -44,6 +50,9 @@ size = Vector2(22.65213, 27.866898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80g6j"]
+size = Vector2(103.49219, 33.235435)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xfvvm")
@@ -144,6 +153,51 @@ position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="map generator" parent="." instance=ExtResource("8_74qji")]
+
+[node name="Cosmetics" type="Node2D" parent="."]
+
+[node name="food3" parent="Cosmetics" instance=ExtResource("9_0m2se")]
+position = Vector2(1502, 427)
+rotation = 0.23086458
+scale = Vector2(1.1765194, 1.033771)
+
+[node name="food4" parent="Cosmetics" instance=ExtResource("10_74qji")]
+position = Vector2(548, 850)
+rotation = -0.30090985
+scale = Vector2(0.8754443, 0.8400389)
+
+[node name="food5" parent="Cosmetics" instance=ExtResource("11_vkhll")]
+position = Vector2(1641, 834)
+rotation = -2.0400114
+scale = Vector2(1.1658336, 1.1517239)
+
+[node name="wood1" parent="Cosmetics" instance=ExtResource("12_js58n")]
+position = Vector2(384, 714)
+rotation = -0.8776541
+scale = Vector2(1.9550567, 1.4754894)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/wood1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/wood1/StaticBody2D"]
+position = Vector2(-0.76815796, -3.9571838)
+rotation = 0.1616349
+scale = Vector2(0.9999995, 0.9999994)
+shape = SubResource("RectangleShape2D_80g6j")
+
+[node name="food9" parent="Cosmetics" instance=ExtResource("13_4k2mc")]
+position = Vector2(765, 377)
+
+[node name="wood4" parent="Cosmetics" instance=ExtResource("14_gjnst")]
+position = Vector2(433, 240)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/wood4"]
+rotation = 0.41634572
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/wood4/StaticBody2D"]
+position = Vector2(-1.2438354, -1.04039)
+rotation = 0.16163495
+scale = Vector2(0.99999946, 0.99999934)
+shape = SubResource("RectangleShape2D_80g6j")
 
 [node name="player" parent="." instance=ExtResource("9_vkhll")]
 position = Vector2(990, 545)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://rc8g4ffxxe8o"]
+[gd_scene load_steps=24 format=3 uid="uid://rc8g4ffxxe8o"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_ge4dj"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_mvjg7"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_u5x5y"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_p20sh"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_1l2bg"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/waterpuddle_3.tscn" id="10_mvjg7"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_3.tscn" id="11_pea42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(22.25333, 20)
@@ -145,6 +147,16 @@ position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="map generator" parent="." instance=ExtResource("8_p20sh")]
+
+[node name="Cosmetics" type="Node2D" parent="."]
+
+[node name="waterpuddle3" parent="Cosmetics" instance=ExtResource("10_mvjg7")]
+position = Vector2(337, 813)
+rotation = -0.55490947
+scale = Vector2(1.1601237, 1.691203)
+
+[node name="food3" parent="Cosmetics" instance=ExtResource("11_pea42")]
+position = Vector2(1584, 297)
 
 [node name="player" parent="." instance=ExtResource("9_1l2bg")]
 position = Vector2(990, 545)

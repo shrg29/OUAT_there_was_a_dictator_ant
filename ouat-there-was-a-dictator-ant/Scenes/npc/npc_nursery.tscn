@@ -329,6 +329,7 @@ _data = {
 }
 
 [node name="npc_nursery" type="Node2D"]
+scale = Vector2(0.6, 0.6)
 
 [node name="controller" type="Node2D" parent="."]
 
