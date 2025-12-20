@@ -273,6 +273,7 @@ position = Vector2(1327, 335)
 position = Vector2(1431, 321)
 
 [node name="queen" parent="." instance=ExtResource("54_1sqge")]
+position = Vector2(-371, -57)
 
 [node name="specific rooms assets" type="Node2D" parent="."]
 
