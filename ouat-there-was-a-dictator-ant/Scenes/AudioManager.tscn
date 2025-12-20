@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://difcqb47bmdp0"]
+
+[ext_resource type="Script" uid="uid://cavwgx1cy2u6y" path="res://Scripts/AudioManager.gd" id="1_dygvs"]
+[ext_resource type="AudioStream" uid="uid://cwkt5radt7o6g" path="res://Music/background_music.mp3" id="2_x8qvj"]
+[ext_resource type="AudioStream" uid="uid://cb17fnmh3hdcc" path="res://Music/game_complete.mp3" id="3_vbys1"]
+[ext_resource type="AudioStream" uid="uid://bcmdrebx8ifwd" path="res://Music/walking.mp3" id="4_va48u"]
+[ext_resource type="AudioStream" uid="uid://dgx4uhf34uwwr" path="res://Music/item_collected.mp3" id="5_xb6i0"]
+[ext_resource type="AudioStream" uid="uid://jc53kjt3fkc4" path="res://Music/yapping.mp3" id="6_rw622"]
+[ext_resource type="AudioStream" uid="uid://s58yuhkaqd7q" path="res://Music/task_completed.mp3" id="7_vbys1"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_dygvs")
+music_tracks = Dictionary[String, AudioStream]({
+"background_music": ExtResource("2_x8qvj"),
+"game_complete": ExtResource("3_vbys1")
+})
+sfx = Dictionary[String, AudioStream]({
+"item_collected": ExtResource("5_xb6i0"),
+"task_completed": ExtResource("7_vbys1"),
+"walking": ExtResource("4_va48u"),
+"yapping": ExtResource("6_rw622")
+})
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Dialogue" type="AudioStreamPlayer" parent="."]
+bus = &"Dialogue"
