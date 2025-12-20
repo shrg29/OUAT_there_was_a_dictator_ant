@@ -1,0 +1,17 @@
+~ start
+do GameState.low = 0.1
+do GameState.high = 0.4
+
+if GameState.has_met_queen == false:
+	The Queen: You, Sara. You will make a fine soldier.
+	The Queen: Our Holy War against the Ladybugs demands your sacrifice!
+	The Queen: You shall be conscripted soon!
+	set GameState.has_met_queen = true
+	=> resolve
+else:
+	The Queen: Not long before you too will serve me in war.
+	The Queen: Say your last farewells in the time you have left.
+	=> resolve
+~ resolve
+set GameState.current_state = GameState.state.WALKING
+=> END
