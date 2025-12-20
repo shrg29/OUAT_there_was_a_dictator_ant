@@ -304,6 +304,7 @@ position = Vector2(2655, 6)
 
 [node name="npc_1" parent="npcs" instance=ExtResource("57_um2fi")]
 position = Vector2(-357, 365)
+script = null
 
 [node name="npc_2" parent="npcs" instance=ExtResource("58_uv45s")]
 position = Vector2(-157, 376)

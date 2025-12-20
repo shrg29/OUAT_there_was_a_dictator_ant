@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://db3pisyt8t6ne"]
+[gd_scene load_steps=6 format=3 uid="uid://db3pisyt8t6ne"]
 
 [ext_resource type="Texture2D" uid="uid://cqqrentben3br" path="res://assets/npc/carpenter.png" id="1_eh6vg"]
+[ext_resource type="Script" uid="uid://b6pmtpli18eu3" path="res://Scripts/npcs/npc_carpenter.gd" id="1_swoii"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
 length = 0.001
@@ -257,6 +258,7 @@ _data = {
 }
 
 [node name="npc_carpenter" type="Node2D"]
+script = ExtResource("1_swoii")
 
 [node name="controller" type="Node2D" parent="."]
 
