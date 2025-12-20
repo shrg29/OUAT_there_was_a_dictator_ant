@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://dpgosjlqkwyn0"]
+[gd_scene load_steps=3 format=3 uid="uid://dpgosjlqkwyn0"]
 
-[node name="ItemInstance" type="Node2D"]
+[ext_resource type="Script" uid="uid://d371bdo41og2a" path="res://Scripts/item_instance.gd" id="1_mpdop"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpdop"]
+radius = 110.00455
+
+[node name="ItemInstance" type="Node2D" groups=["item"]]
+script = ExtResource("1_mpdop")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_mpdop")
