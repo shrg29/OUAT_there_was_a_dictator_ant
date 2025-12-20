@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://difcqb47bmdp0"]
+[gd_scene load_steps=9 format=3 uid="uid://difcqb47bmdp0"]
 
 [ext_resource type="Script" uid="uid://cavwgx1cy2u6y" path="res://Scripts/AudioManager.gd" id="1_dygvs"]
 [ext_resource type="AudioStream" uid="uid://cwkt5radt7o6g" path="res://Music/background_music.mp3" id="2_x8qvj"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dgx4uhf34uwwr" path="res://Music/item_collected.mp3" id="5_xb6i0"]
 [ext_resource type="AudioStream" uid="uid://jc53kjt3fkc4" path="res://Music/yapping.mp3" id="6_rw622"]
 [ext_resource type="AudioStream" uid="uid://s58yuhkaqd7q" path="res://Music/task_completed.mp3" id="7_vbys1"]
+[ext_resource type="AudioStream" uid="uid://04hcueifc217" path="res://Music/drop.mp3" id="8_va48u"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_dygvs")
@@ -15,6 +16,7 @@ music_tracks = Dictionary[String, AudioStream]({
 "game_complete": ExtResource("3_vbys1")
 })
 sfx = Dictionary[String, AudioStream]({
+"drop": ExtResource("8_va48u"),
 "item_collected": ExtResource("5_xb6i0"),
 "task_completed": ExtResource("7_vbys1"),
 "walking": ExtResource("4_va48u"),
