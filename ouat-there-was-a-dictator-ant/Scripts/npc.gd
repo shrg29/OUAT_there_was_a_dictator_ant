@@ -3,12 +3,9 @@ extends CharacterBody2D
 @export var print_mode: bool = true
 
 @export var npc_name: String = ""
-@export var npc_dialogue: Resource
+@export var npc_dialogue: DialogueResource
 
 @export var is_interactable: bool = true
-
-@export var demand_item: Resource
-@export var demand_amount: int
 
 @onready var interaction_area = $InteractionArea
 

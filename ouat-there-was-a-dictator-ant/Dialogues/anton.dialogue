@@ -1,13 +1,34 @@
 ~ start
 if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
-	Anton: [[Greetings|Hoy|]], I heard about your idea. I will join if you give me 1 Water.
-	- Give Water
-		Player: Here you go
-	- I will come back
-		Nathan: You picked the second one.
-	- Nuh uh
-		Anton: Okay then not.
-		set GameState.anton_current_opinion = GameState.anton_opinion.HATE
+	Anton: [[Greetings|Hoy|]], I heard about your idea. I will join if you give me {{GameState.anton_demand_amount}} {{GameState.anton_demand_item.item_name}}.
+	if GameState.count_item(GameState.anton_demand_item) >= GameState.anton_demand_amount:
+		- Give Water
+			Player: Here you go
+			do GameState.give_item(GameState.anton_demand_item, GameState.anton_demand_amount)
+			do GameState.recruit_ant("Anton")
+		- I will come back
+			System: Not yet implemented
+		- Nuh uh
+			Anton: Okay then not.
+			set GameState.anton_current_opinion = GameState.anton_opinion.HATE
+	elif GameState.count_item(GameState.anton_demand_item) > 0:
+		Player: I do not have that much water.
+		- Give {{GameState.count_item(GameState.anton_demand_item)}} Water
+			Player: Here is some, I will give you more later.
+			set GameState.anton_demand_amount = GameState.anton_demand_amount - GameState.count_item(GameState.anton_demand_item)
+			do GameState.give_item(GameState.anton_demand_item, GameState.anton_demand_amount)
+		- I will come back
+			System: Not yet implemented
+		- Nuh uh
+			Anton: Okay then not.
+			set GameState.anton_current_opinion = GameState.anton_opinion.HATE
+	else:
+		Player: I do not have that much water.
+		- I will come back
+			System: Not yet implemented
+		- Nuh uh
+			Anton: Okay then not.
+			set GameState.anton_current_opinion = GameState.anton_opinion.HATE
 else:
 	Anton: Go away.
 

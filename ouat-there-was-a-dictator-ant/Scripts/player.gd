@@ -122,6 +122,10 @@ func handleInput():
 			if GameState.current_state != GameState.state.TALKING: # only interact if not already talking
 				current_interactable.interact()
 				GameState.current_state = GameState.state.TALKING
+	
+	if Input.is_action_just_pressed("drop_item"):
+		if GameState.held_items.size() >= 1:
+			GameState.drop_item(global_position)
 
 
 func _physics_process(delta):

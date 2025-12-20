@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cri8s23bk0uep"]
+
+[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="1_hbfjb"]
+[ext_resource type="Script" uid="uid://d3fsgbumnpg0" path="res://Resource/item_resource.gd" id="1_ihvn1"]
+
+[resource]
+script = ExtResource("1_ihvn1")
+item_name = "Water"
+item_texture = ExtResource("1_hbfjb")
+metadata/_custom_type_script = "uid://d3fsgbumnpg0"

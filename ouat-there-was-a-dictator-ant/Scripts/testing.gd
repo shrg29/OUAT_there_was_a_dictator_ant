@@ -2,8 +2,8 @@ extends Node2D
 
 var npc_scene = preload("res://Scenes/ant_npc.tscn")
 
-var dialogue_anton = preload("res://Dialogues/anton.dialogue")
-var dialogue_anthony = preload("res://Dialogues/anthony.dialogue")
+var dialogue_anton: DialogueResource = preload("res://Dialogues/anton.dialogue")
+var dialogue_anthony: DialogueResource = preload("res://Dialogues/anthony.dialogue")
 
 
 func _ready() -> void:
@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func spawn_npc(npc_name: String, dialogue: Resource, coordinate_x: float, coordinate_y: float):
+func spawn_npc(npc_name: String, dialogue: DialogueResource, coordinate_x: float, coordinate_y: float):
 	var npc: Node2D = npc_scene.instantiate()
 	npc.position = Vector2(coordinate_x, coordinate_y)
 	npc.npc_name = npc_name
