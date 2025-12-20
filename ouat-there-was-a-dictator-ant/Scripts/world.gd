@@ -115,7 +115,8 @@ func find_adjacent_rooms():
 	
 	if current_room.y - 1 >= 0: # North/Up
 		var N = world_grid.get_cell(current_room.x, current_room.y - 1)
-		adjacent_rooms[dir.N] = N
+		if N.type != AntHillGenerator.tile_type.WALL && N.type != AntHillGenerator.tile_type.NONE:
+			adjacent_rooms[dir.N] = N
 
 	if current_room.y + 1 < world_grid.y: # South/Down
 		var S = world_grid.get_cell(current_room.x, current_room.y + 1)
@@ -175,7 +176,12 @@ func assign_rooms():
 						2: choose_two_door_rooms()
 						3: choose_three_door_rooms()
 						4: current_room.scene = four_door_tunnels.pick_random() # only one that does not need to change for the right door
-				AntHillGenerator.tile_type.START:		"res://Scenes/rooms/tunnels/4_doors.tscn"
+				AntHillGenerator.tile_type.START:
+					match AntHillGenerator.get_room_neighbor_amount(current_room):
+						1: choose_one_door_rooms()
+						2: choose_two_door_rooms()
+						3: choose_three_door_rooms()
+						4: current_room.scene = four_door_tunnels.pick_random()
 				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms()
 				AntHillGenerator.tile_type.NURSERY:		choose_one_door_rooms()
 				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms()
