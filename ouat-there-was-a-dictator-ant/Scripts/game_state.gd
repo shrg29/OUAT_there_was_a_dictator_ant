@@ -49,6 +49,10 @@ var recieved_beer: bool = false
 
 var has_met_queen: bool = false
 
+var has_met_anta:bool = false
+var anta_demand_item: ItemResource = coin_item
+var anta_demand_amount: int = 1
+
 enum anton_opinion {HATE, FINE}
 var anton_current_opinion: anton_opinion = anton_opinion.FINE
 var anton_demand_item: ItemResource = water_item

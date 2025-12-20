@@ -9,10 +9,11 @@ var dialogue_kasantra: DialogueResource = preload("res://Dialogues/kasantra.dial
 var dialogue_samantha: DialogueResource = preload("res://Dialogues/Samantha.dialogue")
 var dialogue_antdrew: DialogueResource = preload("res://Dialogues/antdrew.dialogue")
 var dialogue_queen: DialogueResource = preload("res://Dialogues/queen.dialogue")
+var dialogue_anta: DialogueResource = preload("res://Dialogues/anta_maria.dialogue")
 
 
 func _ready() -> void:
-	spawn_npc("The Queen", dialogue_queen, 100, 100, true)
+	spawn_npc("Anta Maria", dialogue_anta, 100, 100, true)
 	spawn_npc("Samantha", dialogue_samantha, 1000, 1000, true)
 	spawn_npc("Antdrew", dialogue_antdrew, 1000, 100, true)
 	spawn_npc("Kasantra", dialogue_kasantra, 100, 1000, true)
