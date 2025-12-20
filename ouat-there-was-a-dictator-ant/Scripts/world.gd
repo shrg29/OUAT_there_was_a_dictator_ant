@@ -35,13 +35,13 @@ func _ready() -> void:
 	print("world grid 00 type: ",world_grid.get_cell(0,0).type)
 	fill_room_arrays()
 	
-	#assign_rooms()
+	assign_rooms()
 	
 	current_room = start_room
 	
 	find_adjacent_rooms()
 	
-	TransitionScene.change_scene(start_room.scene)
+	#TransitionScene.change_scene(start_room.scene)
 
 func fill_room_arrays():
 	four_door_tunnels.append("res://Scenes/level_example.tscn")
@@ -77,6 +77,7 @@ func find_adjacent_rooms():
 
 func load_room(direction: String):
 	#we load here to always get the right room
+	print(adjacent_rooms[dir.N].scene)
 	match direction:
 		"N":	TransitionScene.change_scene(adjacent_rooms[dir.N].scene)
 		"S":	TransitionScene.change_scene(adjacent_rooms[dir.S].scene)
