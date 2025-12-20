@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3koo8up5q3wf"]
+[gd_scene load_steps=5 format=3 uid="uid://b3koo8up5q3wf"]
 
 [ext_resource type="Texture2D" uid="uid://bfghknd5uot2x" path="res://assets/npc/queen.png" id="1_qjw5i"]
-[ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="2_n0jy4"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
 length = 0.001
@@ -493,6 +492,3 @@ region_rect = Rect2(1106.2823, 196.73135, 64.12378, 157.42538)
 libraries = {
 &"": SubResource("AnimationLibrary_mhtfk")
 }
-
-[node name="npc_1" parent="." instance=ExtResource("2_n0jy4")]
-position = Vector2(-301, 104)
