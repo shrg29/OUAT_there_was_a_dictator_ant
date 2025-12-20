@@ -1,10 +1,20 @@
 extends Node
 
 
-var print_mode: bool = false
+var print_mode: bool = true
 
 
+#region Item Preloads
+var coin_item: ItemResource = preload("res://Resource/Item Resources/coin.tres")
+var stick_item: ItemResource = preload("res://Resource/Item Resources/stick.tres")
+var stone_item: ItemResource = preload("res://Resource/Item Resources/stone.tres")
 var water_item: ItemResource = preload("res://Resource/Item Resources/water.tres")
+#endregion
+
+#region Ant-Speech Pitch values
+var low: float = 0.5
+var high: float = 0.9
+#endregion
 
 enum state {TALKING, WALKING}
 var current_state: state = state.WALKING
@@ -13,10 +23,20 @@ var recruited_ants: Array[String] = ["Player", "Another Ant"] # Array holding al
 var held_items: Array[ItemResource] = [] # Array holding all items we are currently carrying
 
 
+#region Specific Ants
+
+var anthony_demand_item: ItemResource = stick_item
+var anthony_demand_amount: int = 1
+var has_met_anthony: bool = false
+
 enum anton_opinion {HATE, FINE}
 var anton_current_opinion: anton_opinion = anton_opinion.FINE
 var anton_demand_item: ItemResource = water_item
 var anton_demand_amount: int = 2
+
+
+
+#endregion
 
 var failed_game: bool = false # Game over check
 
@@ -25,8 +45,9 @@ var failed_game: bool = false # Game over check
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pick_up_item(water_item)
-	pick_up_item(water_item)
+	await get_tree().process_frame
+	#pick_up_item(water_item)
+	#pick_up_item(water_item)
 	pass # Replace with function body.
 
 
@@ -53,6 +74,7 @@ func update_item_display():
 func pick_up_item(item: ItemResource):
 	if held_items.size() < recruited_ants.size():
 		held_items.push_back(item)
+		AudioManager.play_sfx("item_collected")
 		update_item_display()
 	else:
 		if print_mode:
@@ -86,6 +108,7 @@ func give_item(gift: ItemResource, amount: int):
 func drop_item(location: Vector2):
 	# TODO: function to drop the item on the ground at "location"
 	held_items.remove_at(0)
+	AudioManager.play_sfx("drop")
 	update_item_display()
 #endregion
 

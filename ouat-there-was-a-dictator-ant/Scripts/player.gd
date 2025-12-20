@@ -184,8 +184,9 @@ func handleInput():
 
 func _physics_process(delta):
 	handleInput()
-	updateAnimation()
-	move_and_slide()
+	if GameState.current_state == GameState.state.WALKING:
+		updateAnimation()
+		move_and_slide()
 	
 
 
