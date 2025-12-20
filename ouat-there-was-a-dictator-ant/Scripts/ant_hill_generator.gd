@@ -121,8 +121,7 @@ func get_mini_map() -> ImageTexture:
 				tile_type.CARPENTER: c = Color(0.652, 0.467, 0.144, map_transparency)
 				tile_type.WATER:     c = Color(0.209, 0.477, 0.685, map_transparency)
 				tile_type.FOOD:      c = Color(0.302, 0.455, 0.203, map_transparency)
-				_:
-					c = Color.TRANSPARENT
+				_:	c = Color.TRANSPARENT
 
 			for x_b in range(block_size_x):
 				for y_b in range(block_size_y):
@@ -270,6 +269,11 @@ func get_room_neighbors(node: Grid_Node) -> Array:
 			neighbors.append(n)
 
 	return neighbors
+
+
+func get_room_neighbor_amount(node: Grid_Node) -> int:
+	return get_room_neighbors(node).size()
+
 
 
 func spread_rooms():
@@ -422,6 +426,7 @@ class Grid_Node:
 	var y
 	var visited
 	var type
+	var scene
 	func _init(_x: int, _y: int):
 		x = _x
 		y = _y

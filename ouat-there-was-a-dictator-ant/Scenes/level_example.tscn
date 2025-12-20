@@ -24,6 +24,7 @@ size = Vector2(357, 731.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b510r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a2fd"]
+size = Vector2(22.949738, 20)
 
 [node name="level_example" type="Node2D"]
 scale = Vector2(0.38, 0.38)
@@ -121,8 +122,8 @@ shape = SubResource("RectangleShape2D_b510r")
 [node name="West" type="Area2D" parent="Loading_Zones"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Loading_Zones/West"]
-position = Vector2(1239.4738, 1344.7367)
-scale = Vector2(11.786455, 68.880005)
+position = Vector2(1256.8572, 1344.7367)
+scale = Vector2(11.786454, 68.880005)
 shape = SubResource("RectangleShape2D_2a2fd")
 
 [connection signal="area_entered" from="Loading_Zones/North" to="." method="_on_north_area_entered"]

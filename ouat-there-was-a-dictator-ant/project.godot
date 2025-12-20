@@ -21,6 +21,7 @@ GameState="*res://Scripts/game_state.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 AntHillGenerator="*res://Scripts/ant_hill_generator.gd"
 TransitionScene="*res://Scenes/transition_scene.tscn"
+World="*res://Scripts/world.gd"
 
 [display]
 
