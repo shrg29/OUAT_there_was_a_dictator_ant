@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _on_north_area_entered(area: Area2D) -> void:
-	print("entered")
 	World.load_room("N")
 
 
