@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1x6qsccyawtx"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_b6myt"]
+
+[node name="food2" type="Sprite2D"]
+texture = ExtResource("1_b6myt")
+region_enabled = true
+region_rect = Rect2(1170.2677, 75.25583, 55.99585, 57.350586)

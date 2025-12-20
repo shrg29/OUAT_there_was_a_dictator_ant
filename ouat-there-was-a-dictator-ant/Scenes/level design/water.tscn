@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cahqt4o0qx7y1"]
+
+[ext_resource type="Texture2D" uid="uid://bj1oa5uov328o" path="res://assets/level_art/level_design/water_station.png" id="1_bi1k5"]
+[ext_resource type="Script" uid="uid://5xwm5tyft1dw" path="res://Scripts/level_design/water.gd" id="2_3w0ds"]
+[ext_resource type="Texture2D" uid="uid://d0wicggs48yp" path="res://assets/level_art/level_design/waterfall1.png" id="2_xkj41"]
+[ext_resource type="Texture2D" uid="uid://ctnbjixlp2pe2" path="res://assets/level_art/level_design/waterfall.png" id="3_3w0ds"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlubo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xkj41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3w0ds")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="water" type="Sprite2D"]
+texture = ExtResource("1_bi1k5")
+script = ExtResource("2_3w0ds")
+
+[node name="waterfall" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, -32)
+sprite_frames = SubResource("SpriteFrames_nlubo")
+frame_progress = 0.068250984

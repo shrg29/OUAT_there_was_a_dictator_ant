@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dncas4e5kkjy4"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_2jowq"]
+
+[node name="water puddle" type="Sprite2D"]
+texture = ExtResource("1_2jowq")
+region_enabled = true
+region_rect = Rect2(669.10614, 57.194687, 111.795715, 86.55153)
