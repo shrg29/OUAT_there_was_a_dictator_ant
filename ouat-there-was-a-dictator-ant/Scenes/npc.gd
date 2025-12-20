@@ -22,7 +22,7 @@ func _ready():
 	interaction_area.body_entered.connect(_on_body_entered)
 	interaction_area.body_exited.connect(_on_body_exited)
 	
-	interact() # testing purposes
+	#interact() # testing purposes
 
 
 func _on_body_entered(body):
@@ -41,7 +41,7 @@ func _on_body_exited(body):
 
 func interact():
 	if print_mode:
-		print("interacting with: ", npc_name)
+		print("Interacting with: ", npc_name)
 	start_dialogue()
 
 

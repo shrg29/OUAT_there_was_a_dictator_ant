@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 
-
+var nearby_interactables = []  # Track ALL nearby NPCs
+var current_interactable: Node2D = null
 
 
 #sound
@@ -53,12 +54,68 @@ var isHurt = false
 
 
 func _ready() -> void:
-	pass
+	add_to_group("player")
+	
+	await get_tree().process_frame
+	
+	# Connecting to existing and later NPCs
+	for npc in get_tree().get_nodes_in_group("npc"):
+		_connect_to_npc(npc)
+	
+	get_tree().node_added.connect(_on_node_added)
+
+
+#region Interaction
+func _on_node_added(node): # newly added NPCs
+	if node.is_in_group("npc"):
+		_connect_to_npc(node)
+
+
+func _connect_to_npc(npc): # Connecting to NPC signals
+	if not npc.interactable_entered.is_connected(_on_interactable_entered):
+		npc.interactable_entered.connect(_on_interactable_entered)
+		npc.interactable_exited.connect(_on_interactable_exited)
+
+
+func _on_interactable_entered(npc): # Tracking nearby interactable NPCs
+	if npc not in nearby_interactables:
+		nearby_interactables.append(npc)
+	_update_current_interactable()
+
+
+func _on_interactable_exited(npc): # Removing NPCs upon exiting interaction range
+	nearby_interactables.erase(npc)
+	_update_current_interactable()
+
+
+func _update_current_interactable(): # Keeping current interactable clean
+	if nearby_interactables.is_empty():
+		current_interactable = null
+	else:
+		current_interactable = _get_closest_interactable()
+
+
+func _get_closest_interactable(): # setting closest npc as current interactable
+	var closest = nearby_interactables[0]
+	var closest_dist = global_position.distance_to(closest.global_position)
+	
+	for npc in nearby_interactables:
+		var dist = global_position.distance_to(npc.global_position)
+		if dist < closest_dist:
+			closest = npc
+			closest_dist = dist
+	
+	return closest
+#endregion
 
 
 func handleInput():
 	move_direction = Input.get_vector(walk_left, walk_right, walk_up, walk_down)
 	velocity = move_direction.normalized()*speed
+	
+	if Input.is_action_just_pressed("interact"):
+		if current_interactable: # only interact if there is a current_interactable npc
+			current_interactable.interact()
 
 
 func _physics_process(delta):

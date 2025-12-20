@@ -15,6 +15,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+#region Inventory
+
 func update_item_display():
 	if held_items.size() <= recruited_ants.size():
 		var ant_index = 0
@@ -64,9 +66,9 @@ func give_item(gift: Resource, amount: int):
 
 func drop_item(location: Vector2):
 	# TODO: function to drop the item on the ground at "location"
-	held_items[0].erase()
+	held_items.remove_at(0)
 	update_item_display()
-
+#endregion
 
 
 
