@@ -272,7 +272,12 @@ func get_room_neighbors(node: Grid_Node) -> Array:
 
 
 func get_room_neighbor_amount(node: Grid_Node) -> int:
-	return get_room_neighbors(node).size()
+	var amount = 0
+	for n in get_node_neighbors(node):
+		# Any tile that is not a WALL or NONE is walkable
+		if n.type != tile_type.WALL and n.type != tile_type.NONE:
+			amount += 1
+	return amount
 
 
 
