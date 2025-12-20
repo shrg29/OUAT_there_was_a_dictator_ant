@@ -9,6 +9,9 @@ var current_state: state = state.WALKING
 var recruited_ants: Array[String] = ["Player"] # Array holding all successfully recruited ants
 var held_items: Array[Resource] = [] # Array holding all items we are currently carrying
 
+enum anton_opinion {HATE, FINE}
+var anton_current_opinion: anton_opinion = anton_opinion.FINE
+
 var failed_game: bool = false # Game over check
 
 
@@ -81,6 +84,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func recruited_ant(name: String) -> Array[String]:
+func recruit_ant(name: String) -> Array[String]:
 	recruited_ants.push_back(name)
+	print("Recruited ANts: ", recruited_ants)
 	return recruited_ants

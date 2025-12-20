@@ -2,20 +2,15 @@ extends Node2D
 
 var npc_scene = preload("res://Scenes/ant_npc.tscn")
 
-var test_dialogue = preload("res://Dialogues/testing.dialogue")
+var dialogue_anton = preload("res://Dialogues/anton.dialogue")
 var dialogue_anthony = preload("res://Dialogues/anthony.dialogue")
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawn_npc("Anthony", dialogue_anthony, 100, 100)
-	spawn_npc("Anton", dialogue_anthony, 1000, 1000)
-	#DialogueManager.show_dialogue_balloon(test_dialogue_two)
-	pass # Replace with function body.
+	spawn_npc("Anton", dialogue_anton, 1000, 1000)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 

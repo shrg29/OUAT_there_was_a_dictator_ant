@@ -1,0 +1,15 @@
+~ start
+if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
+	Anton: [[Greetings|Hoy|]], I heard about your idea. I will join if you give me 1 Water.
+	- Give Water
+		Player: Here you go
+	- I will come back
+		Nathan: You picked the second one.
+	- Nuh uh
+		Anton: Okay then not.
+		set GameState.anton_current_opinion = GameState.anton_opinion.HATE
+else:
+	Anton: Go away.
+
+set GameState.current_state = GameState.state.WALKING
+=> END
