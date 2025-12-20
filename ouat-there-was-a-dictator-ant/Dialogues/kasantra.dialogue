@@ -1,0 +1,59 @@
+~ start
+do GameState.low = 0.9
+do GameState.high = 1.4
+
+if GameState.recruited_ants.has("Kasantra"):
+	Kasantra: The queen's rule is about to end!
+	=> resolve
+else:
+	if GameState.has_met_antonia == false:
+		Antonia: Hello there, Sara. What brings you here?
+		- We are trying to overthrow our warmongering queen.
+			=> overthrow
+		- I am just wandering around.
+			Antonia: Don't waste my time, Sara.
+			- We are trying to overthrow our warmongering queen.
+				=> overthrow
+			- Goodbye
+				=> resolve
+		- Goodbye
+			=> resolve
+	else:
+		if GameState.got_antonia_quest == false:
+			=> overthrow
+		else:
+			=> quest
+
+~ overthrow
+Antonia: You know I hate the queen, but I will only help if my wife, [wave]Kasantra[/wave], also joins.
+set GameState.has_met_antonia = true
+- I will talk to her!
+	Antonia: Good luck with that...
+	=> quest
+- Can't you ask her to join?
+	Antonia: We are not on speaking terms right now...
+	- I will talk to her!
+		Antonia: Good luck with that...
+		=> quest
+	- I am not getting in-between you two...
+		=> resolve
+
+~ quest
+set GameState.got_antonia_quest = true
+if GameState.recruited_ants.has("Kasantra"):
+	- I have recruited Kasantra!
+		Antonia: Thank you very much. I will join you.
+		do GameState.recruit_ant("Antonia")
+		do AudioManager.play_sfx("task_completed")
+		=> resolve
+	- Goodbye
+		=> resolve
+else:
+	- I will come back later.
+		=> resolve
+	- Goodbye
+		=> resolve
+
+~ resolve
+set GameState.current_state = GameState.state.WALKING
+=> END

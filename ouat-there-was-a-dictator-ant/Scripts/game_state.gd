@@ -32,6 +32,8 @@ var has_met_anthony: bool = false
 var has_met_antonia: bool = false
 var got_antonia_quest: bool = false
 
+var has_met_kasantra: bool = false
+
 enum anton_opinion {HATE, FINE}
 var anton_current_opinion: anton_opinion = anton_opinion.FINE
 var anton_demand_item: ItemResource = water_item

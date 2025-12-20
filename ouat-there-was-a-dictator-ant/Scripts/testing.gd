@@ -9,7 +9,7 @@ var dialogue_antonia: DialogueResource = preload("res://Dialogues/antonia.dialog
 
 func _ready() -> void:
 	spawn_npc("Anthony", dialogue_anthony, 100, 100)
-	spawn_npc("Anton", dialogue_anton, 1000, 1000)
+	#spawn_npc("Anton", dialogue_anton, 1000, 1000)
 	spawn_npc("Antonia", dialogue_antonia, 1000, 100)
 
 
