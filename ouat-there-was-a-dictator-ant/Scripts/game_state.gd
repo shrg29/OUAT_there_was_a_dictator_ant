@@ -5,6 +5,8 @@ var print_mode: bool = false
 
 
 var water_item: ItemResource = preload("res://Resource/Item Resources/water.tres")
+var anton_water_quest: Quest = preload("res://Scripts/anton_water.tres")
+
 
 enum state {TALKING, WALKING}
 var current_state: state = state.WALKING

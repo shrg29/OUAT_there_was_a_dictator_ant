@@ -41,7 +41,7 @@ func _ready() -> void:
 	
 	find_adjacent_rooms()
 	print("start room at: ", start_room.x, ", ", start_room.y)
-	TransitionScene.change_scene(start_room.scene)
+	#TransitionScene.change_scene(start_room.scene)
 
 func print_grid():
 	print("Grid Map (Scenes):")

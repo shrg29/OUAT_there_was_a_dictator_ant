@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0urdp2ca6qh3"]
+[gd_scene load_steps=6 format=3 uid="uid://d0urdp2ca6qh3"]
 
-[ext_resource type="Script" path="res://Scripts/testing.gd" id="1_lq4et"]
+[ext_resource type="Script" uid="uid://bqu48pevwmi4n" path="res://Scripts/testing.gd" id="1_lq4et"]
+[ext_resource type="PackedScene" uid="uid://0r4hl683cank" path="res://Scenes/questHUD.tscn" id="2_8si1v"]
 [ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="2_siu27"]
 [ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="3_4ppfb"]
 [ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="4_8si1v"]
 
 [node name="Testing" type="Node2D"]
+position = Vector2(-2, 0)
 script = ExtResource("1_lq4et")
+
+[node name="QuestHud" parent="." instance=ExtResource("2_8si1v")]
 
 [node name="player" parent="." instance=ExtResource("2_siu27")]
 position = Vector2(1320, 752)
