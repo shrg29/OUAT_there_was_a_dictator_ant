@@ -30,9 +30,13 @@ func _ready() -> void:
 
 
 func set_type(type: ItemResource):
+	add_to_group("item")
 	item_type = type
 	item_title = type.item_name
 	item_image_holder.texture = type.item_texture
+	
+	print("instantiated item as: ", item_title)
+	
 	
 
 

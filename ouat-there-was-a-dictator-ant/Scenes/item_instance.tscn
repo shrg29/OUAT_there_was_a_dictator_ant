@@ -11,16 +11,21 @@ atlas = ExtResource("3_gp3d1")
 region = Rect2(589.7429, 837.1793, 126.66669, 142.25647)
 
 [node name="ItemInstance" type="Node2D" groups=["item"]]
+z_index = 5
 script = ExtResource("1_mpdop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
 
 [node name="PickupArea" type="Area2D" parent="."]
+z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+z_index = 5
 shape = SubResource("CircleShape2D_mpdop")
 
 [node name="Item_Marker" type="Sprite2D" parent="."]
+z_index = 5
 position = Vector2(0, -60.999996)
 scale = Vector2(0.4108911, 0.34375)
 texture = SubResource("AtlasTexture_u6ets")

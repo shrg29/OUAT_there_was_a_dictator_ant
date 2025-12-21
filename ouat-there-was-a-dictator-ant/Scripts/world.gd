@@ -204,6 +204,8 @@ func load_room(direction: String):
 		print("current room at: ", current_room.x, ", ", current_room.y)
 	else:
 		print("next room is null!")
+	
+	
 	GameState.update_item_display()
 
 func assign_rooms():
