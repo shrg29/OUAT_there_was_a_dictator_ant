@@ -8,4 +8,4 @@ func _on_start_pressed():
 
 
 func _on_quit_pressed():
-	get_tree().quit()
+	TransitionScene.change_scene("res://Scenes/main_menu.tscn")

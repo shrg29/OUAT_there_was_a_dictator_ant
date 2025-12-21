@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	TransitionScene.change_scene("res://Scenes/main_scene.tscn")
+	TransitionScene.change_scene("res://Scenes/main_menu.tscn")
 
 
 func _on_quit_pressed() -> void:
