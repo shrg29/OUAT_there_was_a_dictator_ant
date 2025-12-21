@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpgosjlqkwyn0"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgosjlqkwyn0"]
 
 [ext_resource type="Script" uid="uid://d371bdo41og2a" path="res://Scripts/item_instance.gd" id="1_mpdop"]
-[ext_resource type="Resource" uid="uid://cqwc8p6bxdoc7" path="res://Resource/Item Resources/coin.tres" id="2_n0lvx"]
 [ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="3_gp3d1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpdop"]
@@ -13,7 +12,6 @@ region = Rect2(589.7429, 837.1793, 126.66669, 142.25647)
 
 [node name="ItemInstance" type="Node2D" groups=["item"]]
 script = ExtResource("1_mpdop")
-item_type = ExtResource("2_n0lvx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
