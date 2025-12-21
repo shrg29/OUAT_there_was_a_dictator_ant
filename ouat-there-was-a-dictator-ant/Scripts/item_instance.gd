@@ -15,7 +15,7 @@ signal item_area_exited(item)
 func _ready() -> void:
 	
 	add_to_group("item")
-	item_marker.visible = false
+	item_marker.visible = true
 	
 	# connecting signals through code for consistency
 	pickup_area.body_entered.connect(_on_body_entered)
@@ -64,7 +64,7 @@ func _on_becoming_target(target):
 	else:
 		if print_mode:
 			print(item_title, " is not the current target")
-		item_marker.visible = false
+		item_marker.visible = true
 
 
 func interact():
