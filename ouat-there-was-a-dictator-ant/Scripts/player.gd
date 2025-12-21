@@ -58,7 +58,7 @@ var attack = "attack"
 var direction = "down"
 var move_direction
 var last_direction = Vector2(1, 1) #to see where we looked at last and attack in that position if we stand still
-
+var was_moving := false
 
 
 
@@ -200,6 +200,15 @@ func handleInput():
 
 func _physics_process(delta):
 	handleInput()
+	var is_moving := velocity.length() > 0
+
+	if is_moving and not was_moving:
+		AudioManager.play_sfx("walking")
+
+	if not is_moving and was_moving:
+		AudioManager.stop_sfx()
+
+	was_moving = is_moving
 	if GameState.current_state == GameState.state.WALKING:
 		updateAnimation()
 		move_and_slide()
