@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdhdftwo7gdhr"]
+
+[ext_resource type="Script" uid="uid://cbsf60t6sk7pk" path="res://Scripts/level_design/torch.gd" id="1_675gr"]
+[ext_resource type="Texture2D" uid="uid://b3crdp8mkqam5" path="res://assets/level_art/level_design/torch_1.png" id="2_5r1pk"]
+[ext_resource type="Texture2D" uid="uid://b8l1k1bcy4225" path="res://assets/level_art/level_design/torch_2.png" id="3_bcmp0"]
+[ext_resource type="Texture2D" uid="uid://bmg22k3absrju" path="res://assets/level_art/level_design/shine.png" id="4_5r1pk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tujj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5r1pk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bcmp0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5r1pk"]
+resource_name = "new"
+length = 1.5000035
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shine:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.0333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.9534839, 0.7135746, 0.71323097, 0.4509804), Color(0.9529412, 0.7137255, 0.7137255, 0.2901961), Color(0.9529412, 0.7137255, 0.7137255, 0.6431373)]
+}
+
+[sub_resource type="Animation" id="Animation_bcmp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shine:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9534839, 0.7135746, 0.71323097, 0.4509804)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tujj7"]
+_data = {
+&"RESET": SubResource("Animation_bcmp0"),
+&"new": SubResource("Animation_5r1pk")
+}
+
+[node name="torch" type="Node2D"]
+script = ExtResource("1_675gr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tujj7")
+frame_progress = 0.5460029
+
+[node name="Shine" type="Sprite2D" parent="."]
+modulate = Color(0.9534839, 0.7135746, 0.71323097, 0.4509804)
+self_modulate = Color(1, 1, 1, 0.6627451)
+position = Vector2(0, 1)
+texture = ExtResource("4_5r1pk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tujj7")
+}

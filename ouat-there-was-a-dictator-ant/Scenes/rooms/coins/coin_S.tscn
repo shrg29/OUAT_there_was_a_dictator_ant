@@ -1,18 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://mha28kspta6d"]
+[gd_scene load_steps=24 format=3 uid="uid://d0xvusecw4m05"]
 
-[ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_omkue"]
-[ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_o7v2g"]
-[ext_resource type="PackedScene" uid="uid://dmollusy6dodq" path="res://Scenes/level design/walls_rectangle.tscn" id="3_5bl16"]
-[ext_resource type="PackedScene" uid="uid://1uobr5mjx3d0" path="res://Scenes/level design/door_north.tscn" id="4_xxgcw"]
-[ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_f2i5u"]
-[ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_k6tr2"]
-[ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_vh74y"]
-[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_6na6o"]
-[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_87v34"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/water.tscn" id="9_mg0d7"]
-[ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="10_wxyoc"]
-[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="11_dklq0"]
-[ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="12_pef5i"]
+[ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_f1c5p"]
+[ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_ecxdc"]
+[ext_resource type="PackedScene" uid="uid://dmollusy6dodq" path="res://Scenes/level design/walls_rectangle.tscn" id="3_1pbtf"]
+[ext_resource type="PackedScene" uid="uid://1uobr5mjx3d0" path="res://Scenes/level design/door_north.tscn" id="4_a47de"]
+[ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_nwu4w"]
+[ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_ry5ar"]
+[ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_sbtts"]
+[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_4jb2v"]
+[ext_resource type="PackedScene" uid="uid://cdhdftwo7gdhr" path="res://Scenes/level design/torch.tscn" id="9_2fm81"]
+[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="11_4ubd6"]
+[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="13_jdxtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(30.209827, 20)
@@ -49,37 +47,31 @@ size = Vector2(22.65213, 27.866898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dklq0"]
-size = Vector2(30.828016, 70.132935)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pef5i"]
-size = Vector2(98.75, 79.5)
-
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_omkue")
+script = ExtResource("1_f1c5p")
 
 [node name="rectangle" type="Node2D" parent="."]
 
-[node name="terrain1" parent="rectangle" instance=ExtResource("2_o7v2g")]
+[node name="terrain1" parent="rectangle" instance=ExtResource("2_ecxdc")]
 position = Vector2(960, 540)
 
-[node name="WallsRectangle" parent="rectangle" instance=ExtResource("3_5bl16")]
+[node name="WallsRectangle" parent="rectangle" instance=ExtResource("3_1pbtf")]
 position = Vector2(960, 540)
 
 [node name="doors_rectangle" type="Node2D" parent="rectangle"]
 
-[node name="door north" parent="rectangle/doors_rectangle" instance=ExtResource("4_xxgcw")]
+[node name="door north" parent="rectangle/doors_rectangle" instance=ExtResource("4_a47de")]
 visible = false
 position = Vector2(944, 96)
 
-[node name="door south" parent="rectangle/doors_rectangle" instance=ExtResource("5_f2i5u")]
+[node name="door south" parent="rectangle/doors_rectangle" instance=ExtResource("5_nwu4w")]
 position = Vector2(938, 1004)
 
-[node name="door east" parent="rectangle/doors_rectangle" instance=ExtResource("6_k6tr2")]
+[node name="door east" parent="rectangle/doors_rectangle" instance=ExtResource("6_ry5ar")]
 visible = false
 position = Vector2(1826, 531)
 
-[node name="door west" parent="rectangle/doors_rectangle" instance=ExtResource("7_vh74y")]
+[node name="door west" parent="rectangle/doors_rectangle" instance=ExtResource("7_sbtts")]
 visible = false
 position = Vector2(90, 525)
 
@@ -154,62 +146,28 @@ shape = SubResource("RectangleShape2D_qsm1c")
 position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
-[node name="map generator" parent="." instance=ExtResource("8_6na6o")]
+[node name="map generator" parent="." instance=ExtResource("8_4jb2v")]
 
 [node name="Cosmetics" type="Node2D" parent="."]
 
-[node name="water" parent="Cosmetics" instance=ExtResource("9_mg0d7")]
-position = Vector2(926, 513)
+[node name="torch" parent="Cosmetics" instance=ExtResource("9_2fm81")]
+position = Vector2(1104, 177)
+rotation = 6.2831855
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/water"]
+[node name="torch2" parent="Cosmetics" instance=ExtResource("9_2fm81")]
+position = Vector2(768, 177)
+rotation = 6.2831855
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cosmetics/water/StaticBody2D"]
-position = Vector2(-355, -273)
-scale = Vector2(3.8601243, 2.3669336)
-shape = SubResource("RectangleShape2D_dklq0")
-
-[node name="NPCs" type="Node2D" parent="."]
-
-[node name="npc_2" parent="NPCs" instance=ExtResource("10_wxyoc")]
-position = Vector2(1076, 254)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_2/StaticBody2D"]
-position = Vector2(-2.375, 117.75)
-shape = SubResource("RectangleShape2D_pef5i")
+[node name="torch3" parent="Cosmetics" instance=ExtResource("9_2fm81")]
+position = Vector2(926, 137)
+rotation = 6.2831855
 
 [node name="items" type="Node2D" parent="."]
 
-[node name="water" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(718, 338)
-item_type = ExtResource("12_pef5i")
+[node name="coin" parent="items" instance=ExtResource("11_4ubd6")]
+position = Vector2(931, 262)
 
-[node name="water2" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(1453, 589)
-item_type = ExtResource("12_pef5i")
-
-[node name="water3" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(1286, 596)
-item_type = ExtResource("12_pef5i")
-
-[node name="water4" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(638, 492)
-item_type = ExtResource("12_pef5i")
-
-[node name="water5" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(504, 387)
-item_type = ExtResource("12_pef5i")
-
-[node name="water6" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(1234, 448)
-item_type = ExtResource("12_pef5i")
-
-[node name="water7" parent="items" instance=ExtResource("11_dklq0")]
-position = Vector2(1401, 411)
-item_type = ExtResource("12_pef5i")
-
-[node name="player" parent="." instance=ExtResource("9_87v34")]
+[node name="player" parent="." instance=ExtResource("13_jdxtw")]
 position = Vector2(990, 545)
 
 [connection signal="area_entered" from="Loading_Zones/North" to="." method="_on_north_area_entered"]

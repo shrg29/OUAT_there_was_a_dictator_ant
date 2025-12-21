@@ -8,10 +8,12 @@ var foods = []
 var carpenters = []
 var queens = []
 var waters = []
+var coins = []
 var one_door_tunnels = []
 var two_door_tunnels  = []# maybe another way to store them or note the order
 var three_door_tunnels = []
 var four_door_tunnels = []
+var starts = []
 var start_room
 var came_from
 
@@ -43,6 +45,10 @@ func _ready() -> void:
 	find_adjacent_rooms()
 	print("start room at: ", start_room.x, ", ", start_room.y)
 	#TransitionScene.change_scene(start_room.scene)
+
+func _process(delta: float) -> void:
+	#if we go through the tutorial, load start room and then set the flag to false
+	pass
 
 func print_grid():
 	print("Grid Map (Scenes):")
@@ -121,9 +127,17 @@ func fill_room_arrays():
 	waters.append("res://Scenes/rooms/waters/water_S.tscn")
 	waters.append("res://Scenes/rooms/waters/water_W.tscn")
 
-	# dont know what to do with start, 4 room always at least i guess
-	start_room.scene = "res://Scenes/rooms/tunnels/4_doors.tscn"
-
+	# order: 3N, 3E, 3S, 3W, 4
+	starts.append("res://Scenes/rooms/starts/start_3_doors_N.tscn")
+	starts.append("res://Scenes/rooms/starts/start_3_doors_E.tscn")
+	starts.append("res://Scenes/rooms/starts/start_3_doors_S.tscn")
+	starts.append("res://Scenes/rooms/starts/start_3_doors_W.tscn")
+	starts.append("res://Scenes/rooms/starts/start_4_doors.tscn")
+	
+	coins.append("res://Scenes/rooms/coins/coin_N.tscn")
+	coins.append("res://Scenes/rooms/coins/coin_E.tscn")
+	coins.append("res://Scenes/rooms/coins/coin_S.tscn")
+	coins.append("res://Scenes/rooms/coins/coin_W.tscn")
 
 func find_adjacent_rooms():
 	adjacent_rooms[dir.N] = null
@@ -197,19 +211,20 @@ func assign_rooms():
 					match AntHillGenerator.get_room_neighbor_amount(current_room):
 						1: choose_one_door_rooms("tunnel")
 						2: choose_two_door_rooms()
-						3: choose_three_door_rooms()
+						3: choose_three_door_rooms("tunnel")
 						4: current_room.scene = four_door_tunnels.pick_random() # only one that does not need to change for the right door
 				AntHillGenerator.tile_type.START:
 					match AntHillGenerator.get_room_neighbor_amount(current_room):
-						1: choose_one_door_rooms("tunnel")
-						2: choose_two_door_rooms()
-						3: choose_three_door_rooms()
-						4: current_room.scene = four_door_tunnels.pick_random()
+						#1: choose_one_door_rooms("tunnel")
+						#2: choose_two_door_rooms()
+						3: choose_three_door_rooms("start")
+						4: current_room.scene = starts[4]
 				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms("queen")
 				AntHillGenerator.tile_type.NURSERY:		choose_one_door_rooms("nursery")
 				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms("carpenter")
 				AntHillGenerator.tile_type.WATER:		choose_one_door_rooms("water")
 				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms("food")
+				AntHillGenerator.tile_type.COIN:		choose_one_door_rooms("coin")
 				_:										current_room.scene = null
 	current_room = start_room #set it to start room so we can start in the right room... maybe we should use something else but whatever
 
@@ -222,6 +237,7 @@ func choose_one_door_rooms(kind: String):
 		"carpenter":	room_array = carpenters
 		"queen":		room_array = queens
 		"water":		room_array = waters
+		"coin":			room_array = coins
 	if adjacent_rooms[dir.N] != null:
 		current_room.scene = room_array[0]
 	if adjacent_rooms[dir.E] != null:
@@ -249,12 +265,16 @@ func choose_two_door_rooms():
 	if adjacent_rooms[dir.E] != null && adjacent_rooms[dir.W] != null:
 		current_room.scene = two_door_tunnels[5]
 
-func choose_three_door_rooms():
+func choose_three_door_rooms(kind: String):
+	var room_array
+	match kind:
+		"tunnel": 		room_array = three_door_tunnels
+		"start":		room_array = starts
 	if adjacent_rooms[dir.N] == null:
-		current_room.scene = three_door_tunnels[0]
+		current_room.scene = room_array[0]
 	if adjacent_rooms[dir.E] == null:
-		current_room.scene = three_door_tunnels[1]
+		current_room.scene = room_array[1]
 	if adjacent_rooms[dir.S] == null:
-		current_room.scene = three_door_tunnels[2]
+		current_room.scene = room_array[2]
 	if adjacent_rooms[dir.W] == null:
-		current_room.scene = three_door_tunnels[3]
+		current_room.scene = room_array[3]
