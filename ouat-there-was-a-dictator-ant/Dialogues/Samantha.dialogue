@@ -25,6 +25,7 @@ else:
 		=> quest
 ~ quest
 set GameState.has_met_samantha = true
+do QuestManager.add_quest(GameState.samanta_quest)
 Samantha: If you could bring me {{GameState.samantha_demand_amount}} {{GameState.samantha_demand_item.item_name}}?
 if GameState.count_item(GameState.samantha_demand_item) >= GameState.samantha_demand_amount:
 	- I got it (give {{GameState.samantha_demand_amount}} {{GameState.samantha_demand_item.item_name}}).

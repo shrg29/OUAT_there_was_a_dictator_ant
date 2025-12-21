@@ -24,8 +24,6 @@ AntHillGenerator="*res://Scripts/ant_hill_generator.gd"
 TransitionScene="*res://Scenes/transition_scene.tscn"
 World="*res://Scripts/world.gd"
 QuestManager="*res://Scripts/QuestManager.gd"
-AudioManager="*res://Scenes/AudioManager.tscn"
-World="*res://Scripts/world.gd"
 
 [display]
 

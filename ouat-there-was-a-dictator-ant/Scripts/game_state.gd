@@ -10,6 +10,12 @@ var coin_item: ItemResource = preload("res://Resource/Item Resources/coin.tres")
 var stick_item: ItemResource = preload("res://Resource/Item Resources/stick.tres")
 var stone_item: ItemResource = preload("res://Resource/Item Resources/stone.tres")
 var water_item: ItemResource = preload("res://Resource/Item Resources/water.tres")
+var anthony_quest: Quest = preload("res://Resource/Quests/anthony_quest.tres")
+var antonia_quest: Quest = preload("res://Resource/Quests/antonia_quest.tres")
+var kasantra_quest: Quest = preload("res://Resource/Quests/kasantra_quest.tres")
+var kasantra_quest_two: Quest = preload("res://Resource/Quests/kasantra_quest_two.tres")
+var samanta_quest: Quest = preload("res://Resource/Quests/samanta_quest.tres")
+var antamaria_quest: Quest = preload("res://Resource/Quests/antamaria_quest.tres")
 #endregion
 
 #region Ant-Speech Pitch values

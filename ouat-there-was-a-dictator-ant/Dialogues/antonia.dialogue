@@ -29,6 +29,7 @@ Antonia: You know I hate the queen, but I will only help if my wife, [wave]Kasan
 set GameState.has_met_antonia = true
 - I will talk to her!
 	Antonia: Good luck with that...
+do QuestManager.add_quest(GameState.antonia_quest)
 	=> quest
 - Can't you ask her to join?
 	Antonia: We are not on speaking terms right now...

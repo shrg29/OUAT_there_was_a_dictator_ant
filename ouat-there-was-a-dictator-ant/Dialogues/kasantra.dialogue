@@ -3,6 +3,7 @@ do GameState.low = 0.9
 do GameState.high = 1.4
 
 if GameState.recruited_ants.has("Kasantra"):
+	do QuestManager.add_quest(GameState.kasantra_quest)
 	Kasantra: The queen's rule is about to end!
 	=> resolve
 else:
@@ -36,7 +37,7 @@ else:
 			=> quest_one
 	else:
 		=> quest_two
-
+do QuestManager.add_quest(GameState.kasantra_quest_two)
 ~ quest_one
 if GameState.kasantra_first_quest_complete == true
 	=> quest_two

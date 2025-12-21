@@ -1,24 +1,19 @@
 extends Node
 
 signal quest_added(quest: Quest)
-signal quest_updated(quest: Quest)
 signal quest_completed(quest: Quest)
 
 var active_quests: Dictionary = {}
 
+#basically marking quest as active
 func add_quest(quest: Quest):
-	if active_quests.has(quest.quest_name):
+	if active_quests.has(quest.quest_type):
 		return
-	active_quests[quest.quest_name] = quest
+	active_quests[quest.quest_type] = quest
 	quest_added.emit(quest)
-
-func progress(item: ItemResource, amount: int):
-	for quest in active_quests.values():
-		var before: int = quest.current_amount
-		quest.add_progress(item, amount)
-
-		if quest.is_completed and before < quest.required_amount:
-			quest_completed.emit(quest)
-			active_quests.erase(quest.quest_name)
-		elif quest.current_amount != before:
-			quest_updated.emit(quest)
+			
+#removing them once they're completed 
+func remove_quest(quest: Quest):
+	if active_quests.has(quest.quest_type):
+		active_quests.erase(quest.quest_type)
+		quest_completed.emit(quest)  #this tells HUD to remove it

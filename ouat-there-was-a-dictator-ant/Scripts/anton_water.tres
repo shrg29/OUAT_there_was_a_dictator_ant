@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_yi45b")
-quest_name = "Fetch Quest"
+quest_name = "Fetch"
 description = "Bring water to Anton"
 npc = "Anton"
 target_item = ExtResource("2_03h0c")

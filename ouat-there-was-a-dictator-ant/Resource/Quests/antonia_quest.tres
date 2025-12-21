@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://bvsnaju82kf61"]
+
+[ext_resource type="Script" uid="uid://cx6e66m36hoot" path="res://Scripts/quest_resource.gd" id="1_aapeh"]
+
+[resource]
+script = ExtResource("1_aapeh")
+quest_type = "Recruit"
+description = "Recruit Kasantra"
+npc = "Antonia"
+metadata/_custom_type_script = "uid://cx6e66m36hoot"
