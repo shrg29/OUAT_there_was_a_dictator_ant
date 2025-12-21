@@ -31,8 +31,8 @@ func _ready() -> void:
 
 func set_type(type: ItemResource):
 	item_type = type
-	item_title = item_type.item_name
-	item_image_holder.texture = item_type.item_texture
+	item_title = type.item_name
+	item_image_holder.texture = type.item_texture
 
 
 #region Pickup
