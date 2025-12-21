@@ -24,55 +24,53 @@ var screen_index: int = 1
 
 func _ready() -> void:
 	pass
-	#await get_tree().process_frame
-	#print("Checking nodes:")
-	#print("HBoxContainer children: ", $HBoxContainer.get_children())
-	#print("Control2 children: ", $HBoxContainer/Control2.get_children())
-	#print("SubViewportContainer children: ", $HBoxContainer/Control2/SubViewportContainer.get_children())
 
-#
-#func update_ant_display(name: String):
-	#await get_tree().process_frame
-	#var new_screen
-	#screen_index = GameState.recruited_ants.size()
-	#print(GameState.recruited_ants.size())
-	#match screen_index:
-		#1:
-			#new_screen = screen_one
-		#2:
-			#new_screen = screen_two
-			#print("hello")
-		#3:
-			#new_screen = screen_three
-		#4:
-			#new_screen = screen_four
-		#5:
-			#new_screen = screen_five
-	#print("New Screen: ", str(new_screen))
-	#
-	#match name:
-		#"Anthony":
-			#var scene = anthony.instantiate()
+
+func update_ant_display(name: String):
+	await get_tree().process_frame
+	var new_screen
+	screen_index = GameState.recruited_ants.size() - 1
+	match screen_index:
+		1:
+			new_screen = screen_one
+			print("reached first screen")
+		2:
+			new_screen = screen_two
+		3:
+			new_screen = screen_three
+		4:
+			new_screen = screen_four
+		5:
+			new_screen = screen_five
+	print("New Screen: ", str(new_screen))
+	
+	match name:
+		"Anthony":
+			print("loaded 0")
+			var scene = anthony.instantiate()
+			print("loaded 1")
 			#scene.position = Vector2(150,150)
-			#new_screen.add_child(scene)
-		#"Antdrew":
-			#var scene = antdrew.instantiate()
-			#scene.position = Vector2(150,150)
-			#new_screen.add_child(scene)
-		#"Antonia":
-			#var scene = antonia.instantiate()
-			#scene.position = Vector2(150,150)
-			#new_screen.add_child(scene)
-		#"Anta Maria":
-			#var scene = anta.instantiate()
-			#scene.position = Vector2(150,150)
-			#new_screen.add_child(scene)
-		#"Samanta":
-			#var scene = samanta.instantiate()
-			#scene.position = Vector2(150,150)
-			#new_screen.add_child(scene)
-		#"Kasantra":
-			#var scene = kasantra.instantiate()
-			#scene.position = Vector2(150,150)
-			#new_screen.add_child(scene)
-			
+			print("loaded 2")
+			new_screen.add_child(scene)
+			print("loaded 3")
+		"Antdrew":
+			var scene = antdrew.instantiate()
+			scene.position = Vector2(150,150)
+			new_screen.add_child(scene)
+		"Antonia":
+			var scene = antonia.instantiate()
+			scene.position = Vector2(150,150)
+			new_screen.add_child(scene)
+		"Anta Maria":
+			var scene = anta.instantiate()
+			scene.position = Vector2(150,150)
+			new_screen.add_child(scene)
+		"Samanta":
+			var scene = samanta.instantiate()
+			scene.position = Vector2(150,150)
+			new_screen.add_child(scene)
+		"Kasantra":
+			var scene = kasantra.instantiate()
+			scene.position = Vector2(150,150)
+			new_screen.add_child(scene)
+			pass
