@@ -13,11 +13,11 @@ var dialogue_anta: DialogueResource = preload("res://Dialogues/anta_maria.dialog
 
 
 func _ready() -> void:
-	spawn_npc("Anta Maria", dialogue_anta, 100, 100, true)
-	spawn_npc("Samantha", dialogue_samantha, 1000, 1000, true)
-	spawn_npc("Antdrew", dialogue_antdrew, 1000, 100, true)
-	spawn_npc("Kasantra", dialogue_kasantra, 100, 1000, true)
-
+	#spawn_npc("Anta Maria", dialogue_anta, 100, 100, true)
+	#spawn_npc("Samantha", dialogue_samantha, 1000, 1000, true)
+	#spawn_npc("Antdrew", dialogue_antdrew, 1000, 100, true)
+	#spawn_npc("Kasantra", dialogue_kasantra, 100, 1000, true)
+	pass
 
 func _process(delta: float) -> void:
 	pass
