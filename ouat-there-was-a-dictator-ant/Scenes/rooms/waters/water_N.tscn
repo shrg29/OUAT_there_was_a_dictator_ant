@@ -172,7 +172,7 @@ shape = SubResource("RectangleShape2D_utmg3")
 
 [node name="npc_2" parent="NPCs" instance=ExtResource("10_mamv6")]
 position = Vector2(310, 549)
-scale = Vector2(-0.6, 0.6)
+scale = Vector2(-1, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_2"]
 

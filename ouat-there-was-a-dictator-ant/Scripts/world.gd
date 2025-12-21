@@ -44,11 +44,16 @@ func _ready() -> void:
 	
 	find_adjacent_rooms()
 	print("start room at: ", start_room.x, ", ", start_room.y)
-	#TransitionScene.change_scene(start_room.scene)
+	
 
-func _process(delta: float) -> void:
-	#if we go through the tutorial, load start room and then set the flag to false
-	pass
+
+func start_game():
+	var hudquests = load("res://Scenes/questHUD.tscn").instantiate()
+	var pause_menu = load("res://Scenes/pause_menu.tscn").instantiate()
+	get_tree().get_root().add_child(pause_menu)
+	get_tree().get_root().add_child(hudquests)
+	TransitionScene.change_scene(start_room.scene)
+
 
 func print_grid():
 	print("Grid Map (Scenes):")

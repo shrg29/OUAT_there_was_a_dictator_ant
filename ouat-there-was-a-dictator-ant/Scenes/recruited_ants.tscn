@@ -1,21 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccy60giw75wxg"]
+[gd_scene load_steps=2 format=3 uid="uid://d4clx5xqy20x0"]
 
 [ext_resource type="Script" uid="uid://bfbtulhwcpk6y" path="res://Scripts/recruited_ants.gd" id="1_tuxey"]
-[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="3_etctk"]
 
-[node name="RecruitedAnts" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="RecruitedAnts" type="CanvasLayer"]
 script = ExtResource("1_tuxey")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.095000006
 anchor_bottom = 0.095000006
-offset_left = 1.0
-offset_right = 845.0
-offset_bottom = 205.0
+offset_top = -102.600006
+offset_right = 844.0
+offset_bottom = 102.399994
 theme_override_constants/separation = 200
 
 [node name="Control" type="Control" parent="HBoxContainer"]
@@ -38,9 +34,8 @@ render_target_update_mode = 4
 
 [node name="item_one" type="Sprite2D" parent="HBoxContainer/Control/SubViewportContainer/screen_one"]
 z_index = 1
-position = Vector2(150, 185.155)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_etctk")
+position = Vector2(150, 150)
+scale = Vector2(2, 2)
 
 [node name="Control2" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -62,9 +57,8 @@ render_target_update_mode = 4
 
 [node name="item_two" type="Sprite2D" parent="HBoxContainer/Control2/SubViewportContainer/screen_two"]
 z_index = 1
-position = Vector2(150, 185.155)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_etctk")
+position = Vector2(150, 150)
+scale = Vector2(2, 2)
 
 [node name="Control3" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -86,9 +80,8 @@ render_target_update_mode = 4
 
 [node name="item_three" type="Sprite2D" parent="HBoxContainer/Control3/SubViewportContainer/screen_three"]
 z_index = 1
-position = Vector2(150, 185.155)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_etctk")
+position = Vector2(150, 150)
+scale = Vector2(2, 2)
 
 [node name="Control4" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -110,9 +103,8 @@ render_target_update_mode = 4
 
 [node name="item_four" type="Sprite2D" parent="HBoxContainer/Control4/SubViewportContainer/screen_four"]
 z_index = 1
-position = Vector2(150, 185.155)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_etctk")
+position = Vector2(150, 150)
+scale = Vector2(2, 2)
 
 [node name="Control5" type="Control" parent="HBoxContainer"]
 layout_mode = 2
@@ -134,6 +126,5 @@ render_target_update_mode = 4
 
 [node name="item_five" type="Sprite2D" parent="HBoxContainer/Control5/SubViewportContainer/screen_five"]
 z_index = 1
-position = Vector2(150, 185.155)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_etctk")
+position = Vector2(150, 150)
+scale = Vector2(2, 2)
