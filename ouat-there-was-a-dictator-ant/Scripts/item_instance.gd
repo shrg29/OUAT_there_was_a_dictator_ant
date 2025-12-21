@@ -1,8 +1,8 @@
 extends Node2D
 
-var print_mode: bool = true
+var print_mode: bool = false
 
-@export var item_type: ItemResource = null
+var item_type: ItemResource
 @onready var item_title: String
 @onready var item_image_holder = $Sprite2D
 @onready var pickup_area = $PickupArea
@@ -33,6 +33,7 @@ func set_type(type: ItemResource):
 	item_type = type
 	item_title = type.item_name
 	item_image_holder.texture = type.item_texture
+	
 
 
 #region Pickup

@@ -26,8 +26,8 @@ var high: float = 0.9
 enum state {TALKING, WALKING}
 var current_state: state = state.WALKING
 
-var recruited_ants: Array[String] = ["Player"] # Array holding all successfully recruited ants
-var held_items: Array[ItemResource] = [] # Array holding all items we are currently carrying
+var recruited_ants: Array[String] # Array holding all successfully recruited ants
+var held_items: Array[ItemResource] # Array holding all items we are currently carrying
 
 signal item_update(valid: bool)
 
@@ -78,7 +78,8 @@ var failed_game: bool = false # Game over check
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
-	
+	recruited_ants.push_back("Player")
+	update_item_display()
 	pass # Replace with function body.
 
 
@@ -154,6 +155,7 @@ func drop_item(location: Vector2):
 	get_tree().root.get_child(0).add_child(item_instance) 
 	
 	item_instance.set_type(dropped_item)
+	item_instance.visible = true
 	
 	AudioManager.play_sfx("drop")
 	update_item_display()
