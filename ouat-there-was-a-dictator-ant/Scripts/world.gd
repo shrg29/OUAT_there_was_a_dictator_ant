@@ -44,7 +44,7 @@ func _ready() -> void:
 	
 	find_adjacent_rooms()
 	print("start room at: ", start_room.x, ", ", start_room.y)
-	#TransitionScene.change_scene(start_room.scene)
+	TransitionScene.change_scene(start_room.scene)
 
 func _process(delta: float) -> void:
 	#if we go through the tutorial, load start room and then set the flag to false

@@ -3,7 +3,7 @@ extends Node2D
 
 
 @export var map_transparency = 0.5
-@onready var mini_map = $TextureRect
+@onready var mini_map = $minimap
 
 
 
