@@ -35,6 +35,7 @@ offset_bottom = 669.0
 texture_normal = ExtResource("2_sjs17")
 texture_pressed = ExtResource("3_u8tnp")
 texture_hover = ExtResource("3_u8tnp")
+texture_focused = ExtResource("3_u8tnp")
 
 [node name="Restart" type="TextureButton" parent="."]
 layout_mode = 0
@@ -45,6 +46,7 @@ offset_bottom = 765.0
 texture_normal = ExtResource("4_stj27")
 texture_pressed = ExtResource("5_ix48p")
 texture_hover = ExtResource("5_ix48p")
+texture_focused = ExtResource("5_ix48p")
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
@@ -55,6 +57,7 @@ offset_bottom = 861.0
 texture_normal = ExtResource("6_524vl")
 texture_pressed = ExtResource("7_0fi7f")
 texture_hover = ExtResource("7_0fi7f")
+texture_focused = ExtResource("7_0fi7f")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

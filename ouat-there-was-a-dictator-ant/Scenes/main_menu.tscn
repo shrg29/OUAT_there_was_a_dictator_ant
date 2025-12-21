@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bcf2u4pg3faou"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Script" uid="uid://cld56ux13h6uk" path="res://Scripts/main_menu.gd" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://ds2erq3wfrrg5" path="res://assets/ui/play normal.png" id="2_n45e2"]
 [ext_resource type="Texture2D" uid="uid://ddew7mnorgndl" path="res://assets/ui/bgbtetile.png" id="2_t1dhk"]
 [ext_resource type="Texture2D" uid="uid://3wmquhbpun8d" path="res://assets/ui/rocktitle.png" id="2_vr1f0"]
@@ -70,6 +70,7 @@ layout_mode = 2
 texture_normal = ExtResource("2_n45e2")
 texture_pressed = ExtResource("3_opfnp")
 texture_hover = ExtResource("3_opfnp")
+texture_focused = ExtResource("3_opfnp")
 stretch_mode = 3
 
 [node name="Quit" type="TextureButton" parent="Container"]
@@ -78,6 +79,7 @@ layout_mode = 2
 texture_normal = ExtResource("4_cp0ys")
 texture_pressed = ExtResource("5_yhxw7")
 texture_hover = ExtResource("5_yhxw7")
+texture_focused = ExtResource("5_yhxw7")
 stretch_mode = 3
 
 [node name="Logo" type="Sprite2D" parent="."]
