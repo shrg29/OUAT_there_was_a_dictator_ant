@@ -8,7 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if GameState.recruited_ants.has("Anthony"):
+		$Hole.visible = true
+		$Hole/Area2D/CollisionShape2D.disabled = false
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

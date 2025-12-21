@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_0h61n"]
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_ggdcl"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_bxexv"]
-[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_vidtx"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/carpenter.tscn" id="9_hcxio"]
-[ext_resource type="PackedScene" uid="uid://dcioych7p8gul" path="res://Scenes/npc/npc_carpenter.tscn" id="10_hcxio"]
-[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_rv7ix"]
-[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="12_higge"]
+[ext_resource type="PackedScene" uid="uid://u7piil3xi02c" path="res://Scenes/map_generator.tscn" id="8_vidtx"]
+[ext_resource type="PackedScene" uid="uid://dfumpt5oalxnq" path="res://Scenes/level design/carpenter.tscn" id="9_hcxio"]
+[ext_resource type="PackedScene" uid="uid://db3pisyt8t6ne" path="res://Scenes/npc/npc_carpenter.tscn" id="10_hcxio"]
+[ext_resource type="PackedScene" uid="uid://bs4j75o23dak5" path="res://Scenes/player.tscn" id="11_rv7ix"]
+[ext_resource type="PackedScene" path="res://Scenes/item_instance.tscn" id="12_higge"]
 [ext_resource type="Resource" uid="uid://crtebwq7d3cgc" path="res://Resource/Item Resources/stick.tres" id="13_ky485"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
@@ -162,7 +162,7 @@ scale = Vector2(-1, 1)
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="npc_carpenter" parent="NPCs" instance=ExtResource("10_hcxio")]
-position = Vector2(804, 387.00003)
+position = Vector2(777, 380)
 scale = Vector2(-1, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_carpenter"]
