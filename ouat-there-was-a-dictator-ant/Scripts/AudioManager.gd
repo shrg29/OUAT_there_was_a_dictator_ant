@@ -32,6 +32,8 @@ func play_sfx(name: String):
 	sfx_player.stream = sfx[name]
 	sfx_player.play()
 
+func stop_sfx():
+	sfx_player.stop()
 
 func play_sfx_special(name: String, low: float, high: float):
 	if not sfx.has(name):
