@@ -165,8 +165,8 @@ rotation = 6.2831855
 
 [node name="items" type="Node2D" parent="."]
 
-[node name="coin" parent="items" instance=ExtResource("11_4ubd6")]
-position = Vector2(931, 262)
+[node name="ItemInstance" parent="items" instance=ExtResource("11_4ubd6")]
+position = Vector2(932, 233)
 item_type = ExtResource("11_fyv6j")
 
 [node name="player" parent="." instance=ExtResource("13_jdxtw")]

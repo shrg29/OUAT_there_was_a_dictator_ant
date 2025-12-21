@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnvpr65b4wag1"]
+[gd_scene load_steps=8 format=3 uid="uid://bnvpr65b4wag1"]
 
 [ext_resource type="Script" uid="uid://dqiawgm43lify" path="res://Scripts/npcs/npc_2.gd" id="1_0q3uk"]
 [ext_resource type="Texture2D" uid="uid://8f5br3fmyk2y" path="res://assets/npc/npc3.png" id="2_dyi55"]
-[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="3_dyi55"]
+[ext_resource type="PackedScene" uid="uid://c0vst70pdtt7i" path="res://Scenes/level design/arrow.tscn" id="3_dyi55"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
 length = 0.001
@@ -333,10 +333,6 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_0q3uk"]
 radius = 249.12848
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hfcnc"]
-atlas = ExtResource("3_dyi55")
-region = Rect2(447.4865, 850.8204, 101.33331, 128.61542)
-
 [node name="npc_2" type="Node2D"]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_0q3uk")
@@ -431,6 +427,5 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_0q3uk")
 
-[node name="Marker" type="Sprite2D" parent="."]
-position = Vector2(2, -185)
-texture = SubResource("AtlasTexture_hfcnc")
+[node name="Marker" parent="." instance=ExtResource("3_dyi55")]
+position = Vector2(0, -153.33333)

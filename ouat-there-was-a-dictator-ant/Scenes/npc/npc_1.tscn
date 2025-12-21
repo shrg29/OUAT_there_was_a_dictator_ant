@@ -1,17 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3stsypduh2pp"]
+[gd_scene load_steps=5 format=3 uid="uid://b3stsypduh2pp"]
 
 [ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="1_uw1cf"]
-[ext_resource type="Script" path="res://Scripts/npcs/npc_1.gd" id="2_d48i8"]
+[ext_resource type="Script" uid="uid://cnod62yboit1o" path="res://Scripts/npcs/npc_1.gd" id="2_d48i8"]
 [ext_resource type="Texture2D" uid="uid://g6s667vsls58" path="res://assets/npc/npc2.png" id="2_ywg0e"]
 [ext_resource type="Resource" uid="uid://bhriuh2vm64md" path="res://Dialogues/anthony.dialogue" id="3_2823j"]
-[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="5_2823j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4qa4x"]
-atlas = ExtResource("5_2823j")
-region = Rect2(447.4865, 850.8204, 101.33331, 128.61542)
 
 [node name="npc_1" instance=ExtResource("1_uw1cf")]
-scale = Vector2(0.6, 0.6)
 script = ExtResource("2_d48i8")
 npc_name = "Anthony"
 npc_dialogue = ExtResource("3_2823j")
@@ -75,7 +69,3 @@ region_rect = Rect2(4.3381195, 6.2236366, 65.54242, 105.84924)
 [node name="left_antenna" parent="controller/top body/head" index="1"]
 texture = ExtResource("2_ywg0e")
 region_rect = Rect2(109.78552, 17.407585, 85.71176, 92.72164)
-
-[node name="Marker2" type="Sprite2D" parent="." index="3"]
-position = Vector2(2, -185)
-texture = SubResource("AtlasTexture_4qa4x")
