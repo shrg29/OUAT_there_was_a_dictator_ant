@@ -8,7 +8,7 @@ var screen_index: int = 1
 @onready var screen_four = $HBoxContainer/Control4/SubViewportContainer/screen_four
 @onready var screen_five = $HBoxContainer/Control5/SubViewportContainer/screen_five
 
-@onready var anthony = preload("res://Scenes/npc/npc_3.tscn")
+@onready var anthony = preload("res://Scenes/npc/npc_1.tscn")
 @onready var antdrew = preload("res://Scenes/npc/npc_2.tscn")
 @onready var antonia = preload("res://Scenes/npc/npc_3.tscn")
 @onready var anta = preload("res://Scenes/npc/npc_4.tscn")
@@ -31,7 +31,7 @@ func _ready() -> void:
 func update_ant_display(name: String):
 	await get_tree().process_frame
 	var new_screen
-	screen_index = GameState.recruited_ants.size() + 1
+	screen_index = GameState.recruited_ants.size() - 1
 	match screen_index:
 		1:
 			new_screen = screen_one

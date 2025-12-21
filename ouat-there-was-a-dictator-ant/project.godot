@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OUAT There was a Dictator Ant"
-run/main_scene="uid://cugj1muun1qmt"
+run/main_scene="uid://bcf2u4pg3faou"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
