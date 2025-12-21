@@ -13,24 +13,3 @@ offset_right = 1788.0
 offset_bottom = 48.0
 scale = Vector2(4.0546412, 4.2136025)
 expand_mode = 3
-
-[node name="GameTimer" type="Timer" parent="."]
-wait_time = 300.0
-one_shot = true
-
-[node name="TimerLabel" type="Label" parent="."]
-offset_left = 1781.0
-offset_top = 192.0
-offset_right = 1886.0
-offset_bottom = 215.0
-
-[node name="Label" type="Label" parent="."]
-offset_left = 1618.0
-offset_top = 226.0
-offset_right = 1900.0
-offset_bottom = 275.0
-text = "Watch out for the time.. 
-Queen is already getting suspicious. "
-horizontal_alignment = 2
-
-[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

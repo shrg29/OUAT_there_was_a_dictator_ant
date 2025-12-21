@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="OUAT There was a Dictator Ant"
-run/main_scene="uid://bcf2u4pg3faou"
+run/main_scene="uid://cugj1muun1qmt"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,9 +19,9 @@ config/icon="res://icon.svg"
 
 GameState="*res://Scripts/game_state.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+AudioManager="*res://Scenes/AudioManager.tscn"
 AntHillGenerator="*res://Scripts/ant_hill_generator.gd"
 TransitionScene="*res://Scenes/transition_scene.tscn"
-AudioManager="*res://Scenes/AudioManager.tscn"
 World="*res://Scripts/world.gd"
 QuestManager="*res://Scripts/QuestManager.gd"
 RecruitedAnts="*res://Scenes/recruited_ants.tscn"
@@ -116,7 +116,7 @@ drop_item={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/anthony.dialogue", "res://Dialogues/anton.dialogue", "res://Dialogues/antonia.dialogue", "res://Dialogues/kasantra.dialogue", "res://Dialogues/antdrew.dialogue", "res://Dialogues/queen.dialogue", "res://Dialogues/anta_maria.dialogue", "res://Dialogues/samanta.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/anthony.dialogue", "res://Dialogues/anton.dialogue", "res://Dialogues/antonia.dialogue", "res://Dialogues/kasantra.dialogue", "res://Dialogues/antdrew.dialogue", "res://Dialogues/queen.dialogue", "res://Dialogues/anta_maria.dialogue", "res://Dialogues/samanta.dialogue", "res://Dialogues/Samantha.dialogue")
 
 [rendering]
 
