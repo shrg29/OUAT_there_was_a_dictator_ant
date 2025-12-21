@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dpw82biplsnm2"]
+[gd_scene load_steps=28 format=3 uid="uid://dpw82biplsnm2"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_jqu84"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_pdtik"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_nsun3"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/water.tscn" id="9_r25fx"]
 [ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="10_cvi0p"]
+[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="11_h37sp"]
+[ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="12_vgo6x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(30.209827, 20)
@@ -53,7 +55,7 @@ size = Vector2(30.828016, 70.132935)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgo6x"]
 size = Vector2(98.75, 55.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_jqu84")
 
 [node name="rectangle" type="Node2D" parent="."]
@@ -171,13 +173,42 @@ shape = SubResource("RectangleShape2D_h37sp")
 
 [node name="npc_2" parent="NPCs" instance=ExtResource("10_cvi0p")]
 position = Vector2(1572, 545)
-scale = Vector2(0.6, 0.6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_2/StaticBody2D"]
 position = Vector2(-2.375, 129.75)
 shape = SubResource("RectangleShape2D_vgo6x")
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="water" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(530, 706)
+item_type = ExtResource("12_vgo6x")
+
+[node name="water2" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(419, 425)
+item_type = ExtResource("12_vgo6x")
+
+[node name="water3" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(1131, 296)
+item_type = ExtResource("12_vgo6x")
+
+[node name="water4" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(419, 577)
+item_type = ExtResource("12_vgo6x")
+
+[node name="water5" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(556, 499)
+item_type = ExtResource("12_vgo6x")
+
+[node name="water6" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(1105, 462)
+item_type = ExtResource("12_vgo6x")
+
+[node name="water7" parent="items" instance=ExtResource("11_h37sp")]
+position = Vector2(1260, 437)
+item_type = ExtResource("12_vgo6x")
 
 [node name="player" parent="." instance=ExtResource("9_nsun3")]
 position = Vector2(990, 545)
