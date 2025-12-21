@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpgosjlqkwyn0"]
+[gd_scene load_steps=4 format=3 uid="uid://dpgosjlqkwyn0"]
 
 [ext_resource type="Script" uid="uid://d371bdo41og2a" path="res://Scripts/item_instance.gd" id="1_mpdop"]
-[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="3_gp3d1"]
+[ext_resource type="PackedScene" uid="uid://c0vst70pdtt7i" path="res://Scenes/level design/arrow.tscn" id="2_n0lvx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpdop"]
 radius = 66.068146
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6ets"]
-atlas = ExtResource("3_gp3d1")
-region = Rect2(589.7429, 837.1793, 126.66669, 142.25647)
 
 [node name="ItemInstance" type="Node2D" groups=["item"]]
 z_index = 5
@@ -24,8 +20,5 @@ z_index = 5
 z_index = 5
 shape = SubResource("CircleShape2D_mpdop")
 
-[node name="Item_Marker" type="Sprite2D" parent="."]
-z_index = 5
-position = Vector2(0, -60.999996)
-scale = Vector2(0.4108911, 0.34375)
-texture = SubResource("AtlasTexture_u6ets")
+[node name="Item_Marker" parent="." instance=ExtResource("2_n0lvx")]
+position = Vector2(1, -72)

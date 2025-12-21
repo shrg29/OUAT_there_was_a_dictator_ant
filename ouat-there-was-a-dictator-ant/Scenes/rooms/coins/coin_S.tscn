@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0xvusecw4m05"]
+[gd_scene load_steps=25 format=3 uid="uid://d0xvusecw4m05"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_f1c5p"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_ecxdc"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_nwu4w"]
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_ry5ar"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_sbtts"]
-[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_4jb2v"]
+[ext_resource type="PackedScene" uid="uid://u7piil3xi02c" path="res://Scenes/map_generator.tscn" id="8_4jb2v"]
 [ext_resource type="PackedScene" uid="uid://cdhdftwo7gdhr" path="res://Scenes/level design/torch.tscn" id="9_2fm81"]
 [ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="11_4ubd6"]
+[ext_resource type="Resource" uid="uid://cqwc8p6bxdoc7" path="res://Resource/Item Resources/coin.tres" id="11_fyv6j"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="13_jdxtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
@@ -166,6 +167,7 @@ rotation = 6.2831855
 
 [node name="coin" parent="items" instance=ExtResource("11_4ubd6")]
 position = Vector2(931, 262)
+item_type = ExtResource("11_fyv6j")
 
 [node name="player" parent="." instance=ExtResource("13_jdxtw")]
 position = Vector2(990, 545)

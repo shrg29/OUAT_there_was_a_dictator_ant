@@ -2,7 +2,7 @@ extends Node2D
 
 var print_mode: bool = false
 
-var item_type: ItemResource
+@export var item_type: ItemResource
 @onready var item_title: String
 @onready var item_image_holder = $Sprite2D
 @onready var pickup_area = $PickupArea
