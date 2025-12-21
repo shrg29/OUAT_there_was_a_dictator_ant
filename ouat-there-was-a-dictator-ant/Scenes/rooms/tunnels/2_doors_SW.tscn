@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqdlxv2eq7vtn"]
+[gd_scene load_steps=32 format=3 uid="uid://dqdlxv2eq7vtn"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_87c14"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_ssjsv"]
@@ -8,7 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_0k5pg"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_5fsj7"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_842tf"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/bottle_cap.tscn" id="9_jfye6"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_jwoou"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/leaf_1.tscn" id="10_l8ifc"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/leaf_3.tscn" id="11_0k5pg"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/waterpuddle_3.tscn" id="12_luip6"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/sugar.tscn" id="13_dmf5t"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/pile_of_wood.tscn" id="14_853uk"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/spill_1.tscn" id="15_awnvd"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/spill_3.tscn" id="16_o2nv6"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/gem.tscn" id="17_trenq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(30.73819, 20)
@@ -44,6 +53,9 @@ size = Vector2(22.65213, 27.866898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fsj7"]
+size = Vector2(124.5, 106.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_87c14")
@@ -144,6 +156,54 @@ position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="map generator" parent="." instance=ExtResource("8_842tf")]
+
+[node name="Cosmetics" type="Node2D" parent="."]
+
+[node name="bottle_cap" parent="Cosmetics" instance=ExtResource("9_jfye6")]
+position = Vector2(1457, 338)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/bottle_cap"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/bottle_cap/StaticBody2D"]
+position = Vector2(-4.25, 6.75)
+shape = SubResource("RectangleShape2D_5fsj7")
+
+[node name="leaf1" parent="Cosmetics" instance=ExtResource("10_l8ifc")]
+position = Vector2(477.00006, 283)
+rotation = 0.5235988
+scale = Vector2(0.6204677, 0.5992999)
+
+[node name="leaf3" parent="Cosmetics" instance=ExtResource("11_0k5pg")]
+position = Vector2(1567.9999, 813)
+rotation = -0.5235988
+scale = Vector2(0.9909766, 1.3726056)
+
+[node name="waterpuddle3" parent="Cosmetics" instance=ExtResource("12_luip6")]
+position = Vector2(1397, 867)
+rotation = 0.5235988
+
+[node name="sugar" parent="Cosmetics" instance=ExtResource("13_dmf5t")]
+position = Vector2(851.5, 450)
+
+[node name="pile of wood" parent="Cosmetics" instance=ExtResource("14_853uk")]
+position = Vector2(227, 874)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/pile of wood"]
+position = Vector2(-4, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/pile of wood/StaticBody2D"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_5fsj7")
+
+[node name="spill1" parent="Cosmetics" instance=ExtResource("15_awnvd")]
+position = Vector2(318, 347)
+
+[node name="spill3" parent="Cosmetics" instance=ExtResource("16_o2nv6")]
+position = Vector2(565, 809)
+rotation = 0.2617994
+
+[node name="gem" parent="Cosmetics" instance=ExtResource("17_trenq")]
+position = Vector2(1564.5, 547)
 
 [node name="player" parent="." instance=ExtResource("9_jwoou")]
 position = Vector2(990, 545)

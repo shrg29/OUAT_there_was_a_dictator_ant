@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://ci2oiib4aaxh5"]
+
+[ext_resource type="Script" uid="uid://cx6e66m36hoot" path="res://Scripts/quest_resource.gd" id="1_0krl8"]
+
+[resource]
+script = ExtResource("1_0krl8")
+quest_type = "Good Deal"
+description = "Bring one coin to Anta Maria"
+npc = "Anta Maria"
+metadata/_custom_type_script = "uid://cx6e66m36hoot"

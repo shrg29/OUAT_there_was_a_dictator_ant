@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://b4nl5l0vgdoh2"]
+
+[ext_resource type="Script" uid="uid://cx6e66m36hoot" path="res://Scripts/quest_resource.gd" id="1_32ueo"]
+
+[resource]
+script = ExtResource("1_32ueo")
+quest_type = "Fetch"
+description = "Bring one stick to Anthony"
+npc = "Anthony"
+metadata/_custom_type_script = "uid://cx6e66m36hoot"

@@ -1,6 +1,6 @@
 extends Node2D
 
-enum tile_type {ROOM, WALL, NONE, START, NURSERY, WATER, CARPENTER, FOOD, QUEEN}
+enum tile_type {ROOM, WALL, NONE, START, NURSERY, WATER, CARPENTER, FOOD, QUEEN, COIN}
 
 var maze
 var current
@@ -115,6 +115,7 @@ func get_mini_map() -> ImageTexture:
 			match n.type:
 				tile_type.WALL:      c = Color.TRANSPARENT
 				tile_type.ROOM:      c = Color(0.424, 0.372, 0.318, map_transparency)
+				tile_type.COIN:      c = Color(0.424, 0.372, 0.318, map_transparency)
 				tile_type.START:     c = Color(0.401, 0.065, 0.632, map_transparency)
 				tile_type.QUEEN:     c = Color(1.0, 0.004, 0.0, map_transparency)
 				tile_type.NURSERY:   c = Color(0.79, 0.214, 0.53, map_transparency)
@@ -164,7 +165,7 @@ func generate_map():
 		
 
 		# Stop when we have enough dead ends
-		if dead_ends.size() >= 5 && steps == 0:
+		if dead_ends.size() >= 6 && steps == 0:
 			spread_rooms()
 			break
 
@@ -303,6 +304,10 @@ func spread_rooms():
 	
 	i = randi_range(0, dead_ends.size()-1)
 	dead_ends[i].type = tile_type.FOOD
+	dead_ends.remove_at(i)
+	
+	i = randi_range(0, dead_ends.size()-1)
+	dead_ends[i].type = tile_type.COIN
 	dead_ends.remove_at(i)
 	
 	start_room.type = tile_type.START

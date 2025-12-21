@@ -1,7 +1,7 @@
 extends Node
 
 
-var print_mode: bool = true
+var print_mode: bool = false
 
 
 #region Item Preloads
@@ -10,6 +10,12 @@ var coin_item: ItemResource = preload("res://Resource/Item Resources/coin.tres")
 var stick_item: ItemResource = preload("res://Resource/Item Resources/stick.tres")
 var stone_item: ItemResource = preload("res://Resource/Item Resources/stone.tres")
 var water_item: ItemResource = preload("res://Resource/Item Resources/water.tres")
+var anthony_quest: Quest = preload("res://Resource/Quests/anthony_quest.tres")
+var antonia_quest: Quest = preload("res://Resource/Quests/antonia_quest.tres")
+var kasantra_quest: Quest = preload("res://Resource/Quests/kasantra_quest.tres")
+var kasantra_quest_two: Quest = preload("res://Resource/Quests/kasantra_quest_two.tres")
+var samanta_quest: Quest = preload("res://Resource/Quests/samanta_quest.tres")
+var antamaria_quest: Quest = preload("res://Resource/Quests/antamaria_quest.tres")
 #endregion
 
 #region Ant-Speech Pitch values
@@ -72,8 +78,7 @@ var failed_game: bool = false # Game over check
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
-	pick_up_item(water_item)
-	#pick_up_item(water_item)
+	
 	pass # Replace with function body.
 
 
@@ -135,7 +140,21 @@ func give_item(gift: ItemResource, amount: int):
 
 func drop_item(location: Vector2):
 	# TODO: function to drop the item on the ground at "location"
-	held_items.remove_at(0)
+	if held_items.size() == 0 : return #if no item return
+	var dropped_item = held_items.pop_at(0) #pop the item out of the array
+	
+	print("Dropping item: ", dropped_item.item_name if dropped_item else "NULL")
+	print("Item texture: ", dropped_item.item_texture if dropped_item else "NULL")
+	
+	var item_instance_preload = preload("res://Scenes/item_instance.tscn") #load the instance
+	var item_instance = item_instance_preload.instantiate()
+	
+	item_instance.global_position = location #set up the location no clue if this actually works
+	
+	get_tree().root.get_child(0).add_child(item_instance) 
+	
+	item_instance.set_type(dropped_item)
+	
 	AudioManager.play_sfx("drop")
 	update_item_display()
 #endregion
@@ -152,4 +171,5 @@ func recruit_ant(name: String) -> Array[String]:
 	recruited_ants.push_back(name)
 	if print_mode:
 		print("Recruited Ants: ", recruited_ants)
+	RecruitedAnts.update_ant_display(name)
 	return recruited_ants

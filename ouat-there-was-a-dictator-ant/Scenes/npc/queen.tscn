@@ -379,7 +379,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n0jy4"]
-radius = 412.00122
+radius = 338.2499
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkvac"]
 atlas = ExtResource("3_isx62")

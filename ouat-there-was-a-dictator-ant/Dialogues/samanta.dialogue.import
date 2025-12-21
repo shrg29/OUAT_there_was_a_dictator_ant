@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtqdkmwmj55fp"
+path="res://.godot/imported/samanta.dialogue-4f18e4438531be1eb6e64cb1126c3f50.tres"
+
+[deps]
+
+source_file="res://Dialogues/samanta.dialogue"
+dest_files=["res://.godot/imported/samanta.dialogue-4f18e4438531be1eb6e64cb1126c3f50.tres"]
+
+[params]
+
+defaults=true

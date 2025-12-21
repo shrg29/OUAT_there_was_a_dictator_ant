@@ -20,10 +20,12 @@ else:
 set GameState.has_met_anta = true
 Anta Maria: All you want is to stage a revolution?
 Anta Maria: Best deal I ever made.
+do QuestManager.add_quest(GameState.antamaria_quest)
 if GameState.count_item(GameState.anta_demand_item) >= GameState.anta_demand_amount:
 	- Here you go (Give {{GameState.anta_demand_amount}} {{GameState.anta_demand_item.item_name}}).
 		do GameState.give_item(GameState.anta_demand_item, GameState.anta_demand_amount)
 		do GameState.recruit_ant("Anta Maria")
+		do QuestManager.remove_quest(GameState.antamaria_quest)
 		do AudioManager.play_sfx("task_completed")
 		=> resolve
 	- Maybe later.

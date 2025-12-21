@@ -3,8 +3,8 @@ extends Node2D
 
 @export var print_mode: bool = true
 
-@export var npc_name: String = "Samantha"
-@export var npc_dialogue: DialogueResource = preload("res://Dialogues/samantha.dialogue")
+@export var npc_name: String = "Samanta"
+@export var npc_dialogue: DialogueResource = preload("res://Dialogues/samanta.dialogue")
 
 @export var is_interactable: bool = true
 @onready var marker: Sprite2D = $Marker
