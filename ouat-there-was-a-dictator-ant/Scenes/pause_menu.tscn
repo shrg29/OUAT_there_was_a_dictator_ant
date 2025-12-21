@@ -1,49 +1,57 @@
-[gd_scene load_steps=8 format=3 uid="uid://chxah4y7fg02r"]
+[gd_scene load_steps=10 format=3 uid="uid://mfc0ogdx7hlm"]
 
-[ext_resource type="Script" uid="uid://cpryn8rjhdfqn" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="Texture2D" uid="uid://dodvklefpmtqg" path="res://assets/ui/resume_normal.png" id="2_sjs17"]
+[ext_resource type="Texture2D" uid="uid://c36cu17p8jau" path="res://assets/ui/logo.png" id="2_stj27"]
+[ext_resource type="Texture2D" uid="uid://cfq6l8pbnm07m" path="res://assets/ui/patternall.png" id="2_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://cmnclarotmy7p" path="res://assets/ui/resume_hover.png" id="3_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://cjn2e3ormgk27" path="res://assets/ui/restart_normal.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://c16e1b51gdn0u" path="res://assets/ui/restart_hover.png" id="5_ix48p"]
 [ext_resource type="Texture2D" uid="uid://dnykaheleixoj" path="res://assets/ui/quit normal.png" id="6_524vl"]
 [ext_resource type="Texture2D" uid="uid://d0i5rq1joupho" path="res://assets/ui/quit_hover.png" id="7_0fi7f"]
 
-[node name="Control" type="Control"]
+[node name="CanvasLayer" type="Control"]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_k0w1u")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(417, 298)
+scale = Vector2(1.3416846, 1.3416846)
+texture = ExtResource("2_stj27")
+
+[node name="Patternall" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.10980392)
+position = Vector2(960, 540)
+texture = ExtResource("2_u8tnp")
 
 [node name="Resume" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 770.5
-offset_top = 344.0
-offset_right = 1149.5
-offset_bottom = 435.0
+offset_left = 218.0
+offset_top = 578.0
+offset_right = 597.0
+offset_bottom = 669.0
 texture_normal = ExtResource("2_sjs17")
 texture_pressed = ExtResource("3_u8tnp")
 texture_hover = ExtResource("3_u8tnp")
 
 [node name="Restart" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 770.5
-offset_top = 439.0
-offset_right = 1149.5
-offset_bottom = 531.0
+offset_left = 218.0
+offset_top = 673.0
+offset_right = 597.0
+offset_bottom = 765.0
 texture_normal = ExtResource("4_stj27")
 texture_pressed = ExtResource("5_ix48p")
 texture_hover = ExtResource("5_ix48p")
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 770.5
-offset_top = 535.0
-offset_right = 1149.5
-offset_bottom = 627.0
+offset_left = 218.0
+offset_top = 769.0
+offset_right = 597.0
+offset_bottom = 861.0
 texture_normal = ExtResource("6_524vl")
 texture_pressed = ExtResource("7_0fi7f")
 texture_hover = ExtResource("7_0fi7f")

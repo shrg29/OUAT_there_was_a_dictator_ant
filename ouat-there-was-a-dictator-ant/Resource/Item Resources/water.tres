@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_hbfjb"]
 [ext_resource type="Script" uid="uid://d3fsgbumnpg0" path="res://Resource/item_resource.gd" id="1_ihvn1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sy35t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbfjb"]
 atlas = ExtResource("1_hbfjb")
-region = Rect2(784.6147, 43.07728, 76.177124, 102.75059)
+region = Rect2(703.1235, 161.7713, 58.461548, 63.776215)
 
 [resource]
 script = ExtResource("1_ihvn1")
 item_name = "Water"
-item_texture = SubResource("AtlasTexture_sy35t")
+item_texture = SubResource("AtlasTexture_hbfjb")
 metadata/_custom_type_script = "uid://d3fsgbumnpg0"

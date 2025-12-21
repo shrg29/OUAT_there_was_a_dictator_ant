@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=3 uid="uid://dx4uep11pe6wn"]
+
+[ext_resource type="Texture2D" uid="uid://kgi8j6fbjkrf" path="res://assets/ui/win1.jpg" id="1_hn2st"]
+[ext_resource type="Script" uid="uid://cecuibkayhcic" path="res://Scripts/win_ending.gd" id="1_lecev"]
+[ext_resource type="Texture2D" uid="uid://emo8jin1sw63" path="res://assets/ui/evil_ending.jpg" id="2_vfivc"]
+[ext_resource type="Texture2D" uid="uid://cjn2e3ormgk27" path="res://assets/ui/restart_normal.png" id="3_vfivc"]
+[ext_resource type="Texture2D" uid="uid://cmnclarotmy7p" path="res://assets/ui/resume_hover.png" id="4_twws2"]
+[ext_resource type="Texture2D" uid="uid://dnykaheleixoj" path="res://assets/ui/quit normal.png" id="5_uqrqh"]
+[ext_resource type="Texture2D" uid="uid://d0i5rq1joupho" path="res://assets/ui/quit_hover.png" id="6_0i4m8"]
+
+[sub_resource type="Theme" id="Theme_vfivc"]
+
+[sub_resource type="Animation" id="Animation_vfivc"]
+resource_name = "win"
+length = 5.333337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.8333335, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Win1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.8000002, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_twws2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Win1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uqrqh"]
+_data = {
+&"RESET": SubResource("Animation_twws2"),
+&"win": SubResource("Animation_vfivc")
+}
+
+[node name="win_endingà" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lecev")
+
+[node name="maybe?" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_vfivc")
+
+[node name="Win1" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_hn2st")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -813.0
+offset_right = 410.0
+offset_bottom = -553.0
+grow_vertical = 0
+alignment = 1
+
+[node name="Start" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_vfivc")
+texture_normal = ExtResource("3_vfivc")
+texture_pressed = ExtResource("4_twws2")
+texture_hover = ExtResource("4_twws2")
+stretch_mode = 3
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_uqrqh")
+texture_pressed = ExtResource("6_0i4m8")
+texture_hover = ExtResource("6_0i4m8")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uqrqh")
+}
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
