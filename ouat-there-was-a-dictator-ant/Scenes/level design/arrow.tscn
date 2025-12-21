@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0vst70pdtt7i"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_ss7rc"]
+
+[node name="arrow" type="Sprite2D"]
+texture = ExtResource("1_ss7rc")
+region_enabled = true
+region_rect = Rect2(848.413, 409.23572, 82.33423, 68.56937)

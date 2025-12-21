@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf7dvmnvo5k7l"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_l42st"]
+
+[node name="water_drop" type="Sprite2D"]
+texture = ExtResource("1_l42st")
+region_enabled = true
+region_rect = Rect2(708.79706, 158.4147, 46.13739, 62.32898)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfqw4ifr2e8j1"]
+
+[ext_resource type="Texture2D" uid="uid://degmdb1gygut5" path="res://assets/level_art/level_design/hole.png" id="1_e11bc"]
+
+[node name="Hole" type="Sprite2D"]
+texture = ExtResource("1_e11bc")
