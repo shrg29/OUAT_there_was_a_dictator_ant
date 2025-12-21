@@ -48,6 +48,10 @@ func _ready() -> void:
 
 
 func start_game():
+	var hudquests = load("res://Scenes/questHUD.tscn").instantiate()
+	var pause_menu = load("res://Scenes/pause_menu.tscn").instantiate()
+	get_tree().get_root().add_child(pause_menu)
+	get_tree().get_root().add_child(hudquests)
 	TransitionScene.change_scene(start_room.scene)
 
 
