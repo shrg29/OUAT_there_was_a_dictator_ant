@@ -79,6 +79,8 @@ func _ready() -> void:
 		_connect_to_item(item)
 	
 	get_tree().node_added.connect(_on_node_added)
+	
+	GameState.item_update.connect(update_item_holder)
 
 
 #region Interaction
@@ -167,9 +169,9 @@ func _get_closest_item(): # setting closest item as current interactable
 	return closest
 
 
-func update_item_holder(item: ItemResource, valid: bool):
+func update_item_holder(valid: bool):
 	if valid == true:
-		item_holder.texture = item.item_texture
+		item_holder.texture = GameState.held_items[0].item_texture
 		item_holder.visible = true
 	else:
 		item_holder.visible = false
