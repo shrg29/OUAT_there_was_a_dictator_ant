@@ -73,23 +73,25 @@ func update_ant_display(name: String):
 			pass
 
 func update_item_holder(valid: bool):
-	if GameState.held_items.size() >= 6:
-		item_five.texture = GameState.held_items[5].item_texture
-	else:
-		item_five.texture = null
-	if GameState.held_items.size() >= 5:
-		item_four.texture = GameState.held_items[4].item_texture
-	else:
-		item_four.texture = null
-	if GameState.held_items.size() >= 4:
-		item_three.texture = GameState.held_items[3].item_texture
-	else:
-		item_three.texture = null
-	if GameState.held_items.size() >= 3:
-		item_two.texture = GameState.held_items[2].item_texture
-	else:
-		item_two.texture = null
-	if GameState.held_items.size() >= 2:
-		item_one.texture = GameState.held_items[1].item_texture
-	else:
-		item_one.texture = null
+	await get_tree().process_frame
+	if valid == true:
+		if GameState.held_items.size() >= 6:
+			item_five.texture = GameState.held_items[5].item_texture
+		else:
+			item_five.texture = null
+		if GameState.held_items.size() >= 5:
+			item_four.texture = GameState.held_items[4].item_texture
+		else:
+			item_four.texture = null
+		if GameState.held_items.size() >= 4:
+			item_three.texture = GameState.held_items[3].item_texture
+		else:
+			item_three.texture = null
+		if GameState.held_items.size() >= 3:
+			item_two.texture = GameState.held_items[2].item_texture
+		else:
+			item_two.texture = null
+		if GameState.held_items.size() >= 2:
+			item_one.texture = GameState.held_items[1].item_texture
+		else:
+			item_one.texture = null

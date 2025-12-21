@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="9_a4ydb"]
 [ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="10_x6ncj"]
 [ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="11_383b8"]
-[ext_resource type="PackedScene" uid="uid://dcioych7p8gul" path="res://Scenes/npc/npc_carpenter.tscn" id="12_17ygw"]
+[ext_resource type="PackedScene" uid="uid://db3pisyt8t6ne" path="res://Scenes/npc/npc_carpenter.tscn" id="12_17ygw"]
 [ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="13_4u8n4"]
-[ext_resource type="PackedScene" uid="uid://ce6pjae377nhv" path="res://Scenes/npc/queen.tscn" id="14_2343q"]
+[ext_resource type="PackedScene" uid="uid://b3koo8up5q3wf" path="res://Scenes/npc/queen.tscn" id="14_2343q"]
 [ext_resource type="PackedScene" uid="uid://d4clx5xqy20x0" path="res://Scenes/recruited_ants.tscn" id="14_xi0es"]
 
 [node name="Testing" type="Node2D"]
@@ -73,6 +73,7 @@ position = Vector2(815, 332)
 
 [node name="npc_nursery" parent="." instance=ExtResource("8_a06pk")]
 position = Vector2(286, 850)
+scale = Vector2(1, 1)
 
 [node name="npc_3" parent="." instance=ExtResource("9_a4ydb")]
 position = Vector2(719, 912)
@@ -80,12 +81,15 @@ scale = Vector2(1, 1)
 
 [node name="npc_2" parent="." instance=ExtResource("10_x6ncj")]
 position = Vector2(166, 111)
+scale = Vector2(1, 1)
 
 [node name="npc_4" parent="." instance=ExtResource("11_383b8")]
 position = Vector2(1025, 145)
+scale = Vector2(1, 1)
 
 [node name="npc_carpenter" parent="." instance=ExtResource("12_17ygw")]
 position = Vector2(594, 128)
+scale = Vector2(1, 1)
 
 [node name="npc_1" parent="." instance=ExtResource("13_4u8n4")]
 position = Vector2(1091, 896)
