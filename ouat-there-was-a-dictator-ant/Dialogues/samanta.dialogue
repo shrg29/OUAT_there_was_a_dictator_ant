@@ -1,0 +1,45 @@
+~ start
+do GameState.low = 0.4
+do GameState.high = 0.8
+
+if GameState.recruited_ants.has("Samanta"):
+	Samanta: I got your back, Sara. And thanks! [wave](slurps)[/wave]
+	=> resolve
+else:
+	if GameState.has_met_samanta == false:
+		Samanta: Hey Mate, I've been sweating my acid-gland off all day.
+		Samanta: What brings you to this queen-forsaken place?
+		- Speaking of queen...
+			Samanta: I've wanted to kick her behind for a while now...
+			Samanta: But, could you do me a favour first?
+			Samanta: The [wave]Fisherman[/wave] keeps hoarding the beer, you know?
+			=> quest
+		- I got lost.
+			Samanta: No need to pretend, I heard what you're up to.
+			Samanta: I'm willing to help for a small favour.
+			Samanta: The [wave]Fisherman[/wave] keeps hoarding the beer, you know?
+			=> quest
+		- Goodbye
+			=> resolve
+	else:
+		=> quest
+~ quest
+set GameState.has_met_samanta = true
+Samanta: If you could bring me {{GameState.samanta_demand_amount}} {{GameState.samanta_demand_item.item_name}}?
+if GameState.count_item(GameState.samanta_demand_item) >= GameState.samanta_demand_amount:
+	- I got it (give {{GameState.samanta_demand_amount}} {{GameState.samanta_demand_item.item_name}}).
+		do GameState.give_item(GameState.samanta_demand_item, GameState.samanta_demand_amount)
+		set GameState.samanta_demand_amount = 0
+		do GameState.recruit_ant("Samanta")
+		do AudioManager.play_sfx("task_completed")
+		=> resolve
+	- Another Time.
+		=> resolve
+else:
+	- I will go have a talk with the Fisherman
+		=> resolve
+	- Goodbye
+		=> resolve
+~ resolve
+set GameState.current_state = GameState.state.WALKING
+=> END
