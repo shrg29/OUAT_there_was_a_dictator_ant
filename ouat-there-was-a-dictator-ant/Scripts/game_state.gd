@@ -1,7 +1,7 @@
 extends Node
 
 
-var print_mode: bool = true
+var print_mode: bool = false
 
 
 #region Item Preloads
@@ -78,8 +78,7 @@ var failed_game: bool = false # Game over check
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
-	pick_up_item(water_item)
-	#pick_up_item(water_item)
+	
 	pass # Replace with function body.
 
 
@@ -141,7 +140,21 @@ func give_item(gift: ItemResource, amount: int):
 
 func drop_item(location: Vector2):
 	# TODO: function to drop the item on the ground at "location"
-	held_items.remove_at(0)
+	if held_items.size() == 0 : return #if no item return
+	var dropped_item = held_items.pop_at(0) #pop the item out of the array
+	
+	print("Dropping item: ", dropped_item.item_name if dropped_item else "NULL")
+	print("Item texture: ", dropped_item.item_texture if dropped_item else "NULL")
+	
+	var item_instance_preload = preload("res://Scenes/item_instance.tscn") #load the instance
+	var item_instance = item_instance_preload.instantiate()
+	
+	item_instance.global_position = location #set up the location no clue if this actually works
+	
+	get_tree().root.get_child(0).add_child(item_instance) 
+	
+	item_instance.set_type(dropped_item)
+	
 	AudioManager.play_sfx("drop")
 	update_item_display()
 #endregion

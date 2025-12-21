@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8ay5e5jtqxfx"]
+[gd_scene load_steps=38 format=3 uid="uid://b8ay5e5jtqxfx"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_1oa0f"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_nb5s2"]
@@ -9,6 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_cctjh"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_wff6f"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_0k265"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/water_puddle.tscn" id="9_ulp8i"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/waterpuddle_2.tscn" id="10_2acfl"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/gear.tscn" id="11_2fpr3"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/spill_1.tscn" id="12_ulcm8"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/spill_4.tscn" id="13_7n1m8"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/scre_2.tscn" id="14_2ws6e"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/gem.tscn" id="15_lc1fm"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_2.tscn" id="16_fcvvd"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_3.tscn" id="17_xgd8v"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_5.tscn" id="18_0ukhr"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_7.tscn" id="19_iot88"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/food_9.tscn" id="20_mo7ci"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/gear_1.tscn" id="21_2fpr3"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/blanket.tscn" id="22_ulcm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(30.396309, 20)
@@ -44,6 +58,12 @@ size = Vector2(22.65213, 27.866898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iwyr"]
+size = Vector2(20, 92.02243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn7t4"]
+size = Vector2(74.7003, 22.090393)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1oa0f")
@@ -144,6 +164,75 @@ position = Vector2(74, 556)
 shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="map generator" parent="." instance=ExtResource("8_wff6f")]
+
+[node name="Cosmetics" type="Node2D" parent="."]
+
+[node name="water puddle" parent="Cosmetics" instance=ExtResource("9_ulp8i")]
+position = Vector2(1658, 786)
+
+[node name="waterpuddle2" parent="Cosmetics" instance=ExtResource("10_2acfl")]
+position = Vector2(462, 338)
+
+[node name="gear" parent="Cosmetics" instance=ExtResource("11_2fpr3")]
+position = Vector2(310, 281.99988)
+rotation = 0.2617994
+
+[node name="spill1" parent="Cosmetics" instance=ExtResource("12_ulcm8")]
+position = Vector2(626, 311)
+rotation = 3.1415927
+
+[node name="spill4" parent="Cosmetics" instance=ExtResource("13_7n1m8")]
+position = Vector2(1046, 787)
+rotation = 1.3089969
+
+[node name="scre2" parent="Cosmetics" instance=ExtResource("14_2ws6e")]
+position = Vector2(328.0001, 715.0001)
+rotation = 0.2617994
+scale = Vector2(0.79013306, 0.9822167)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cosmetics/scre2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cosmetics/scre2/StaticBody2D"]
+position = Vector2(-11.897256, 3.6184509)
+rotation = 0.5235988
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_5iwyr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cosmetics/scre2/StaticBody2D"]
+position = Vector2(12.147339, -27.621399)
+rotation = 0.52359873
+scale = Vector2(0.9999998, 0.9999999)
+shape = SubResource("RectangleShape2D_yn7t4")
+
+[node name="gem" parent="Cosmetics" instance=ExtResource("15_lc1fm")]
+position = Vector2(1457, 915.99994)
+rotation = 2.0943952
+scale = Vector2(0.5684724, -0.626737)
+
+[node name="food2" parent="Cosmetics" instance=ExtResource("16_fcvvd")]
+position = Vector2(1581, 609)
+
+[node name="food3" parent="Cosmetics" instance=ExtResource("17_xgd8v")]
+position = Vector2(1158, 228)
+rotation = 0.5235988
+scale = Vector2(1.1801765, 1.1550863)
+
+[node name="food5" parent="Cosmetics" instance=ExtResource("18_0ukhr")]
+position = Vector2(543, 886)
+
+[node name="food7" parent="Cosmetics" instance=ExtResource("19_iot88")]
+position = Vector2(1688, 282)
+rotation = 0.5235988
+scale = Vector2(-0.62864983, 0.5136884)
+
+[node name="food9" parent="Cosmetics" instance=ExtResource("20_mo7ci")]
+position = Vector2(768, 562)
+
+[node name="gear1" parent="Cosmetics" instance=ExtResource("21_2fpr3")]
+position = Vector2(1708, 725)
+
+[node name="blanket" parent="Cosmetics" instance=ExtResource("22_ulcm8")]
+position = Vector2(1626, 304.5)
 
 [node name="player" parent="." instance=ExtResource("9_0k265")]
 position = Vector2(990, 545)

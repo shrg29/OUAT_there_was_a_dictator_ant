@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_jf5n6"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_ockeu"]
 [ext_resource type="Texture2D" uid="uid://dxpra8js036a5" path="res://assets/level_art/level_design/food_station.png" id="9_5u5te"]
-[ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="10_5u5te"]
+[ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="10_5u5te"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_3m38a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
@@ -47,8 +47,8 @@ size = Vector2(22.65213, 27.866898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm825"]
-size = Vector2(119.37494, 106.666595)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ees4"]
+size = Vector2(111.42868, 108.04169)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_qxb0w")
@@ -159,14 +159,16 @@ texture = ExtResource("9_5u5te")
 
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="npc_3" parent="NPCs" instance=ExtResource("10_5u5te")]
-position = Vector2(670, 606)
+[node name="npc_4" parent="NPCs" instance=ExtResource("10_5u5te")]
+position = Vector2(718, 585)
+scale = Vector2(-1, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_3/StaticBody2D"]
-position = Vector2(1.354126, 118.333374)
-shape = SubResource("RectangleShape2D_xm825")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_4/StaticBody2D"]
+position = Vector2(0.00024414063, 95.4494)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_6ees4")
 
 [node name="player" parent="." instance=ExtResource("11_3m38a")]
 position = Vector2(1158, 308)

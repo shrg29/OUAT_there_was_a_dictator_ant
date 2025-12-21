@@ -161,7 +161,6 @@ texture = ExtResource("9_d1ga5")
 
 [node name="npc_1" parent="NPCs" instance=ExtResource("11_or32f")]
 position = Vector2(821, 537)
-scale = Vector2(1, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_1"]
 

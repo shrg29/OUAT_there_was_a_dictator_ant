@@ -11,4 +11,3 @@ region = Rect2(1384.0002, 67.000015, 91, 91.00003)
 script = ExtResource("2_qco74")
 item_name = "Beer"
 item_texture = SubResource("AtlasTexture_qco74")
-metadata/_custom_type_script = "uid://d3fsgbumnpg0"

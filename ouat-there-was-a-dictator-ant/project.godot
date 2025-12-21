@@ -24,6 +24,7 @@ AntHillGenerator="*res://Scripts/ant_hill_generator.gd"
 TransitionScene="*res://Scenes/transition_scene.tscn"
 World="*res://Scripts/world.gd"
 QuestManager="*res://Scripts/QuestManager.gd"
+AudioManager="*res://Scenes/AudioManager.tscn"
 
 [display]
 
@@ -94,7 +95,7 @@ drop_item={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/anthony.dialogue", "res://Dialogues/anton.dialogue", "res://Dialogues/antonia.dialogue", "res://Dialogues/kasantra.dialogue", "res://Dialogues/Samantha.dialogue", "res://Dialogues/antdrew.dialogue", "res://Dialogues/queen.dialogue", "res://Dialogues/anta_maria.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/anthony.dialogue", "res://Dialogues/anton.dialogue", "res://Dialogues/antonia.dialogue", "res://Dialogues/kasantra.dialogue", "res://Dialogues/antdrew.dialogue", "res://Dialogues/queen.dialogue", "res://Dialogues/anta_maria.dialogue", "res://Dialogues/samanta.dialogue", "res://Dialogues/Samantha.dialogue")
 
 [rendering]
 
