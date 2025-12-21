@@ -155,7 +155,8 @@ func drop_item(location: Vector2):
 	
 	item_instance.global_position = location #set up the location no clue if this actually works
 	
-	get_tree().root.get_child(0).add_child(item_instance) 
+	get_tree().root.get_child(0).add_child(item_instance)
+	print("hi: ", get_tree().root.get_child(0).name)
 	
 	item_instance.set_type(dropped_item)
 	print("droped: ", dropped_item.item_name)
