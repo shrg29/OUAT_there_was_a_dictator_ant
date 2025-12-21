@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjkyp44b6ihsi"]
 
 [ext_resource type="Script" uid="uid://bwrb5eglvr0fa" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="PackedScene" uid="uid://trt6l47mivlv" path="res://Scenes/main_ant.tscn" id="2_6t5aa"]
+[ext_resource type="PackedScene" path="res://Scenes/main_ant.tscn" id="2_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 
@@ -25,3 +25,5 @@ shape = SubResource("RectangleShape2D_vgqql")
 position = Vector2(-7, 13)
 scale = Vector2(3.630017, 10.968082)
 shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="ItemHolder" type="Sprite2D" parent="."]

@@ -12,6 +12,8 @@ signal inform_current_interactable(npc)
 var nearby_items = []  # Track all nearby NPCs
 var current_item: Node2D = null
 
+@onready var item_holder: Sprite2D = $ItemHolder
+
 signal inform_current_item(item)
 #endregion
 
@@ -65,6 +67,7 @@ var isHurt = false
 
 func _ready() -> void:
 	add_to_group("player")
+	item_holder.visible = false
 	
 	await get_tree().process_frame
 	
@@ -162,6 +165,15 @@ func _get_closest_item(): # setting closest item as current interactable
 			closest_dist = dist
 	
 	return closest
+
+
+func update_item_holder(item: ItemResource, valid: bool):
+	if valid == true:
+		item_holder.texture = item.item_texture
+		item_holder.visible = true
+	else:
+		item_holder.visible = false
+		item_holder.texture = null
 #endregion
 
 func handleInput():

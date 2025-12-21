@@ -91,9 +91,11 @@ func update_item_display():
 				if print_mode:
 					print(ant, " does not have an item to hold")
 			ant_index = ant_index + 1
+			
 	else:
 		if print_mode:
 			print("Error: Too many items to display")
+	$Player.update_item_holder(held_items[0], held_items.size() > 0)
 
 
 func pick_up_item(item: ItemResource):
