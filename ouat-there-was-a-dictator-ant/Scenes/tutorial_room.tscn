@@ -1,12 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciham2hc6lupp"]
+[gd_scene load_steps=13 format=3 uid="uid://cayj7j7t8xvl3"]
 
 [ext_resource type="Script" uid="uid://bfucfcehy5l5u" path="res://Scripts/main_scene.gd" id="1_6db0d"]
 [ext_resource type="Texture2D" uid="uid://cxg34mchbwev8" path="res://assets/level_art/level_design/tutorial_room.png" id="1_dlhfk"]
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_ok5aq"]
-[ext_resource type="PackedScene" uid="uid://chxah4y7fg02r" path="res://Scenes/pause_menu.tscn" id="2_6db0d"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/hole.tscn" id="2_8ayev"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/torch.tscn" id="2_43ach"]
+[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="1_ok5aq"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="2_6db0d"]
+[ext_resource type="PackedScene" uid="uid://cfqw4ifr2e8j1" path="res://Scenes/level design/hole.tscn" id="2_8ayev"]
+[ext_resource type="PackedScene" uid="uid://cdhdftwo7gdhr" path="res://Scenes/level design/torch.tscn" id="2_43ach"]
 [ext_resource type="PackedScene" path="res://Scenes/level design/input_controller.tscn" id="4_8ayev"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6db0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6db0d"]
+size = Vector2(955, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siyfi"]
+size = Vector2(43, 848.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l11xw"]
+size = Vector2(957.5, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io5t0"]
+size = Vector2(71, 857)
 
 [node name="tutorial_room" type="Node2D"]
 script = ExtResource("1_6db0d")
@@ -18,6 +32,13 @@ texture = ExtResource("1_dlhfk")
 [node name="Hole" parent="." instance=ExtResource("2_8ayev")]
 position = Vector2(961.00006, 804.00006)
 scale = Vector2(0.8707536, 0.8707536)
+
+[node name="Area2D" type="Area2D" parent="Hole"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole/Area2D"]
+position = Vector2(-18.374956, -7.009506e-05)
+scale = Vector2(8.337291, 7.2357063)
+shape = SubResource("CircleShape2D_6db0d")
 
 [node name="torch" parent="." instance=ExtResource("2_43ach")]
 position = Vector2(768, 227)
@@ -32,3 +53,23 @@ position = Vector2(821, 298)
 position = Vector2(714, 771)
 
 [node name="Control" parent="." instance=ExtResource("2_6db0d")]
+
+[node name="colliders" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colliders"]
+position = Vector2(961.5, 166.5)
+shape = SubResource("RectangleShape2D_6db0d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="colliders"]
+position = Vector2(510, 582.75)
+shape = SubResource("RectangleShape2D_siyfi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="colliders"]
+position = Vector2(945.25, 975)
+shape = SubResource("RectangleShape2D_l11xw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="colliders"]
+position = Vector2(1388, 551)
+shape = SubResource("RectangleShape2D_io5t0")
+
+[connection signal="area_entered" from="Hole/Area2D" to="." method="_on_area_2d_area_entered"]
