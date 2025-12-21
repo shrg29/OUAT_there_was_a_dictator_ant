@@ -11,4 +11,3 @@ region = Rect2(233.46509, 38.140686, 114.12463, 122.68405)
 script = ExtResource("2_hxsau")
 item_name = "Coin"
 item_texture = SubResource("AtlasTexture_u4h5u")
-metadata/_custom_type_script = "uid://d3fsgbumnpg0"
