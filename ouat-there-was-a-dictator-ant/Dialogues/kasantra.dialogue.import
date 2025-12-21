@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dk2lq6oxjdf7h"
+path="res://.godot/imported/kasantra.dialogue-a48cf7909df67be89b327ee9c341d0d8.tres"
+
+[deps]
+
+source_file="res://Dialogues/kasantra.dialogue"
+dest_files=["res://.godot/imported/kasantra.dialogue-a48cf7909df67be89b327ee9c341d0d8.tres"]
+
+[params]
+
+defaults=true

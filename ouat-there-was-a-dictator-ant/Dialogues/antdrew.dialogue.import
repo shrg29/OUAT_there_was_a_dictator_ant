@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dik16h25rbm4p"
+path="res://.godot/imported/antdrew.dialogue-ddb4d02b0bb6a75ff6a7d47d481dae45.tres"
+
+[deps]
+
+source_file="res://Dialogues/antdrew.dialogue"
+dest_files=["res://.godot/imported/antdrew.dialogue-ddb4d02b0bb6a75ff6a7d47d481dae45.tres"]
+
+[params]
+
+defaults=true

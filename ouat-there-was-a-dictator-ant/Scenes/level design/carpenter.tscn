@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfumpt5oalxnq"]
+
+[ext_resource type="Texture2D" uid="uid://bu26814gj3rio" path="res://assets/level_art/level_design/carpenter_station.png" id="1_20eeo"]
+
+[node name="carpenter" type="Sprite2D"]
+texture = ExtResource("1_20eeo")

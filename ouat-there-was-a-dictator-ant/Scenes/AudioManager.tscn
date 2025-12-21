@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://difcqb47bmdp0"]
+[gd_scene load_steps=9 format=3 uid="uid://dy7i0idebxsn7"]
 
 [ext_resource type="Script" uid="uid://cavwgx1cy2u6y" path="res://Scripts/AudioManager.gd" id="1_dygvs"]
 [ext_resource type="AudioStream" uid="uid://cwkt5radt7o6g" path="res://Music/background_music.mp3" id="2_x8qvj"]
@@ -24,10 +24,7 @@ sfx = Dictionary[String, AudioStream]({
 })
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-bus = &"Music"
 
 [node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
 
 [node name="Dialogue" type="AudioStreamPlayer" parent="."]
-bus = &"Dialogue"

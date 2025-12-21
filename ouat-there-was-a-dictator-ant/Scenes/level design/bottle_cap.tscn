@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccncetemrkuu4"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_0t5tm"]
+
+[node name="bottle_cap" type="Sprite2D"]
+texture = ExtResource("1_0t5tm")
+region_enabled = true
+region_rect = Rect2(8.667519, 11.900049, 202.75922, 176.116)

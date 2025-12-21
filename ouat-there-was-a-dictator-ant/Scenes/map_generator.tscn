@@ -7,9 +7,9 @@ script = ExtResource("1_803pc")
 map_transparency = 0.75
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 1708.0001
-offset_top = 44.0
-offset_right = 1748.0001
-offset_bottom = 84.0
+offset_left = 1748.0
+offset_top = 8.0
+offset_right = 1788.0
+offset_bottom = 48.0
 scale = Vector2(4.0546412, 4.2136025)
 expand_mode = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lv7767crf5m1"]
+[gd_scene load_steps=66 format=3 uid="uid://lv7767crf5m1"]
 
 [ext_resource type="PackedScene" uid="uid://bd778p2c8x55d" path="res://Scenes/level design/terrain_cube.tscn" id="1_xya7e"]
 [ext_resource type="PackedScene" uid="uid://cq6nfcen2xyl1" path="res://Scenes/level design/wall_cube.tscn" id="2_ekove"]
@@ -8,8 +8,66 @@
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_pw6wb"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="7_ycmeu"]
 [ext_resource type="PackedScene" uid="uid://dmollusy6dodq" path="res://Scenes/level design/walls_rectangle.tscn" id="8_60ird"]
+[ext_resource type="Texture2D" uid="uid://4wi5j0ixwuod" path="res://assets/level_art/level_design/bridge.png" id="9_ekove"]
+[ext_resource type="Texture2D" uid="uid://dgpmvs2gad53m" path="res://assets/level_art/level_design/ditch.png" id="9_ycmeu"]
+[ext_resource type="PackedScene" uid="uid://ccncetemrkuu4" path="res://Scenes/level design/bottle_cap.tscn" id="11_4877w"]
+[ext_resource type="PackedScene" uid="uid://p2janly4s7wb" path="res://Scenes/level design/coin.tscn" id="12_1sqge"]
+[ext_resource type="PackedScene" uid="uid://djt0w7tc1oqrr" path="res://Scenes/level design/sign.tscn" id="13_woi8k"]
+[ext_resource type="PackedScene" uid="uid://dqw37n8mh42pd" path="res://Scenes/level design/waterpuddle_3.tscn" id="14_pymvu"]
+[ext_resource type="PackedScene" uid="uid://dncas4e5kkjy4" path="res://Scenes/level design/water_puddle.tscn" id="15_lssb3"]
+[ext_resource type="PackedScene" uid="uid://cls0he0454u14" path="res://Scenes/level design/waterpuddle_2.tscn" id="16_um2fi"]
+[ext_resource type="PackedScene" uid="uid://25eymqqifqee" path="res://Scenes/level design/sugar.tscn" id="17_ch6jv"]
+[ext_resource type="PackedScene" uid="uid://dkd38dhtkvces" path="res://Scenes/level design/food_colklectable.tscn" id="18_jwom2"]
+[ext_resource type="PackedScene" uid="uid://dprmrwolnmjwe" path="res://Scenes/level design/food_1.tscn" id="19_uv45s"]
+[ext_resource type="PackedScene" uid="uid://1x6qsccyawtx" path="res://Scenes/level design/food_2.tscn" id="20_8q85r"]
+[ext_resource type="PackedScene" uid="uid://cegb1pnovjkws" path="res://Scenes/level design/food_3.tscn" id="21_p0jfs"]
+[ext_resource type="PackedScene" uid="uid://cgcqt5l2vk0te" path="res://Scenes/level design/food_4.tscn" id="22_4thcj"]
+[ext_resource type="PackedScene" uid="uid://cofardnikyuyd" path="res://Scenes/level design/food_5.tscn" id="23_5anxw"]
+[ext_resource type="PackedScene" uid="uid://dpmrd2uw3gmrg" path="res://Scenes/level design/food_6.tscn" id="24_t85g0"]
+[ext_resource type="PackedScene" uid="uid://dvae83y6fm0g" path="res://Scenes/level design/food_7.tscn" id="25_ej500"]
+[ext_resource type="PackedScene" uid="uid://cnjjw52lyg1qk" path="res://Scenes/level design/wood_1.tscn" id="26_nlubo"]
+[ext_resource type="PackedScene" uid="uid://1p6cwxgvpass" path="res://Scenes/level design/food_8.tscn" id="27_xsf85"]
+[ext_resource type="PackedScene" uid="uid://cwlvh6top1x18" path="res://Scenes/level design/food_9.tscn" id="28_p7jwl"]
+[ext_resource type="PackedScene" uid="uid://cx7028ei1la0k" path="res://Scenes/level design/branch_1.tscn" id="29_mkhre"]
+[ext_resource type="PackedScene" uid="uid://dgnwnbfwb7mtd" path="res://Scenes/level design/branch_2.tscn" id="30_616um"]
+[ext_resource type="PackedScene" uid="uid://crun75527jmiw" path="res://Scenes/level design/branch_3.tscn" id="31_3c2ku"]
+[ext_resource type="PackedScene" uid="uid://cpl42jcusjd5h" path="res://Scenes/level design/wood_2.tscn" id="32_s1vx3"]
+[ext_resource type="PackedScene" uid="uid://bbv1tmon3r5gv" path="res://Scenes/level design/wood_3.tscn" id="33_un1oe"]
+[ext_resource type="PackedScene" uid="uid://dkxbrerl6tcit" path="res://Scenes/level design/wood_4.tscn" id="34_ap7fe"]
+[ext_resource type="PackedScene" uid="uid://e8eb7whcue8v" path="res://Scenes/level design/wood_5.tscn" id="35_0t6wt"]
+[ext_resource type="PackedScene" uid="uid://dm7hh6pnv2jip" path="res://Scenes/level design/pile_of_wood.tscn" id="36_a2syk"]
+[ext_resource type="PackedScene" uid="uid://cyu4j771fqhxh" path="res://Scenes/level design/gear.tscn" id="37_7hwbg"]
+[ext_resource type="PackedScene" uid="uid://cphhqp3eevqio" path="res://Scenes/level design/gear_1.tscn" id="38_fhjd3"]
+[ext_resource type="PackedScene" uid="uid://dj7uymvt6g5cb" path="res://Scenes/level design/blanket.tscn" id="39_tyq2l"]
+[ext_resource type="PackedScene" uid="uid://cxrtgu5ur2y0g" path="res://Scenes/level design/spill_1.tscn" id="40_jesvs"]
+[ext_resource type="PackedScene" uid="uid://cbgm7aonfabdn" path="res://Scenes/level design/spill_2.tscn" id="41_adwfq"]
+[ext_resource type="PackedScene" uid="uid://dhmwccmg2ghfa" path="res://Scenes/level design/spill_3.tscn" id="42_kdmf5"]
+[ext_resource type="PackedScene" uid="uid://p52avrc4cy4d" path="res://Scenes/level design/spill_4.tscn" id="43_8ogj1"]
+[ext_resource type="PackedScene" uid="uid://huqefi364mtd" path="res://Scenes/level design/leaf_1.tscn" id="44_qr65p"]
+[ext_resource type="PackedScene" uid="uid://2cp6ed32vm4q" path="res://Scenes/level design/leaf_2.tscn" id="45_tx3da"]
+[ext_resource type="PackedScene" uid="uid://bnje1tevwmoob" path="res://Scenes/level design/leaf_3.tscn" id="46_fhs66"]
+[ext_resource type="PackedScene" uid="uid://de0wr3vhhguwl" path="res://Scenes/level design/screw.tscn" id="47_jupki"]
+[ext_resource type="PackedScene" uid="uid://qkql1p0ct1wk" path="res://Scenes/level design/scre_2.tscn" id="48_r532y"]
+[ext_resource type="PackedScene" uid="uid://dxu3k4f7joo12" path="res://Scenes/level design/gem.tscn" id="49_4itj3"]
+[ext_resource type="PackedScene" uid="uid://m22n2m1jar4d" path="res://Scenes/level design/seed_1.tscn" id="50_3vvmh"]
+[ext_resource type="PackedScene" uid="uid://buoxfef8fjnbp" path="res://Scenes/level design/seed_2.tscn" id="51_y2c5s"]
+[ext_resource type="PackedScene" uid="uid://o0jmhwrv5ibw" path="res://Scenes/level design/tissue_1.tscn" id="52_0agpm"]
+[ext_resource type="PackedScene" uid="uid://vwwcm2gvcar5" path="res://Scenes/level design/tissue_2.tscn" id="53_flsew"]
+[ext_resource type="PackedScene" uid="uid://b3koo8up5q3wf" path="res://Scenes/npc/queen.tscn" id="54_1sqge"]
+[ext_resource type="PackedScene" uid="uid://dfumpt5oalxnq" path="res://Scenes/level design/carpenter.tscn" id="55_8q85r"]
+[ext_resource type="PackedScene" uid="uid://db3pisyt8t6ne" path="res://Scenes/npc/npc_carpenter.tscn" id="56_lssb3"]
+[ext_resource type="PackedScene" uid="uid://dv0dsc1u2ealr" path="res://Scenes/level design/nursery.tscn" id="56_p0jfs"]
+[ext_resource type="PackedScene" uid="uid://cahqt4o0qx7y1" path="res://Scenes/level design/water.tscn" id="57_p0jfs"]
+[ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="57_um2fi"]
+[ext_resource type="PackedScene" uid="uid://brobnf1be5yw6" path="res://Scenes/level design/queen.tscn" id="58_4thcj"]
+[ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="58_uv45s"]
+[ext_resource type="Texture2D" uid="uid://dxpra8js036a5" path="res://assets/level_art/level_design/food_station.png" id="59_5anxw"]
+[ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="59_8q85r"]
+[ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="60_p0jfs"]
+[ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="61_4thcj"]
 
 [node name="LevelDesign" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-398.0]
 
 [node name="cube" type="Node2D" parent="."]
 visible = false
@@ -43,6 +101,7 @@ position = Vector2(960, 540)
 position = Vector2(960, 540)
 
 [node name="doors_rectangle" type="Node2D" parent="rectangle"]
+visible = false
 
 [node name="door north" parent="rectangle/doors_rectangle" instance=ExtResource("4_pw6wb")]
 position = Vector2(944, 96)
@@ -55,3 +114,206 @@ position = Vector2(1826, 531)
 
 [node name="door west" parent="rectangle/doors_rectangle" instance=ExtResource("7_pw6wb")]
 position = Vector2(90, 525)
+
+[node name="ditch" type="Node2D" parent="rectangle"]
+
+[node name="ditch_est" type="Sprite2D" parent="rectangle/ditch"]
+position = Vector2(1813, 544)
+texture = ExtResource("9_ycmeu")
+region_enabled = true
+region_rect = Rect2(1633.582, 236.8787, 359.4663, 614.5713)
+
+[node name="ditch_west" type="Sprite2D" parent="rectangle/ditch"]
+position = Vector2(83, 532)
+texture = ExtResource("9_ycmeu")
+region_enabled = true
+region_rect = Rect2(-50.71167, 232.64417, 269.2776, 602.97565)
+
+[node name="bridge" type="Node2D" parent="rectangle"]
+visible = false
+position = Vector2(-32, 10)
+
+[node name="bridge_east" type="Sprite2D" parent="rectangle/bridge"]
+position = Vector2(133, 501)
+texture = ExtResource("9_ekove")
+region_enabled = true
+region_rect = Rect2(-60.360596, 172.4544, 324.11102, 680.8046)
+
+[node name="bridge_west" type="Sprite2D" parent="rectangle/bridge"]
+position = Vector2(1844, 524)
+texture = ExtResource("9_ekove")
+region_enabled = true
+region_rect = Rect2(1659.6838, 234.02252, 305.70435, 600.86725)
+
+[node name="assets" type="Node2D" parent="."]
+position = Vector2(87, -415)
+
+[node name="bottle_cap" parent="assets" instance=ExtResource("11_4877w")]
+
+[node name="coin" parent="assets" instance=ExtResource("12_1sqge")]
+position = Vector2(177, 4)
+
+[node name="sign" parent="assets" instance=ExtResource("13_woi8k")]
+position = Vector2(338, 0)
+
+[node name="waterpuddle3" parent="assets" instance=ExtResource("14_pymvu")]
+position = Vector2(519, 4)
+
+[node name="water puddle" parent="assets" instance=ExtResource("15_lssb3")]
+position = Vector2(643, 6)
+
+[node name="waterpuddle2" parent="assets" instance=ExtResource("16_um2fi")]
+position = Vector2(770, 2)
+
+[node name="sugar" parent="assets" instance=ExtResource("17_ch6jv")]
+position = Vector2(887, 6)
+
+[node name="food_colklectable" parent="assets" instance=ExtResource("18_jwom2")]
+position = Vector2(977, -2)
+
+[node name="food1" parent="assets" instance=ExtResource("19_uv45s")]
+position = Vector2(1083, -15)
+
+[node name="food2" parent="assets" instance=ExtResource("20_8q85r")]
+position = Vector2(1187, 0)
+
+[node name="food3" parent="assets" instance=ExtResource("21_p0jfs")]
+position = Vector2(1294, -12)
+
+[node name="food4" parent="assets" instance=ExtResource("22_4thcj")]
+position = Vector2(1364, -17)
+
+[node name="food5" parent="assets" instance=ExtResource("23_5anxw")]
+position = Vector2(1470, -11)
+
+[node name="food6" parent="assets" instance=ExtResource("24_t85g0")]
+position = Vector2(1557, -9)
+
+[node name="food7" parent="assets" instance=ExtResource("25_ej500")]
+position = Vector2(1726, -11)
+
+[node name="wood1" parent="assets" instance=ExtResource("26_nlubo")]
+position = Vector2(13, 238)
+
+[node name="food8" parent="assets" instance=ExtResource("27_xsf85")]
+position = Vector2(1638, -13)
+
+[node name="food9" parent="assets" instance=ExtResource("28_p7jwl")]
+position = Vector2(1804, -11)
+
+[node name="branch1" parent="assets" instance=ExtResource("29_mkhre")]
+position = Vector2(-7, 125)
+
+[node name="branch2" parent="assets" instance=ExtResource("30_616um")]
+position = Vector2(144, 134)
+
+[node name="branch3" parent="assets" instance=ExtResource("31_3c2ku")]
+position = Vector2(277, 129)
+
+[node name="wood2" parent="assets" instance=ExtResource("32_s1vx3")]
+position = Vector2(172, 238)
+
+[node name="wood3" parent="assets" instance=ExtResource("33_un1oe")]
+position = Vector2(311, 246)
+
+[node name="wood4" parent="assets" instance=ExtResource("34_ap7fe")]
+position = Vector2(433, 240)
+
+[node name="wood5" parent="assets" instance=ExtResource("35_0t6wt")]
+position = Vector2(1, 310)
+
+[node name="pile of wood" parent="assets" instance=ExtResource("36_a2syk")]
+position = Vector2(590, 254)
+
+[node name="gear" parent="assets" instance=ExtResource("37_7hwbg")]
+position = Vector2(451, 124)
+
+[node name="gear1" parent="assets" instance=ExtResource("38_fhjd3")]
+position = Vector2(553, 123)
+
+[node name="blanket" parent="assets" instance=ExtResource("39_tyq2l")]
+position = Vector2(686, 128)
+
+[node name="spill1" parent="assets" instance=ExtResource("40_jesvs")]
+position = Vector2(847, 131)
+
+[node name="spill2" parent="assets" instance=ExtResource("41_adwfq")]
+position = Vector2(854, 194)
+
+[node name="spill3" parent="assets" instance=ExtResource("42_kdmf5")]
+position = Vector2(991, 131)
+
+[node name="spill4" parent="assets" instance=ExtResource("43_8ogj1")]
+position = Vector2(1121, 120)
+
+[node name="leaf1" parent="assets" instance=ExtResource("44_qr65p")]
+position = Vector2(1235, 139)
+
+[node name="leaf2" parent="assets" instance=ExtResource("45_tx3da")]
+position = Vector2(1360, 132)
+
+[node name="leaf3" parent="assets" instance=ExtResource("46_fhs66")]
+position = Vector2(1475, 137)
+
+[node name="screw" parent="assets" instance=ExtResource("47_jupki")]
+position = Vector2(865, 282)
+
+[node name="scre2" parent="assets" instance=ExtResource("48_r532y")]
+position = Vector2(1042, 276)
+
+[node name="gem" parent="assets" instance=ExtResource("49_4itj3")]
+position = Vector2(1600, 103)
+
+[node name="seed1" parent="assets" instance=ExtResource("50_3vvmh")]
+position = Vector2(1699, 118)
+
+[node name="seed2" parent="assets" instance=ExtResource("51_y2c5s")]
+position = Vector2(1813, 226)
+
+[node name="tissue1" parent="assets" instance=ExtResource("52_0agpm")]
+position = Vector2(1327, 335)
+
+[node name="tissue2" parent="assets" instance=ExtResource("53_flsew")]
+position = Vector2(1431, 321)
+
+[node name="queen" parent="." instance=ExtResource("54_1sqge")]
+position = Vector2(-371, -57)
+
+[node name="specific rooms assets" type="Node2D" parent="."]
+
+[node name="carpenter" parent="specific rooms assets" instance=ExtResource("55_8q85r")]
+position = Vector2(2550, 153)
+
+[node name="nursery" parent="specific rooms assets" instance=ExtResource("56_p0jfs")]
+position = Vector2(2571, 756)
+
+[node name="water" parent="specific rooms assets" instance=ExtResource("57_p0jfs")]
+position = Vector2(921, 1608)
+
+[node name="queen" parent="specific rooms assets" instance=ExtResource("58_4thcj")]
+position = Vector2(2464, 1544)
+
+[node name="food" type="Sprite2D" parent="specific rooms assets"]
+position = Vector2(-395, 1434)
+texture = ExtResource("59_5anxw")
+
+[node name="npcs" type="Node2D" parent="."]
+
+[node name="npc_carpenter" parent="npcs" instance=ExtResource("56_lssb3")]
+position = Vector2(2655, 6)
+
+[node name="npc_1" parent="npcs" instance=ExtResource("57_um2fi")]
+position = Vector2(-357, 365)
+script = null
+
+[node name="npc_2" parent="npcs" instance=ExtResource("58_uv45s")]
+position = Vector2(-157, 376)
+
+[node name="npc_3" parent="npcs" instance=ExtResource("59_8q85r")]
+position = Vector2(-382, 779)
+
+[node name="npc_4" parent="npcs" instance=ExtResource("60_p0jfs")]
+position = Vector2(-157, 756)
+
+[node name="npc_nursery" parent="npcs" instance=ExtResource("61_4thcj")]
+position = Vector2(2557, 839)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djt0w7tc1oqrr"]
+
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_owdeq"]
+
+[node name="sign" type="Sprite2D"]
+texture = ExtResource("1_owdeq")
+region_enabled = true
+region_rect = Rect2(369.86777, 41.467888, 157.91281, 106.00378)

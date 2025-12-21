@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://brobnf1be5yw6"]
+
+[ext_resource type="Texture2D" uid="uid://dtpiponqpahf" path="res://assets/level_art/level_design/queen_station.png" id="1_ip5g0"]
+
+[node name="queen" type="Sprite2D"]
+texture = ExtResource("1_ip5g0")

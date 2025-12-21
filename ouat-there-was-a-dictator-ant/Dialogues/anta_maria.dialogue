@@ -1,0 +1,39 @@
+~ start
+do GameState.low = 0.9
+do GameState.high = 1.3
+
+if GameState.recruited_ants.has("Anta Maria"):
+	Anta Maria: I will honor our deal.
+	=> resolve
+else:
+	if GameState.has_met_anta == false:
+		Anta Maria: Sshh. I lost my coin somewhere.
+		Anta Maria: If you help me find it, I will do anything you ask of me.
+		- Anything?
+			=> quest
+		- Not interested.
+			=> resolve
+	else:
+		=> quest
+
+~ quest
+set GameState.has_met_anta = true
+Anta Maria: All you want is to stage a revolution?
+Anta Maria: Best deal I ever made.
+if GameState.count_item(GameState.anta_demand_item) >= GameState.anta_demand_amount:
+	- Here you go (Give {{GameState.anta_demand_amount}} {{GameState.anta_demand_item.item_name}}).
+		do GameState.give_item(GameState.anta_demand_item, GameState.anta_demand_amount)
+		do GameState.recruit_ant("Anta Maria")
+		do AudioManager.play_sfx("task_completed")
+		=> resolve
+	- Maybe later.
+		=> resolve
+else:
+	- I will go look for one.
+		=> resolve
+	- See ya.
+		=> resolve
+
+~ resolve
+set GameState.current_state = GameState.state.WALKING
+=> END

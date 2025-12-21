@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs4j75o23dak5"]
+[gd_scene load_steps=5 format=3 uid="uid://bjkyp44b6ihsi"]
 
 [ext_resource type="Script" uid="uid://bwrb5eglvr0fa" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" path="res://Scenes/main_ant.tscn" id="2_6t5aa"]
@@ -6,8 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(14.355278, 4.3259544)
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,6 +22,8 @@ shape = SubResource("RectangleShape2D_vgqql")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-9.000001, -12)
-scale = Vector2(5.7121844, 13.394322)
+position = Vector2(-7, 13)
+scale = Vector2(3.630017, 10.968082)
 shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="ItemHolder" type="Sprite2D" parent="."]

@@ -13,6 +13,7 @@ var two_door_tunnels  = []# maybe another way to store them or note the order
 var three_door_tunnels = []
 var four_door_tunnels = []
 var start_room
+var came_from
 
 var current_room
 enum dir{
@@ -88,21 +89,38 @@ func fill_room_arrays():
 	
 	
 	#the rest are basically one door tunnels
-	#nurseries.append()
-	nurseries = one_door_tunnels
+	nurseries.append("res://Scenes/rooms/nurseries/nursery_N.tscn")
+	nurseries.append("res://Scenes/rooms/nurseries/nursery_E.tscn")
+	nurseries.append("res://Scenes/rooms/nurseries/nursery_S.tscn")
+	nurseries.append("res://Scenes/rooms/nurseries/nursery_W.tscn")
 	
-	#foods.append()
-	foods = one_door_tunnels
 	
-	#carpenters.append()
-	carpenters = one_door_tunnels
+	foods.append("res://Scenes/rooms/foods/food_N.tscn")
+	foods.append("res://Scenes/rooms/foods/food_E.tscn")
+	foods.append("res://Scenes/rooms/foods/food_S.tscn")
+	foods.append("res://Scenes/rooms/foods/food_W.tscn")
 	
-	#queens.append()
-	queens = one_door_tunnels
 	
-	#waters.append()
-	waters = one_door_tunnels
 	
+	carpenters.append("res://Scenes/rooms/carpenters/carpenter_N.tscn")
+	carpenters.append("res://Scenes/rooms/carpenters/carpenter_E.tscn")
+	carpenters.append("res://Scenes/rooms/carpenters/carpenter_S.tscn")
+	carpenters.append("res://Scenes/rooms/carpenters/carpenter_W.tscn")
+	
+	
+	
+	queens.append("res://Scenes/rooms/queens/queen_N.tscn")
+	queens.append("res://Scenes/rooms/queens/queen_E.tscn")
+	queens.append("res://Scenes/rooms/queens/queen_S.tscn")
+	queens.append("res://Scenes/rooms/queens/queen_W.tscn")
+	
+	
+	
+	waters.append("res://Scenes/rooms/waters/water_N.tscn")
+	waters.append("res://Scenes/rooms/waters/water_E.tscn")
+	waters.append("res://Scenes/rooms/waters/water_S.tscn")
+	waters.append("res://Scenes/rooms/waters/water_W.tscn")
+
 	# dont know what to do with start, 4 room always at least i guess
 	start_room.scene = "res://Scenes/rooms/tunnels/4_doors.tscn"
 
@@ -150,15 +168,20 @@ func load_room(direction: String):
 	match direction:
 		"N":	
 			next_room = adjacent_rooms[dir.N]
+			came_from = "S"
 		"S":
 			next_room = adjacent_rooms[dir.S]
+			came_from = "N"
 		"E":
 			next_room = adjacent_rooms[dir.E]
+			came_from = "W"
 		"W":	
 			next_room = adjacent_rooms[dir.W]
+			came_from = "E"
 	if(next_room != null) :
 		TransitionScene.change_scene(next_room.scene)
 		current_room = next_room
+		#here somehow get access to the current player and set its position to where we came from
 		print("current room at: ", current_room.x, ", ", current_room.y)
 	else:
 		print("next room is null!")
@@ -172,33 +195,41 @@ func assign_rooms():
 				AntHillGenerator.tile_type.WALL:		current_room.scene = null
 				AntHillGenerator.tile_type.ROOM:
 					match AntHillGenerator.get_room_neighbor_amount(current_room):
-						1: choose_one_door_rooms()
+						1: choose_one_door_rooms("tunnel")
 						2: choose_two_door_rooms()
 						3: choose_three_door_rooms()
 						4: current_room.scene = four_door_tunnels.pick_random() # only one that does not need to change for the right door
 				AntHillGenerator.tile_type.START:
 					match AntHillGenerator.get_room_neighbor_amount(current_room):
-						1: choose_one_door_rooms()
+						1: choose_one_door_rooms("tunnel")
 						2: choose_two_door_rooms()
 						3: choose_three_door_rooms()
 						4: current_room.scene = four_door_tunnels.pick_random()
-				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms()
-				AntHillGenerator.tile_type.NURSERY:		choose_one_door_rooms()
-				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms()
-				AntHillGenerator.tile_type.WATER:		choose_one_door_rooms()
-				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms()
+				AntHillGenerator.tile_type.QUEEN:		choose_one_door_rooms("queen")
+				AntHillGenerator.tile_type.NURSERY:		choose_one_door_rooms("nursery")
+				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms("carpenter")
+				AntHillGenerator.tile_type.WATER:		choose_one_door_rooms("water")
+				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms("food")
 				_:										current_room.scene = null
 	current_room = start_room #set it to start room so we can start in the right room... maybe we should use something else but whatever
 
-func choose_one_door_rooms():
+func choose_one_door_rooms(kind: String):
+	var room_array
+	match kind:
+		"tunnel": 		room_array = one_door_tunnels
+		"nursery":		room_array = nurseries
+		"food":			room_array = foods
+		"carpenter":	room_array = carpenters
+		"queen":		room_array = queens
+		"water":		room_array = waters
 	if adjacent_rooms[dir.N] != null:
-		current_room.scene = one_door_tunnels[0]
+		current_room.scene = room_array[0]
 	if adjacent_rooms[dir.E] != null:
-		current_room.scene = one_door_tunnels[1]
+		current_room.scene = room_array[1]
 	if adjacent_rooms[dir.S] != null:
-		current_room.scene = one_door_tunnels[2]
+		current_room.scene = room_array[2]
 	if adjacent_rooms[dir.W] != null:
-		current_room.scene = one_door_tunnels[3]
+		current_room.scene = room_array[3]
 
 func choose_two_door_rooms():
 	if adjacent_rooms[dir.N] != null:

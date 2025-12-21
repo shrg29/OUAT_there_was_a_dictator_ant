@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cw3ku4x1ht3m2"
+path="res://.godot/imported/queen.dialogue-8bf15c29fa85a832f29962db2e70e8a6.tres"
+
+[deps]
+
+source_file="res://Dialogues/queen.dialogue"
+dest_files=["res://.godot/imported/queen.dialogue-8bf15c29fa85a832f29962db2e70e8a6.tres"]
+
+[params]
+
+defaults=true

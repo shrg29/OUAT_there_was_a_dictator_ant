@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://cri8s23bk0uep"]
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://cri8s23bk0uep"]
 
-[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="1_hbfjb"]
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="1_hbfjb"]
 [ext_resource type="Script" uid="uid://d3fsgbumnpg0" path="res://Resource/item_resource.gd" id="1_ihvn1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy35t"]
+atlas = ExtResource("1_hbfjb")
+region = Rect2(784.6147, 43.07728, 76.177124, 102.75059)
 
 [resource]
 script = ExtResource("1_ihvn1")
 item_name = "Water"
-item_texture = ExtResource("1_hbfjb")
+item_texture = SubResource("AtlasTexture_sy35t")
 metadata/_custom_type_script = "uid://d3fsgbumnpg0"
