@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_tdatb"]
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_0ob32"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_eajw5"]
-[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_nvlmg"]
+[ext_resource type="PackedScene" uid="uid://u7piil3xi02c" path="res://Scenes/map_generator.tscn" id="8_nvlmg"]
 [ext_resource type="Texture2D" uid="uid://dxpra8js036a5" path="res://assets/level_art/level_design/food_station.png" id="9_d1ga5"]
-[ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="11_or32f"]
+[ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="10_d1ga5"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_v4tqp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
@@ -47,8 +47,8 @@ size = Vector2(22.65213, 27.866898)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4tal"]
-size = Vector2(107.00003, 132.04169)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or32f"]
+size = Vector2(111.42868, 108.04169)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2chg4")
@@ -159,14 +159,16 @@ texture = ExtResource("9_d1ga5")
 
 [node name="NPCs" type="Node2D" parent="."]
 
-[node name="npc_1" parent="NPCs" instance=ExtResource("11_or32f")]
-position = Vector2(821, 537)
+[node name="npc_4" parent="NPCs" instance=ExtResource("10_d1ga5")]
+position = Vector2(718, 585)
+scale = Vector2(-1, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_1/StaticBody2D"]
-position = Vector2(-1.5, 97.020874)
-shape = SubResource("RectangleShape2D_o4tal")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_4/StaticBody2D"]
+position = Vector2(0.00024414063, 95.4494)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_or32f")
 
 [node name="player" parent="." instance=ExtResource("11_v4tqp")]
 position = Vector2(1435, 473)

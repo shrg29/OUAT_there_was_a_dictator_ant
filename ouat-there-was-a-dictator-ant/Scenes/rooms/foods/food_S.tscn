@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b50fcrcf248pp" path="res://Scenes/level design/door_south.tscn" id="5_1wihd"]
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_l2heb"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_mss6o"]
-[ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_ovuho"]
+[ext_resource type="PackedScene" uid="uid://u7piil3xi02c" path="res://Scenes/map_generator.tscn" id="8_ovuho"]
 [ext_resource type="Texture2D" uid="uid://dxpra8js036a5" path="res://assets/level_art/level_design/food_station.png" id="9_bjlv0"]
 [ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="10_bjlv0"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_5imv3"]
@@ -161,6 +161,7 @@ texture = ExtResource("9_bjlv0")
 
 [node name="npc_4" parent="NPCs" instance=ExtResource("10_bjlv0")]
 position = Vector2(1256.9999, 436.99997)
+scale = Vector2(1, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_4"]
 
