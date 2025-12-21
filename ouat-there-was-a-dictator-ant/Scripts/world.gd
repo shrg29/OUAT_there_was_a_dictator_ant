@@ -53,6 +53,7 @@ func start_game():
 	get_tree().get_root().add_child(pause_menu)
 	get_tree().get_root().add_child(hudquests)
 	TransitionScene.change_scene(start_room.scene)
+	RecruitedAnts.visible = true
 
 
 func print_grid():

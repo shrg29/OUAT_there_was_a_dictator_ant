@@ -67,7 +67,7 @@ var isHurt = false
 
 func _ready() -> void:
 	add_to_group("player")
-	item_holder.visible = false
+	
 	
 	await get_tree().process_frame
 	
@@ -81,6 +81,8 @@ func _ready() -> void:
 	get_tree().node_added.connect(_on_node_added)
 	
 	GameState.item_update.connect(update_item_holder)
+	if GameState.held_items.size() > 0:
+		update_item_holder(true)
 
 
 #region Interaction
@@ -174,7 +176,7 @@ func update_item_holder(valid: bool):
 		item_holder.texture = GameState.held_items[0].item_texture
 		item_holder.visible = true
 	else:
-		item_holder.visible = false
+		item_holder.visible = true
 		item_holder.texture = null
 #endregion
 
