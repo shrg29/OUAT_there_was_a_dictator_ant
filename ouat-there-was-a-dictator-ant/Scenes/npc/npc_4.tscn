@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj7mkoi7o2sbn"]
+[gd_scene load_steps=9 format=3 uid="uid://cj7mkoi7o2sbn"]
 
 [ext_resource type="Script" uid="uid://yhssp4eb15d7" path="res://Scripts/npcs/npc_4.gd" id="1_46q72"]
 [ext_resource type="Texture2D" uid="uid://dfeihqym071ed" path="res://assets/npc/npc5.png" id="2_6noh7"]
+[ext_resource type="Texture2D" uid="uid://clduxwgtv40t1" path="res://assets/level_art/level_design/assets.png" id="3_6noh7"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
 length = 0.001
@@ -329,6 +330,13 @@ _data = {
 &"idle": SubResource("Animation_dflj6")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_46q72"]
+radius = 249.12848
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3undc"]
+atlas = ExtResource("3_6noh7")
+region = Rect2(447.4865, 850.8204, 101.33331, 128.61542)
+
 [node name="npc_4" type="Node2D"]
 script = ExtResource("1_46q72")
 
@@ -415,3 +423,12 @@ region_rect = Rect2(84.090126, 18.499743, 54.34208, 105.33266)
 libraries = {
 &"": SubResource("AnimationLibrary_mhtfk")
 }
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_46q72")
+
+[node name="Marker" type="Sprite2D" parent="."]
+position = Vector2(2, -185)
+texture = SubResource("AtlasTexture_3undc")

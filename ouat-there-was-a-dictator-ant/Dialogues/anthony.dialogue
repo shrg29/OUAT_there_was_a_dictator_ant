@@ -3,7 +3,10 @@ do GameState.low = 0.8
 do GameState.high = 1.2
 
 if GameState.recruited_ants.has("Anthony"):
-	Anthony: I am ready to overthrow the queen!
+	if GameState.ant_number_goal - GameState.recruited_ants.size() > 0:
+		Anthony: I am ready! Let's recruit {{GameState.ant_number_goal - GameState.recruited_ants.size()}} more.
+	else:
+		Anthony: I think we have enough! Let's overthrow the queen!
 	=> resolve
 elif GameState.has_met_anthony == false:
 	set GameState.has_met_anthony = true
@@ -36,6 +39,7 @@ if GameState.count_item(GameState.anthony_demand_item) >= GameState.anthony_dema
 		do GameState.give_item(GameState.anthony_demand_item, GameState.anthony_demand_amount)
 		do GameState.recruit_ant("Anthony")
 		do AudioManager.play_sfx("task_completed")
+		Anthony: We need to recruit {{GameState.ant_number_goal - 2}} more to stand a chance. Go!
 		=> resolve
 	- Maybe later.
 		=> resolve

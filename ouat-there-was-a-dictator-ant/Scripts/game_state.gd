@@ -63,6 +63,7 @@ var anton_demand_amount: int = 2
 #endregion
 
 var failed_game: bool = false # Game over check
+@export var ant_number_goal: int = 6 # How many ants (including player) should there be to win?
 
 
 
@@ -147,5 +148,5 @@ func _process(delta: float) -> void:
 func recruit_ant(name: String) -> Array[String]:
 	recruited_ants.push_back(name)
 	if print_mode:
-		print("Recruited ANts: ", recruited_ants)
+		print("Recruited Ants: ", recruited_ants)
 	return recruited_ants

@@ -6,7 +6,7 @@ var print_mode: bool = true
 @onready var item_title: String
 @onready var item_image_holder = $Sprite2D
 @onready var pickup_area = $PickupArea
-
+@onready var item_marker: Sprite2D = $Item_Marker
 
 signal item_area_entered(item)
 signal item_area_exited(item)
@@ -15,6 +15,7 @@ signal item_area_exited(item)
 func _ready() -> void:
 	
 	add_to_group("item")
+	item_marker.visible = false
 	
 	# connecting signals through code for consistency
 	pickup_area.body_entered.connect(_on_body_entered)
@@ -54,11 +55,11 @@ func _on_becoming_target(target):
 	if self == target:
 		if print_mode:
 			print(item_title, " is the current target")
-		# TODO: Add visual indicator for interaction
+		item_marker.visible = true
 	else:
 		if print_mode:
 			print(item_title, " is not the current target")
-		# TODO: Remove visual indicator for interaction
+		item_marker.visible = false
 
 
 func interact():

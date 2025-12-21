@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0urdp2ca6qh3"]
+[gd_scene load_steps=14 format=3 uid="uid://d0urdp2ca6qh3"]
 
 [ext_resource type="Script" uid="uid://bqu48pevwmi4n" path="res://Scripts/testing.gd" id="1_lq4et"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="2_siu27"]
@@ -6,20 +6,26 @@
 [ext_resource type="Resource" uid="uid://hpk13ubic3hb" path="res://Resource/Item Resources/stick.tres" id="4_4ppfb"]
 [ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="4_8si1v"]
 [ext_resource type="Resource" uid="uid://b58fqimyi122a" path="res://Resource/Item Resources/beer.tres" id="5_vdlfs"]
-[ext_resource type="Resource" uid="uid://xr5u0dnwlg27" path="res://Resource/Item Resources/coin.tres" id="7_irbir"]
+[ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="8_a06pk"]
+[ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="9_a4ydb"]
+[ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="10_x6ncj"]
+[ext_resource type="PackedScene" uid="uid://cj7mkoi7o2sbn" path="res://Scenes/npc/npc_4.tscn" id="11_383b8"]
+[ext_resource type="PackedScene" uid="uid://dcioych7p8gul" path="res://Scenes/npc/npc_carpenter.tscn" id="12_17ygw"]
+[ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="13_4u8n4"]
+[ext_resource type="PackedScene" uid="uid://ce6pjae377nhv" path="res://Scenes/npc/queen.tscn" id="14_2343q"]
 
 [node name="Testing" type="Node2D"]
 script = ExtResource("1_lq4et")
 
 [node name="player" parent="." instance=ExtResource("2_siu27")]
-position = Vector2(1320, 752)
+position = Vector2(1472, 820)
 
 [node name="ItemInstance" parent="." instance=ExtResource("3_4ppfb")]
-position = Vector2(1968, 619)
+position = Vector2(1853, 614)
 item_type = ExtResource("4_4ppfb")
 
 [node name="ItemInstance11" parent="." instance=ExtResource("3_4ppfb")]
-position = Vector2(1023, 408)
+position = Vector2(1058, 488)
 item_type = ExtResource("5_vdlfs")
 
 [node name="ItemInstance10" parent="." instance=ExtResource("3_4ppfb")]
@@ -59,5 +65,25 @@ position = Vector2(1422, 126)
 item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance12" parent="." instance=ExtResource("3_4ppfb")]
-position = Vector2(437, 116)
-item_type = ExtResource("7_irbir")
+position = Vector2(815, 332)
+
+[node name="npc_nursery" parent="." instance=ExtResource("8_a06pk")]
+position = Vector2(286, 850)
+
+[node name="npc_3" parent="." instance=ExtResource("9_a4ydb")]
+position = Vector2(719, 912)
+
+[node name="npc_2" parent="." instance=ExtResource("10_x6ncj")]
+position = Vector2(166, 111)
+
+[node name="npc_4" parent="." instance=ExtResource("11_383b8")]
+position = Vector2(1025, 145)
+
+[node name="npc_carpenter" parent="." instance=ExtResource("12_17ygw")]
+position = Vector2(594, 128)
+
+[node name="npc_1" parent="." instance=ExtResource("13_4u8n4")]
+position = Vector2(1091, 896)
+
+[node name="queen" parent="." instance=ExtResource("14_2343q")]
+position = Vector2(497, 524)

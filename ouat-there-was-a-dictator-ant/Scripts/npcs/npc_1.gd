@@ -3,8 +3,8 @@ extends Node2D
 
 @export var print_mode: bool = true
 
-@export var npc_name: String = "Samantha"
-@export var npc_dialogue: DialogueResource = preload("res://Dialogues/samantha.dialogue")
+@export var npc_name: String = "Anthony"
+@export var npc_dialogue: DialogueResource = preload("res://Dialogues/anthony.dialogue")
 
 @export var is_interactable: bool = true
 @onready var marker: Sprite2D = $Marker
@@ -17,7 +17,7 @@ signal interactable_exited(npc)
 func _ready() -> void:
 	$AnimationPlayer.play("idle")
 	marker.visible = false
-	
+
 	add_to_group("npc") # identifier for interactable npcs
 	
 	# connecting signals through code for consistency
