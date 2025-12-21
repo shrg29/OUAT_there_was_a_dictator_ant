@@ -1,7 +1,7 @@
-extends TextureRect
+extends Control
 
 func _ready():
-	pass
+	$AnimatedSprite2D.play("default")
 
 #go to main scene
 func _on_start_pressed():

@@ -1,15 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://cugj1muun1qmt"]
+[gd_scene load_steps=14 format=3 uid="uid://bw75mc5fkqdse"]
 
-[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="1_28flt"]
 [ext_resource type="Script" uid="uid://cld56ux13h6uk" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://ds2erq3wfrrg5" path="res://assets/ui/play normal.png" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://ddew7mnorgndl" path="res://assets/ui/bgbtetile.png" id="2_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://3wmquhbpun8d" path="res://assets/ui/rocktitle.png" id="2_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://cv1y65h02n5lx" path="res://assets/ui/playbutton_hover.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dnykaheleixoj" path="res://assets/ui/quit normal.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://d0i5rq1joupho" path="res://assets/ui/quit_hover.png" id="5_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://c36cu17p8jau" path="res://assets/ui/logo.png" id="6_opfnp"]
+[ext_resource type="Texture2D" uid="uid://c21pmmb2sp5h" path="res://assets/ui/anttile.png" id="7_16hvj"]
+[ext_resource type="Texture2D" uid="uid://ms8tc7gdl5kc" path="res://assets/ui/scarf1.png" id="8_vr1f0"]
+[ext_resource type="Texture2D" uid="uid://bgptc36n3j5p3" path="res://assets/ui/scarf2.png" id="9_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://7ourt686ptt4" path="res://assets/ui/scarf3.png" id="10_5egv6"]
 
-[node name="TextureRect" type="TextureRect"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtepg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vr1f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t1dhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5egv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t1dhk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TextureRect" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_48xlc")
+
+[node name="Bgbtetile" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_t1dhk")
+
+[node name="Rocktitle" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_vr1f0")
 
 [node name="Container" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -18,22 +57,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -127.5
-offset_top = -130.0
-offset_right = 127.5
-offset_bottom = 130.0
+offset_left = -776.0
+offset_top = 70.0
+offset_right = -397.0
+offset_bottom = 330.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Start" type="TextureButton" parent="Container"]
 layout_mode = 2
-texture_normal = ExtResource("1_28flt")
+texture_normal = ExtResource("2_n45e2")
+texture_pressed = ExtResource("3_opfnp")
+texture_hover = ExtResource("3_opfnp")
 stretch_mode = 3
 
 [node name="Quit" type="TextureButton" parent="Container"]
 layout_mode = 2
-texture_normal = ExtResource("1_28flt")
+texture_normal = ExtResource("4_cp0ys")
+texture_pressed = ExtResource("5_yhxw7")
+texture_hover = ExtResource("5_yhxw7")
 stretch_mode = 3
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(417, 298)
+scale = Vector2(1.3416846, 1.3416846)
+texture = ExtResource("6_opfnp")
+
+[node name="Anttile" type="Sprite2D" parent="."]
+position = Vector2(957.0172, 539.50964)
+texture = ExtResource("7_16hvj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(938.0172, 495.50964)
+scale = Vector2(1.3416846, 1.3416846)
+sprite_frames = SubResource("SpriteFrames_vtepg")
+frame_progress = 0.18834227
 
 [connection signal="pressed" from="Container/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Container/Quit" to="." method="_on_quit_pressed"]
