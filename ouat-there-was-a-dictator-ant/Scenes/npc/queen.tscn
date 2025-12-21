@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce6pjae377nhv"]
+[gd_scene load_steps=6 format=3 uid="uid://b3koo8up5q3wf"]
 
+[ext_resource type="Script" uid="uid://bf7g7hkdro4g4" path="res://Scripts/npcs/queen.gd" id="1_n0jy4"]
 [ext_resource type="Texture2D" uid="uid://bfghknd5uot2x" path="res://assets/npc/queen.png" id="1_qjw5i"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
@@ -377,6 +378,7 @@ _data = {
 }
 
 [node name="queen" type="Node2D"]
+script = ExtResource("1_n0jy4")
 
 [node name="controller" type="Node2D" parent="."]
 

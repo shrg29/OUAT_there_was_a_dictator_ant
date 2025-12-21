@@ -1,5 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhtdy4g2vbqqc"]
 
+[ext_resource type="Script" uid="uid://dxkuv0am85whs" path="res://Scripts/npcs/npc_nursery.gd" id="1_dflj6"]
 [ext_resource type="Texture2D" uid="uid://qqtp0tly10u7" path="res://assets/npc/npc1.png" id="1_rpr4t"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
@@ -328,11 +329,8 @@ _data = {
 &"idle": SubResource("Animation_dflj6")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rpr4t"]
-radius = 218.33969
-
 [node name="npc_nursery" type="Node2D"]
-scale = Vector2(0.6, 0.6)
+script = ExtResource("1_dflj6")
 
 [node name="controller" type="Node2D" parent="."]
 
@@ -412,8 +410,3 @@ region_rect = Rect2(129.43687, 213.26773, 66.6219, 81.73523)
 libraries = {
 &"": SubResource("AnimationLibrary_mhtfk")
 }
-
-[node name="InteractionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_rpr4t")

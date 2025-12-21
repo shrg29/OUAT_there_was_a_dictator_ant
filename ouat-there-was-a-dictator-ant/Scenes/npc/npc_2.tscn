@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnvpr65b4wag1"]
+[gd_scene load_steps=6 format=3 uid="uid://bnvpr65b4wag1"]
 
+[ext_resource type="Script" uid="uid://dqiawgm43lify" path="res://Scripts/npcs/npc_2.gd" id="1_0q3uk"]
 [ext_resource type="Texture2D" uid="uid://8f5br3fmyk2y" path="res://assets/npc/npc3.png" id="2_dyi55"]
 
 [sub_resource type="Animation" id="Animation_g40pb"]
@@ -329,6 +330,7 @@ _data = {
 }
 
 [node name="npc_2" type="Node2D"]
+script = ExtResource("1_0q3uk")
 
 [node name="controller" type="Node2D" parent="."]
 
