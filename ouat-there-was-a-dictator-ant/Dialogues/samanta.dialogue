@@ -24,6 +24,7 @@ else:
 	else:
 		=> quest
 ~ quest
+do QuestManager.add_quest(GameState.samanta_quest)
 set GameState.has_met_samanta = true
 Samanta: If you could bring me {{GameState.samanta_demand_amount}} {{GameState.samanta_demand_item.item_name}}?
 if GameState.count_item(GameState.samanta_demand_item) >= GameState.samanta_demand_amount:
@@ -31,6 +32,7 @@ if GameState.count_item(GameState.samanta_demand_item) >= GameState.samanta_dema
 		do GameState.give_item(GameState.samanta_demand_item, GameState.samanta_demand_amount)
 		set GameState.samanta_demand_amount = 0
 		do GameState.recruit_ant("Samanta")
+		do QuestManager.remove_quest(GameState.samanta_quest)
 		do AudioManager.play_sfx("task_completed")
 		=> resolve
 	- Another Time.
