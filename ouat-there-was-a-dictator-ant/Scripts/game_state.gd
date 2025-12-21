@@ -3,7 +3,6 @@ extends Node
 
 var print_mode: bool = false
 
-
 #region Item Preloads
 var beer_item: ItemResource = preload("res://Resource/Item Resources/beer.tres")
 var coin_item: ItemResource = preload("res://Resource/Item Resources/coin.tres")
@@ -79,7 +78,6 @@ var failed_game: bool = false # Game over check
 func _ready() -> void:
 	await get_tree().process_frame
 	recruited_ants.push_back("Player")
-	recruited_ants.push_back("Anthony")
 	update_item_display()
 	pass # Replace with function body.
 
@@ -180,4 +178,15 @@ func recruit_ant(name: String) -> Array[String]:
 	if print_mode:
 		print("Recruited Ants: ", recruited_ants)
 	RecruitedAnts.update_ant_display(name)
+	
+	if recruited_ants.size() >= ant_number_goal:
+		end_game()
+		
 	return recruited_ants
+
+
+func end_game():
+	if failed_game == true:
+		TransitionScene.change_scene("res://Scenes/game_over.tscn")
+	else:
+		TransitionScene.change_scene("res://Scenes/win_ending.tscn")

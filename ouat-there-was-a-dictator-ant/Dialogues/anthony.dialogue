@@ -28,9 +28,11 @@ elif GameState.has_met_anthony == false:
 				=> quest
 			- I give up. Maybe we get lucky and survive the war.
 				set GameState.failed_game = true
+				do GameState.end_game()
 				=> resolve
 		- I am reporting you to the queen, traitor!
 			set GameState.failed_game = true
+			do GameState.end_game()
 			=> resolve
 
 ~ quest

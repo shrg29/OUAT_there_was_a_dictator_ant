@@ -44,4 +44,5 @@ func _process(delta):
 		timer_label.text = "Time: %d" % remaining
 
 func _on_game_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	GameState.failed_game = true
+	GameState.end_game()
