@@ -2,11 +2,13 @@
 do GameState.low = 0.5
 do GameState.high = 0.9
 if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
+	do QuestManager.add_quest(GameState.anton_water_quest)
 	Anton: [[Greetings|Hoy]], I heard about your idea. I will join if you give me {{GameState.anton_demand_amount}} {{GameState.anton_demand_item.item_name}}.
 	if GameState.count_item(GameState.anton_demand_item) >= GameState.anton_demand_amount:
 		- Give Water
 			Player: Here you go
 			do GameState.give_item(GameState.anton_demand_item, GameState.anton_demand_amount)
+			do QuestManager.progress(GameState.anton_demand_item, GameState.anton_demand_amount)
 			set GameState.anton_demand_amount = 0
 			do GameState.recruit_ant("Anton")
 			do AudioManager.play_sfx("task_completed")
@@ -18,9 +20,11 @@ if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
 	elif GameState.count_item(GameState.anton_demand_item) > 0:
 		Player: I do not have that much water.
 		- Give {{GameState.count_item(GameState.anton_demand_item)}} Water
-			Player: Here is some, I will give you more later.
-			set GameState.anton_demand_amount = GameState.anton_demand_amount - GameState.count_item(GameState.anton_demand_item)
-			do GameState.give_item(GameState.anton_demand_item, GameState.anton_demand_amount)
+		    Player: Here is some, I will give you more later.
+		    var given_amount = GameState.count_item(GameState.anton_demand_item)
+		    do GameState.give_item(GameState.anton_demand_item, given_amount)
+		    do QuestManager.progress(GameState.anton_demand_item, given_amount)
+		    set GameState.anton_demand_amount = GameState.anton_demand_amount - given_amount
 		- I will come back
 			System: Not yet implemented
 		- Nuh uh

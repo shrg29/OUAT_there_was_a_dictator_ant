@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://dvgp3gdbmvhe3"]
+
+[ext_resource type="Script" uid="uid://cx6e66m36hoot" path="res://Scripts/quest_resource.gd" id="1_cyoyo"]
+[ext_resource type="Resource" uid="uid://crtebwq7d3cgc" path="res://Resource/Item Resources/stick.tres" id="2_rvjc5"]
+
+[resource]
+script = ExtResource("1_cyoyo")
+quest_type = "More"
+description = "Bring one stick to Kasantra"
+npc = "Kasantra"
+target_item = ExtResource("2_rvjc5")
+required_amount = 1
+metadata/_custom_type_script = "uid://cx6e66m36hoot"
