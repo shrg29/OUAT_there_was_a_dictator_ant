@@ -15,7 +15,3 @@ func display_ant(scene_type):
 	var scene = scene_type.instantiate()
 	scene.position = Vector2(110,110)
 	new_scene.add_child(scene)
-
-#Display item through texture
-func display_item(texture):
-	item.texture = texture

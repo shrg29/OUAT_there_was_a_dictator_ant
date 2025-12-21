@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dnykaheleixoj" path="res://assets/ui/quit normal.png" id="6_524vl"]
 [ext_resource type="Texture2D" uid="uid://d0i5rq1joupho" path="res://assets/ui/quit_hover.png" id="7_0fi7f"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="Control"]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_k0w1u")
 
 [node name="Logo" type="Sprite2D" parent="."]
@@ -25,6 +27,7 @@ position = Vector2(960, 540)
 texture = ExtResource("2_u8tnp")
 
 [node name="Resume" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 218.0
 offset_top = 578.0
 offset_right = 597.0
@@ -34,6 +37,7 @@ texture_pressed = ExtResource("3_u8tnp")
 texture_hover = ExtResource("3_u8tnp")
 
 [node name="Restart" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 218.0
 offset_top = 673.0
 offset_right = 597.0
@@ -43,6 +47,7 @@ texture_pressed = ExtResource("5_ix48p")
 texture_hover = ExtResource("5_ix48p")
 
 [node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 218.0
 offset_top = 769.0
 offset_right = 597.0
