@@ -1,7 +1,6 @@
-extends CanvasLayer
+extends Control
 
 var screen_index: int = 1
-
 @onready var screen_one = $HBoxContainer/Control/SubViewportContainer/screen_one
 @onready var screen_two = $HBoxContainer/Control2/SubViewportContainer/screen_two
 @onready var screen_three = $HBoxContainer/Control3/SubViewportContainer/screen_three
@@ -30,6 +29,7 @@ func update_ant_display(name: String):
 	await get_tree().process_frame
 	var new_screen
 	screen_index = GameState.recruited_ants.size() - 1
+	print(screen_index)
 	match screen_index:
 		1:
 			new_screen = screen_one
@@ -48,11 +48,8 @@ func update_ant_display(name: String):
 		"Anthony":
 			print("loaded 0")
 			var scene = anthony.instantiate()
-			print("loaded 1")
-			#scene.position = Vector2(150,150)
-			print("loaded 2")
+			scene.position = Vector2(150,150)
 			new_screen.add_child(scene)
-			print("loaded 3")
 		"Antdrew":
 			var scene = antdrew.instantiate()
 			scene.position = Vector2(150,150)

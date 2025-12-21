@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://q03cln0tkbpq"]
+
+[ext_resource type="Script" uid="uid://c64wse8707ir7" path="res://ant_display.gd" id="1_rk23d"]
+
+[node name="ant_display" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1698.0
+offset_bottom = -856.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rk23d")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 226.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 226.0
+
+[node name="itemdisplay" type="Sprite2D" parent="."]
