@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwsim038ycpta"]
+
+[ext_resource type="Texture2D" uid="uid://chfpyj57mdqwu" path="res://assets/level_art/level_design/keyboard_tutorial.png" id="1_6smmn"]
+
+[node name="input_controller" type="Sprite2D"]
+
+[node name="keyboard" type="Sprite2D" parent="."]
+texture = ExtResource("1_6smmn")
+region_enabled = true
+region_rect = Rect2(552.12976, 174.82352, 518.8771, 216.68683)

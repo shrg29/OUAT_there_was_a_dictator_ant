@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://csvqpwijibno3"]
+[gd_scene load_steps=6 format=3 uid="uid://csvqpwijibno3"]
 
 [ext_resource type="Script" uid="uid://cld56ux13h6uk" path="res://Scripts/main_menu.gd" id="1_8fo1c"]
-[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="2_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://cjn2e3ormgk27" path="res://assets/ui/restart_normal.png" id="2_14u15"]
+[ext_resource type="Texture2D" uid="uid://cmnclarotmy7p" path="res://assets/ui/resume_hover.png" id="3_j3ryr"]
+[ext_resource type="Texture2D" uid="uid://dnykaheleixoj" path="res://assets/ui/quit normal.png" id="4_rjluv"]
+[ext_resource type="Texture2D" uid="uid://d0i5rq1joupho" path="res://assets/ui/quit_hover.png" id="5_gjtdd"]
 
 [node name="GameOver" type="TextureRect"]
 anchors_preset = 15
@@ -25,12 +28,16 @@ alignment = 1
 
 [node name="Start" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_ek8ke")
+texture_normal = ExtResource("2_14u15")
+texture_pressed = ExtResource("3_j3ryr")
+texture_hover = ExtResource("3_j3ryr")
 stretch_mode = 3
 
 [node name="Quit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("2_ek8ke")
+texture_normal = ExtResource("4_rjluv")
+texture_pressed = ExtResource("5_gjtdd")
+texture_hover = ExtResource("5_gjtdd")
 stretch_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

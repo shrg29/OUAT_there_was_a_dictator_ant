@@ -143,8 +143,8 @@ func drop_item(location: Vector2):
 	if held_items.size() == 0 : return #if no item return
 	var dropped_item = held_items.pop_at(0) #pop the item out of the array
 	
-	print("Dropping item: ", dropped_item.item_name if dropped_item else "NULL")
-	print("Item texture: ", dropped_item.item_texture if dropped_item else "NULL")
+	#print("Dropping item: ", dropped_item.item_name if dropped_item else "NULL")
+	#print("Item texture: ", dropped_item.item_texture if dropped_item else "NULL")
 	
 	var item_instance_preload = preload("res://Scenes/item_instance.tscn") #load the instance
 	var item_instance = item_instance_preload.instantiate()

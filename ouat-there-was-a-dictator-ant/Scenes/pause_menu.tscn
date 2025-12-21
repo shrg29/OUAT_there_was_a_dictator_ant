@@ -1,37 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://chxah4y7fg02r"]
+[gd_scene load_steps=8 format=3 uid="uid://chxah4y7fg02r"]
 
 [ext_resource type="Script" uid="uid://cpryn8rjhdfqn" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
-[ext_resource type="Texture2D" uid="uid://ct1njkabbqljk" path="res://icon.svg" id="2_1och7"]
+[ext_resource type="Texture2D" uid="uid://dodvklefpmtqg" path="res://assets/ui/resume_normal.png" id="2_sjs17"]
+[ext_resource type="Texture2D" uid="uid://cmnclarotmy7p" path="res://assets/ui/resume_hover.png" id="3_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://cjn2e3ormgk27" path="res://assets/ui/restart_normal.png" id="4_stj27"]
+[ext_resource type="Texture2D" uid="uid://c16e1b51gdn0u" path="res://assets/ui/restart_hover.png" id="5_ix48p"]
+[ext_resource type="Texture2D" uid="uid://dnykaheleixoj" path="res://assets/ui/quit normal.png" id="6_524vl"]
+[ext_resource type="Texture2D" uid="uid://d0i5rq1joupho" path="res://assets/ui/quit_hover.png" id="7_0fi7f"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Control" type="Control"]
 process_mode = 3
-script = ExtResource("1_k0w1u")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -196.0
-offset_right = 64.0
-offset_bottom = 196.0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k0w1u")
 
-[node name="Resume" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_1och7")
+[node name="Resume" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 770.5
+offset_top = 344.0
+offset_right = 1149.5
+offset_bottom = 435.0
+texture_normal = ExtResource("2_sjs17")
+texture_pressed = ExtResource("3_u8tnp")
+texture_hover = ExtResource("3_u8tnp")
 
-[node name="Restart" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_1och7")
+[node name="Restart" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 770.5
+offset_top = 439.0
+offset_right = 1149.5
+offset_bottom = 531.0
+texture_normal = ExtResource("4_stj27")
+texture_pressed = ExtResource("5_ix48p")
+texture_hover = ExtResource("5_ix48p")
 
-[node name="Quit" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("2_1och7")
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 770.5
+offset_top = 535.0
+offset_right = 1149.5
+offset_bottom = 627.0
+texture_normal = ExtResource("6_524vl")
+texture_pressed = ExtResource("7_0fi7f")
+texture_hover = ExtResource("7_0fi7f")
 
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
