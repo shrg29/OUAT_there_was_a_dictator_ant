@@ -19,9 +19,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 
 [node name="GameTimer" type="Timer" parent="."]
-wait_time = 300.0
+wait_time = 420.0
 one_shot = true
-autostart = true
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 1801.0
@@ -37,3 +36,5 @@ offset_bottom = 261.0
 text = "Watch out for the time...
 Queen is already suspicious. "
 horizontal_alignment = 2
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
