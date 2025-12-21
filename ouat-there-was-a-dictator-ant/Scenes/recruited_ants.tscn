@@ -12,6 +12,7 @@ anchor_bottom = 0.095000006
 offset_top = -102.600006
 offset_right = 844.0
 offset_bottom = 102.399994
+scale = Vector2(0.5470589, 0.5470589)
 theme_override_constants/separation = 200
 
 [node name="Control" type="Control" parent="HBoxContainer"]
@@ -35,7 +36,7 @@ render_target_update_mode = 4
 [node name="item_one" type="Sprite2D" parent="HBoxContainer/Control/SubViewportContainer/screen_one"]
 z_index = 1
 position = Vector2(150, 150)
-scale = Vector2(2, 2)
+scale = Vector2(1.0724769, 1.0724769)
 
 [node name="Control2" type="Control" parent="HBoxContainer"]
 layout_mode = 2
