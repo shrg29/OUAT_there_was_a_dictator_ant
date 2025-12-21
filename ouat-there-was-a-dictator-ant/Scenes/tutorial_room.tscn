@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cayj7j7t8xvl3"]
+[gd_scene load_steps=5 format=3 uid="uid://cayj7j7t8xvl3"]
 
 [ext_resource type="Texture2D" uid="uid://cxg34mchbwev8" path="res://assets/level_art/level_design/tutorial_room.png" id="1_dlhfk"]
 [ext_resource type="PackedScene" uid="uid://cfqw4ifr2e8j1" path="res://Scenes/level design/hole.tscn" id="2_8ayev"]
 [ext_resource type="PackedScene" uid="uid://cdhdftwo7gdhr" path="res://Scenes/level design/torch.tscn" id="2_43ach"]
+[ext_resource type="PackedScene" uid="uid://dwsim038ycpta" path="res://Scenes/level design/input_controller.tscn" id="4_8ayev"]
 
 [node name="tutorial_room" type="Node2D"]
 
@@ -19,3 +20,6 @@ position = Vector2(768, 227)
 
 [node name="torch2" parent="." instance=ExtResource("2_43ach")]
 position = Vector2(1206, 823)
+
+[node name="input_tutorial" parent="." instance=ExtResource("4_8ayev")]
+position = Vector2(821, 298)
