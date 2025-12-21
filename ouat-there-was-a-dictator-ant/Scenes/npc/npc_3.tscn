@@ -338,6 +338,7 @@ atlas = ExtResource("3_s5dq2")
 region = Rect2(447.4865, 850.8204, 101.33331, 128.61542)
 
 [node name="npc_3" type="Node2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_0dvrq")
 
 [node name="controller" type="Node2D" parent="."]
