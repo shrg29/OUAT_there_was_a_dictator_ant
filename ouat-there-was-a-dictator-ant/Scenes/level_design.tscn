@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://lv7767crf5m1"]
+[gd_scene load_steps=69 format=3 uid="uid://lv7767crf5m1"]
 
 [ext_resource type="PackedScene" uid="uid://bd778p2c8x55d" path="res://Scenes/level design/terrain_cube.tscn" id="1_xya7e"]
 [ext_resource type="PackedScene" uid="uid://cq6nfcen2xyl1" path="res://Scenes/level design/wall_cube.tscn" id="2_ekove"]
@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://dfumpt5oalxnq" path="res://Scenes/level design/carpenter.tscn" id="55_8q85r"]
 [ext_resource type="PackedScene" uid="uid://c0vst70pdtt7i" path="res://Scenes/level design/arrow.tscn" id="55_nlubo"]
 [ext_resource type="PackedScene" uid="uid://db3pisyt8t6ne" path="res://Scenes/npc/npc_carpenter.tscn" id="56_lssb3"]
+[ext_resource type="PackedScene" uid="uid://cdhdftwo7gdhr" path="res://Scenes/level design/torch.tscn" id="56_nlubo"]
 [ext_resource type="PackedScene" uid="uid://dv0dsc1u2ealr" path="res://Scenes/level design/nursery.tscn" id="56_p0jfs"]
 [ext_resource type="PackedScene" uid="uid://cahqt4o0qx7y1" path="res://Scenes/level design/water.tscn" id="57_p0jfs"]
 [ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="57_um2fi"]
@@ -283,6 +284,8 @@ position = Vector2(2073, -10)
 
 [node name="arrow" parent="assets" instance=ExtResource("55_nlubo")]
 position = Vector2(1994, -18)
+
+[node name="torch" parent="assets" instance=ExtResource("56_nlubo")]
 
 [node name="queen" parent="." instance=ExtResource("54_1sqge")]
 position = Vector2(-371, -57)
