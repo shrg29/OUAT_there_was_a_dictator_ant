@@ -1,6 +1,6 @@
 extends Node2D
 
-var npc_scene = preload("res://Scenes/ant_npc.tscn")
+#var npc_scene = preload("res://Scenes/ant_npc.tscn")
 
 var dialogue_anton: DialogueResource = preload("res://Dialogues/anton.dialogue")
 var dialogue_anthony: DialogueResource = preload("res://Dialogues/anthony.dialogue")

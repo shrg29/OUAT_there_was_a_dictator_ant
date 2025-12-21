@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcioych7p8gul"]
+[gd_scene load_steps=9 format=3 uid="uid://db3pisyt8t6ne"]
 
 [ext_resource type="Texture2D" uid="uid://cqqrentben3br" path="res://assets/npc/carpenter.png" id="1_eh6vg"]
 [ext_resource type="Script" uid="uid://b6pmtpli18eu3" path="res://Scripts/npcs/npc_carpenter.gd" id="1_swoii"]
@@ -266,6 +266,7 @@ atlas = ExtResource("3_27akf")
 region = Rect2(447.4865, 850.8204, 101.33331, 128.61542)
 
 [node name="npc_carpenter" type="Node2D"]
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_swoii")
 
 [node name="controller" type="Node2D" parent="."]
