@@ -114,14 +114,18 @@ func get_mini_map() -> ImageTexture:
 			var c := Color.TRANSPARENT
 			match n.type:
 				tile_type.WALL:      c = Color.TRANSPARENT
-				tile_type.ROOM:      c = Color(0.408, 0.246, 0.076, map_transparency)
+				tile_type.ROOM:      c = Color(0.424, 0.372, 0.318, map_transparency)
 				tile_type.START:     c = Color(0.401, 0.065, 0.632, map_transparency)
 				tile_type.QUEEN:     c = Color(1.0, 0.004, 0.0, map_transparency)
 				tile_type.NURSERY:   c = Color(0.79, 0.214, 0.53, map_transparency)
-				tile_type.CARPENTER: c = Color(0.652, 0.467, 0.144, map_transparency)
+				tile_type.CARPENTER: c = Color(0.505, 0.236, 0.146, map_transparency)
 				tile_type.WATER:     c = Color(0.209, 0.477, 0.685, map_transparency)
 				tile_type.FOOD:      c = Color(0.302, 0.455, 0.203, map_transparency)
 				_:	c = Color.TRANSPARENT
+			if World.current_room == n:
+				c += Color(0.35, 0.35, 0.35)
+				c.a = 1.0
+				
 
 			for x_b in range(block_size_x):
 				for y_b in range(block_size_y):

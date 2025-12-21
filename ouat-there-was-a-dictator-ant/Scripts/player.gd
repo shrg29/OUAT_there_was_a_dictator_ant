@@ -12,6 +12,8 @@ signal inform_current_interactable(npc)
 var nearby_items = []  # Track all nearby NPCs
 var current_item: Node2D = null
 
+@onready var item_holder: Sprite2D = $ItemHolder
+
 signal inform_current_item(item)
 #endregion
 
@@ -29,7 +31,7 @@ signal inform_current_item(item)
 #var sound_joy = preload("res://assets/SFX/player noises/wahahuu.wav")
 #endregion
 
-@export var speed: int = 400
+@export var speed: int = 600
 
 #animations
 @onready var animations = $main_ant/AnimationPlayer
@@ -65,6 +67,7 @@ var isHurt = false
 
 func _ready() -> void:
 	add_to_group("player")
+	item_holder.visible = false
 	
 	await get_tree().process_frame
 	
@@ -76,6 +79,8 @@ func _ready() -> void:
 		_connect_to_item(item)
 	
 	get_tree().node_added.connect(_on_node_added)
+	
+	GameState.item_update.connect(update_item_holder)
 
 
 #region Interaction
@@ -162,6 +167,15 @@ func _get_closest_item(): # setting closest item as current interactable
 			closest_dist = dist
 	
 	return closest
+
+
+func update_item_holder(valid: bool):
+	if valid == true:
+		item_holder.texture = GameState.held_items[0].item_texture
+		item_holder.visible = true
+	else:
+		item_holder.visible = false
+		item_holder.texture = null
 #endregion
 
 func handleInput():
@@ -184,8 +198,9 @@ func handleInput():
 
 func _physics_process(delta):
 	handleInput()
-	updateAnimation()
-	move_and_slide()
+	if GameState.current_state == GameState.state.WALKING:
+		updateAnimation()
+		move_and_slide()
 	
 
 

@@ -25,8 +25,18 @@ func stop_music():
 #same thing for the sound effects
 #just call the function and type the name of the sfx you need, e.g. "walking"
 func play_sfx(name: String):
+	sfx_player.pitch_scale = 1 # just to be sure
 	if not sfx.has(name):
 		push_warning("sound effect you tryna call doesn't exist " + name)
 		return
+	sfx_player.stream = sfx[name]
+	sfx_player.play()
+
+
+func play_sfx_special(name: String, low: float, high: float):
+	if not sfx.has(name):
+		push_warning("sound effect you tryna call doesn't exist " + name)
+		return
+	sfx_player.pitch_scale = randf_range(low, high)
 	sfx_player.stream = sfx[name]
 	sfx_player.play()

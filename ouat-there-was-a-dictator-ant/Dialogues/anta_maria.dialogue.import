@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bga6lmp3radqk"
+path="res://.godot/imported/anta_maria.dialogue-2d0408615d74d123965970db7e303806.tres"
+
+[deps]
+
+source_file="res://Dialogues/anta_maria.dialogue"
+dest_files=["res://.godot/imported/anta_maria.dialogue-2d0408615d74d123965970db7e303806.tres"]
+
+[params]
+
+defaults=true

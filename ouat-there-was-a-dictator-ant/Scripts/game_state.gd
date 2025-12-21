@@ -1,32 +1,79 @@
 extends Node
 
 
-var print_mode: bool = false
+var print_mode: bool = true
 
 
+#region Item Preloads
+var beer_item: ItemResource = preload("res://Resource/Item Resources/beer.tres")
+var coin_item: ItemResource = preload("res://Resource/Item Resources/coin.tres")
+var stick_item: ItemResource = preload("res://Resource/Item Resources/stick.tres")
+var stone_item: ItemResource = preload("res://Resource/Item Resources/stone.tres")
 var water_item: ItemResource = preload("res://Resource/Item Resources/water.tres")
+#endregion
+
+#region Ant-Speech Pitch values
+var low: float = 0.5
+var high: float = 0.9
+#endregion
 
 enum state {TALKING, WALKING}
 var current_state: state = state.WALKING
 
-var recruited_ants: Array[String] = ["Player", "Another Ant"] # Array holding all successfully recruited ants
+var recruited_ants: Array[String] = ["Player"] # Array holding all successfully recruited ants
 var held_items: Array[ItemResource] = [] # Array holding all items we are currently carrying
 
+signal item_update(valid: bool)
+
+#region Specific Ants
+
+var anthony_demand_item: ItemResource = stick_item
+var anthony_demand_amount: int = 1
+var has_met_anthony: bool = false
+
+var has_met_antonia: bool = false
+var got_antonia_quest: bool = false
+
+var has_met_kasantra: bool = false
+var kasantra_first_quest_complete: bool = false
+var kasantra_demand_item: ItemResource = water_item
+var kasantra_demand_amount: int = 6
+var kasantra_second_item: ItemResource = stick_item
+var kasantra_second_amount: int = 1
+
+var has_met_samantha: bool = false
+var samantha_demand_item: ItemResource = beer_item
+var samantha_demand_amount: int = 1
+
+var has_met_antdrew: bool = false
+var recieved_beer: bool = false
+
+var has_met_queen: bool = false
+
+var has_met_anta:bool = false
+var anta_demand_item: ItemResource = coin_item
+var anta_demand_amount: int = 1
 
 enum anton_opinion {HATE, FINE}
 var anton_current_opinion: anton_opinion = anton_opinion.FINE
 var anton_demand_item: ItemResource = water_item
 var anton_demand_amount: int = 2
 
+
+
+#endregion
+
 var failed_game: bool = false # Game over check
+@export var ant_number_goal: int = 6 # How many ants (including player) should there be to win?
 
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	await get_tree().process_frame
 	pick_up_item(water_item)
-	pick_up_item(water_item)
+	#pick_up_item(water_item)
 	pass # Replace with function body.
 
 
@@ -45,14 +92,17 @@ func update_item_display():
 				if print_mode:
 					print(ant, " does not have an item to hold")
 			ant_index = ant_index + 1
+			
 	else:
 		if print_mode:
 			print("Error: Too many items to display")
+	item_update.emit(held_items.size() > 0)
 
 
 func pick_up_item(item: ItemResource):
 	if held_items.size() < recruited_ants.size():
 		held_items.push_back(item)
+		AudioManager.play_sfx("item_collected")
 		update_item_display()
 	else:
 		if print_mode:
@@ -86,6 +136,7 @@ func give_item(gift: ItemResource, amount: int):
 func drop_item(location: Vector2):
 	# TODO: function to drop the item on the ground at "location"
 	held_items.remove_at(0)
+	AudioManager.play_sfx("drop")
 	update_item_display()
 #endregion
 
@@ -100,5 +151,5 @@ func _process(delta: float) -> void:
 func recruit_ant(name: String) -> Array[String]:
 	recruited_ants.push_back(name)
 	if print_mode:
-		print("Recruited ANts: ", recruited_ants)
+		print("Recruited Ants: ", recruited_ants)
 	return recruited_ants

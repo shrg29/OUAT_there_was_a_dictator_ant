@@ -1,12 +1,12 @@
 extends Node2D
 
-var print_mode: bool = false
+var print_mode: bool = true
 
 @export var item_type: ItemResource = null
 @onready var item_title: String
 @onready var item_image_holder = $Sprite2D
 @onready var pickup_area = $PickupArea
-
+@onready var item_marker: Sprite2D = $Item_Marker
 
 signal item_area_entered(item)
 signal item_area_exited(item)
@@ -15,6 +15,7 @@ signal item_area_exited(item)
 func _ready() -> void:
 	
 	add_to_group("item")
+	item_marker.visible = false
 	
 	# connecting signals through code for consistency
 	pickup_area.body_entered.connect(_on_body_entered)
@@ -34,6 +35,8 @@ func set_type(type: ItemResource):
 	item_image_holder.texture = item_type.item_texture
 
 
+#region Pickup
+
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		item_area_entered.emit(self)
@@ -52,18 +55,23 @@ func _on_becoming_target(target):
 	if self == target:
 		if print_mode:
 			print(item_title, " is the current target")
-		# TODO: Add visual indicator for interaction
+		item_marker.visible = true
 	else:
 		if print_mode:
 			print(item_title, " is not the current target")
-		# TODO: Remove visual indicator for interaction
+		item_marker.visible = false
 
 
 func interact():
 	if print_mode:
 		print("Picking up: ", item_title)
-	GameState.pick_up_item(item_type)
-	queue_free()
+	if GameState.recruited_ants.size() > GameState.held_items.size():
+		GameState.pick_up_item(item_type)
+		queue_free()
+	else:
+		if print_mode:
+			print("Player is holding too many items")
+#endregion
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

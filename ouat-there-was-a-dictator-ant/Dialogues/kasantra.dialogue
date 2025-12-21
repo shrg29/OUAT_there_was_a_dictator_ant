@@ -1,0 +1,90 @@
+~ start
+do GameState.low = 0.9
+do GameState.high = 1.4
+
+if GameState.recruited_ants.has("Kasantra"):
+	Kasantra: The queen's rule is about to end!
+	=> resolve
+else:
+	if GameState.kasantra_first_quest_complete == false:
+		if GameState.has_met_kasantra == false:
+			if GameState.got_antonia_quest == false:
+				Kasantra: Greetings | Fellow | Worker
+				- Hello, we are recruiting for a revolution!
+					Kasantra: Contemplating... | Need | Favour
+					set GameState.has_met_kasantra = true
+					=> quest_one
+				- Goodbye
+					=> resolve
+			else:
+				Kasantra: Greetings | I | Expected | You
+				- You did? Through Antonia?
+					Kasantra: Indirectly | . | You | Recruiting | ?
+					- We are, yes... Are you joining?
+						Kasantra: Need | Favour | First
+						set GameState.has_met_kasantra = true
+						=> quest_one
+					- Goodbye.
+						=> resolve
+				- Hello, we are recruiting for a revolution!
+					Kasantra: Contemplating... | Need | Favour
+					set GameState.has_met_kasantra = true
+					=> quest_one
+				- Goodbye
+					=> resolve
+		else:
+			=> quest_one
+	else:
+		=> quest_two
+
+~ quest_one
+if GameState.kasantra_first_quest_complete == true
+	=> quest_two
+else:
+	Kasantra: Nursery | Needs | {{GameState.kasantra_demand_amount}} | {{GameState.kasantra_demand_item.item_name}} | For | Children
+	if GameState.count_item(GameState.kasantra_demand_item) >= GameState.kasantra_demand_amount:
+		- I have everything you need here (give {{GameState.kasantra_demand_amount}} {{GameState.kasantra_demand_item.item_name}}).
+			do GameState.give_item(GameState.kasantra_demand_item, GameState.kasantra_demand_amount)
+			set GameState.kasantra_demand_amount = 0
+			set GameState.kasantra_first_quest_complete = true
+			do AudioManager.play_sfx("task_completed")
+			Kasantra: Help | Appreciated
+			=> quest_two
+		- Another Time
+			=> resolve
+	elif GameState.count_item(GameState.kasantra_demand_item) > 0:
+		- I have some, but not everything (give {{GameState.count_item(GameState.kasantra_demand_item)}} {{GameState.kasantra_demand_item.item_name}} ).
+			set GameState.kasantra_demand_amount = GameState.kasantra_demand_amount - GameState.count_item(GameState.kasantra_demand_item)
+			do GameState.give_item(GameState.kasantra_demand_item, GameState.count_item(GameState.kasantra_demand_item))
+			Kasantra: Appreciated | Waiting | For | More
+			=> resolve
+		- Another Time
+			=> resolve
+	else:
+		- I will look for some!
+			=> resolve
+		- Goodbye
+			=> resolve
+
+~ quest_two
+Kasantra: One | More | Thing | . | Need | Weapon
+Kasantra: Bring | {{GameState.kasantra_second_amount}} | {{GameState.kasantra_second_item.item_name}}
+if GameState.count_item(GameState.kasantra_second_item) >= GameState.kasantra_second_amount:
+	- Here you go (give {{GameState.kasantra_second_amount}} {{GameState.kasantra_second_item.item_name}})
+		do GameState.give_item(GameState.kasantra_second_item, GameState.kasantra_second_amount)
+		do GameState.recruit_ant("Kasantra")
+		do AudioManager.play_sfx("task_completed")
+		=> resolve
+	- Another Time.
+		=> resolve
+else:
+	- I will go look.
+		=> resolve
+	- Goodbye
+		=> resolve
+
+
+
+~ resolve
+set GameState.current_state = GameState.state.WALKING
+=> END

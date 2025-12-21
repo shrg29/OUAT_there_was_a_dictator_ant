@@ -1,4 +1,6 @@
 ~ start
+do GameState.low = 0.5
+do GameState.high = 0.9
 if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
 	Anton: [[Greetings|Hoy]], I heard about your idea. I will join if you give me {{GameState.anton_demand_amount}} {{GameState.anton_demand_item.item_name}}.
 	if GameState.count_item(GameState.anton_demand_item) >= GameState.anton_demand_amount:
@@ -7,6 +9,7 @@ if GameState.anton_current_opinion == GameState.anton_opinion.FINE:
 			do GameState.give_item(GameState.anton_demand_item, GameState.anton_demand_amount)
 			set GameState.anton_demand_amount = 0
 			do GameState.recruit_ant("Anton")
+			do AudioManager.play_sfx("task_completed")
 		- I will come back
 			System: Not yet implemented
 		- Nuh uh

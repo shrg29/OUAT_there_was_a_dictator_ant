@@ -1,0 +1,54 @@
+~ start
+do GameState.low = 0.6
+do GameState.high = 1.0
+
+if GameState.recieved_beer == true:
+	Antdrew: Oh, you came for another?
+	- Yes, please.
+		do GameState.pick_up_item(GameState.beer_item)
+		set GameState.recieved_beer = true
+		=> resolve
+	- No, thanks
+		=> resolve
+
+if GameState.has_met_antdrew == false:
+	if GameState.has_met_samantha == false:
+		Antdrew: Howdy Partna', how's you?
+		- I'm recruiting for a coup against the queen!
+			Antdrew: Listen Partna', I ain't blamin' ya, but I don't want no part o' this.
+			=> beer
+		- Goodbye
+		 => resolve
+	else:
+		Antdrew: Howdy Partna', how's you?
+		- I'm recruiting for a coup against the queen!
+			Antdrew: Listen Partna', I ain't blamin' ya, but I don't want no part o' this.
+			=> beer
+		- I came to ask for a beer.
+			Antdrew: Who told you about that?
+			Antdrew: Fine, if you keep it quiet, i'll give you one
+			- Thank you.
+				do GameState.pick_up_item(GameState.beer_item)
+				set GameState.recieved_beer = true
+				=> resolve
+		- Goodbye
+		 => resolve
+else:
+	=> beer
+
+~ beer
+set GameState.has_met_antdrew = true
+Antdrew: How 'bout we share a beer, and forget our conversation ever happened?
+- Sure, i'll take a beer
+	do GameState.pick_up_item(GameState.beer_item)
+	set GameState.recieved_beer = true
+		=> resolve
+- No thanks, but we really need you.
+	Antdrew: Not happening.
+	=> resolve
+- Goodbye
+	=> resolve
+
+~ resolve
+set GameState.current_state = GameState.state.WALKING
+=> END
