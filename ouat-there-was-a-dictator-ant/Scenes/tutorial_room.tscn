@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bfucfcehy5l5u" path="res://Scripts/main_scene.gd" id="1_6db0d"]
 [ext_resource type="Texture2D" uid="uid://cxg34mchbwev8" path="res://assets/level_art/level_design/tutorial_room.png" id="1_dlhfk"]
-[ext_resource type="PackedScene" uid="uid://bs4j75o23dak5" path="res://Scenes/player.tscn" id="1_ok5aq"]
+[ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="1_ok5aq"]
 [ext_resource type="PackedScene" uid="uid://dl3ho0k0ia1ht" path="res://Scenes/pause_menu.tscn" id="2_6db0d"]
-[ext_resource type="PackedScene" uid="uid://cfqw4ifr2e8j1" path="res://Scenes/level design/hole.tscn" id="2_8ayev"]
-[ext_resource type="PackedScene" uid="uid://cdhdftwo7gdhr" path="res://Scenes/level design/torch.tscn" id="2_43ach"]
-[ext_resource type="PackedScene" uid="uid://dwsim038ycpta" path="res://Scenes/level design/input_controller.tscn" id="4_8ayev"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/hole.tscn" id="2_8ayev"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/torch.tscn" id="2_43ach"]
+[ext_resource type="PackedScene" path="res://Scenes/level design/input_controller.tscn" id="4_8ayev"]
 [ext_resource type="PackedScene" uid="uid://b3stsypduh2pp" path="res://Scenes/npc/npc_1.tscn" id="8_siyfi"]
-[ext_resource type="PackedScene" path="res://Scenes/item_instance.tscn" id="9_io5t0"]
+[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="9_io5t0"]
 [ext_resource type="Resource" uid="uid://crtebwq7d3cgc" path="res://Resource/Item Resources/stick.tres" id="10_nov0t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6db0d"]
