@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckrb3bitambiu"]
+[gd_scene load_steps=6 format=3 uid="uid://u7n1wr7fmmf8"]
 
 [ext_resource type="Script" uid="uid://csqbftrbrr0dm" path="res://Scripts/transition_scene.gd" id="1_72rgs"]
 
@@ -57,7 +57,6 @@ _data = {
 }
 
 [node name="TransitionScene" type="CanvasLayer"]
-visible = false
 script = ExtResource("1_72rgs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -72,4 +71,5 @@ offset_left = -310.0
 offset_top = -191.0
 offset_right = 2236.0
 offset_bottom = 1292.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
