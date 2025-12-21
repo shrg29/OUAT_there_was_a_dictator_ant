@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csvqpwijibno3"]
+[gd_scene load_steps=10 format=3 uid="uid://wcv7xa4dof5a"]
 
 [ext_resource type="Script" uid="uid://s2b6vcofisgl" path="res://Scripts/game_over.gd" id="1_14u15"]
 [ext_resource type="Texture2D" uid="uid://cjn2e3ormgk27" path="res://assets/ui/restart_normal.png" id="2_14u15"]
@@ -73,6 +73,7 @@ layout_mode = 2
 texture_normal = ExtResource("2_14u15")
 texture_pressed = ExtResource("3_j3ryr")
 texture_hover = ExtResource("3_j3ryr")
+texture_focused = ExtResource("3_j3ryr")
 stretch_mode = 3
 
 [node name="Quit" type="TextureButton" parent="VBoxContainer"]
@@ -80,6 +81,7 @@ layout_mode = 2
 texture_normal = ExtResource("4_rjluv")
 texture_pressed = ExtResource("5_gjtdd")
 texture_hover = ExtResource("5_gjtdd")
+texture_focused = ExtResource("5_gjtdd")
 stretch_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
