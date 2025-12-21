@@ -52,9 +52,7 @@ func start_game():
 	var pause_menu = load("res://Scenes/pause_menu.tscn").instantiate()
 	get_tree().get_root().add_child(pause_menu)
 	get_tree().get_root().add_child(hudquests)
-	pause_menu.z_index = 1000 
 	TransitionScene.change_scene(start_room.scene)
-	RecruitedAnts.visible = true
 
 
 func print_grid():
@@ -206,6 +204,7 @@ func load_room(direction: String):
 		print("current room at: ", current_room.x, ", ", current_room.y)
 	else:
 		print("next room is null!")
+	
 	
 	GameState.update_item_display()
 

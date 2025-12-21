@@ -79,6 +79,7 @@ var failed_game: bool = false # Game over check
 func _ready() -> void:
 	await get_tree().process_frame
 	recruited_ants.push_back("Player")
+	recruited_ants.push_back("Anthony")
 	update_item_display()
 	pass # Replace with function body.
 
@@ -104,6 +105,9 @@ func update_item_display():
 		if print_mode:
 			print("Error: Too many items to display")
 	item_update.emit(held_items.size() > 0)
+	
+	for i in held_items:
+		print(i.item_name)
 
 
 func pick_up_item(item: ItemResource):
@@ -156,6 +160,7 @@ func drop_item(location: Vector2):
 	get_tree().root.get_child(0).add_child(item_instance) 
 	
 	item_instance.set_type(dropped_item)
+	print("droped: ", dropped_item.item_name)
 	item_instance.visible = true
 	
 	AudioManager.play_sfx("drop")

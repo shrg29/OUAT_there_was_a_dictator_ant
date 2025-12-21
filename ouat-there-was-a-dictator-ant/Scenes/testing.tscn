@@ -1,12 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0urdp2ca6qh3"]
+[gd_scene load_steps=13 format=3 uid="uid://d0urdp2ca6qh3"]
 
 [ext_resource type="Script" uid="uid://bqu48pevwmi4n" path="res://Scripts/testing.gd" id="1_lq4et"]
 [ext_resource type="PackedScene" path="res://Scenes/questHUD.tscn" id="2_8si1v"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="2_siu27"]
 [ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="3_4ppfb"]
-[ext_resource type="Resource" uid="uid://crtebwq7d3cgc" path="res://Resource/Item Resources/stick.tres" id="4_4ppfb"]
-[ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="4_8si1v"]
-[ext_resource type="Resource" uid="uid://ckpeg621id0qd" path="res://Resource/Item Resources/beer.tres" id="5_vdlfs"]
 [ext_resource type="PackedScene" uid="uid://dhtdy4g2vbqqc" path="res://Scenes/npc/npc_nursery.tscn" id="8_a06pk"]
 [ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="9_a4ydb"]
 [ext_resource type="PackedScene" uid="uid://bnvpr65b4wag1" path="res://Scenes/npc/npc_2.tscn" id="10_x6ncj"]
@@ -26,47 +23,36 @@ position = Vector2(1472, 820)
 
 [node name="ItemInstance" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1853, 614)
-item_type = ExtResource("4_4ppfb")
 
 [node name="ItemInstance11" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1058, 488)
-item_type = ExtResource("5_vdlfs")
 
 [node name="ItemInstance10" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1870, 835)
-item_type = ExtResource("4_4ppfb")
 
 [node name="ItemInstance2" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1319, 263)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance3" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1672, 493)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance4" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1854, 247)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance5" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1598, 258)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance6" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1564, 37)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance7" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1781, 387)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance8" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1475, 379)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance9" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(1422, 126)
-item_type = ExtResource("4_8si1v")
 
 [node name="ItemInstance12" parent="." instance=ExtResource("3_4ppfb")]
 position = Vector2(815, 332)
