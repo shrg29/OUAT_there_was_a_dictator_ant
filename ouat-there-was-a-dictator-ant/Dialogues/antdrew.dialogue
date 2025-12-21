@@ -12,7 +12,7 @@ if GameState.recieved_beer == true:
 		=> resolve
 
 if GameState.has_met_antdrew == false:
-	if GameState.has_met_samantha == false:
+	if GameState.has_met_samanta == false:
 		Antdrew: Howdy Partna', how's you?
 		- I'm recruiting for a coup against the queen!
 			Antdrew: Listen Partna', I ain't blamin' ya, but I don't want no part o' this.

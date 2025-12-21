@@ -41,9 +41,9 @@ var kasantra_demand_amount: int = 6
 var kasantra_second_item: ItemResource = stick_item
 var kasantra_second_amount: int = 1
 
-var has_met_samantha: bool = false
-var samantha_demand_item: ItemResource = beer_item
-var samantha_demand_amount: int = 1
+var has_met_samanta: bool = false
+var samanta_demand_item: ItemResource = beer_item
+var samanta_demand_amount: int = 1
 
 var has_met_antdrew: bool = false
 var recieved_beer: bool = false
@@ -72,8 +72,6 @@ var failed_game: bool = false # Game over check
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await get_tree().process_frame
-	pick_up_item(water_item)
-	#pick_up_item(water_item)
 	pass # Replace with function body.
 
 
