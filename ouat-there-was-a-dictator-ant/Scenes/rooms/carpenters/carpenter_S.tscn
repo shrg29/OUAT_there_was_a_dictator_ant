@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bklgc3jj7efto"]
+[gd_scene load_steps=23 format=3 uid="uid://bklgc3jj7efto"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_utuoh"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_nipu5"]
@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://daiq3qmbcmlyj" path="res://Scenes/level design/door_east.tscn" id="6_sl031"]
 [ext_resource type="PackedScene" uid="uid://bqq3a24anqoae" path="res://Scenes/level design/door_west.tscn" id="7_vbieq"]
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_0mcsw"]
-[ext_resource type="PackedScene" path="res://Scenes/level design/carpenter.tscn" id="9_5smq2"]
-[ext_resource type="PackedScene" uid="uid://dcioych7p8gul" path="res://Scenes/npc/npc_carpenter.tscn" id="10_5smq2"]
+[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="11_bs3n4"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_uagmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
@@ -46,9 +45,6 @@ size = Vector2(22.65213, 27.866898)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqi7j"]
 size = Vector2(116.47487, 313)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhiau"]
-size = Vector2(96.041626, 76.083374)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_utuoh")
@@ -153,19 +149,10 @@ shape = SubResource("RectangleShape2D_hqi7j")
 
 [node name="Cosmetics" type="Node2D" parent="."]
 
-[node name="carpenter" parent="Cosmetics" instance=ExtResource("9_5smq2")]
-position = Vector2(935, 570)
+[node name="items" type="Node2D" parent="."]
 
-[node name="NPCs" type="Node2D" parent="."]
-
-[node name="npc_carpenter" parent="NPCs" instance=ExtResource("10_5smq2")]
-position = Vector2(1027, 503)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="NPCs/npc_carpenter"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCs/npc_carpenter/StaticBody2D"]
-position = Vector2(13.020874, 116.375)
-shape = SubResource("RectangleShape2D_bhiau")
+[node name="coin" parent="items" instance=ExtResource("11_bs3n4")]
+position = Vector2(931, 338)
 
 [node name="player" parent="." instance=ExtResource("11_uagmx")]
 position = Vector2(990, 545)

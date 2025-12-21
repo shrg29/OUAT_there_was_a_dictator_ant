@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://jxo2ok7urhxq"]
+[gd_scene load_steps=26 format=3 uid="uid://jxo2ok7urhxq"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_42erb"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_wp42r"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://buxq4savjtg61" path="res://Scenes/map_generator.tscn" id="8_doj5o"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="9_3s6ik"]
 [ext_resource type="PackedScene" uid="uid://dfrmlrv288ir0" path="res://Scenes/npc/npc_3.tscn" id="9_ul0pw"]
+[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="10_g8b3u"]
+[ext_resource type="Resource" uid="uid://cri8s23bk0uep" path="res://Resource/Item Resources/water.tres" id="11_mdl1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(22.19117, 20)
@@ -157,6 +159,12 @@ position = Vector2(462.00006, 289)
 position = Vector2(-0.00012207031, 123.57141)
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_i0fki")
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="water_drop" parent="items" instance=ExtResource("10_g8b3u")]
+position = Vector2(1603, 814)
+item_type = ExtResource("11_mdl1b")
 
 [node name="player" parent="." instance=ExtResource("9_3s6ik")]
 position = Vector2(962, 508)

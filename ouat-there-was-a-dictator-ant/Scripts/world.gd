@@ -8,6 +8,7 @@ var foods = []
 var carpenters = []
 var queens = []
 var waters = []
+var coins = []
 var one_door_tunnels = []
 var two_door_tunnels  = []# maybe another way to store them or note the order
 var three_door_tunnels = []
@@ -128,6 +129,11 @@ func fill_room_arrays():
 	starts.append("res://Scenes/rooms/starts/start_3_doors_S.tscn")
 	starts.append("res://Scenes/rooms/starts/start_3_doors_W.tscn")
 	starts.append("res://Scenes/rooms/starts/start_4_doors.tscn")
+	
+	coins.append("res://Scenes/rooms/coins/coin_N.tscn")
+	coins.append("res://Scenes/rooms/coins/coin_E.tscn")
+	coins.append("res://Scenes/rooms/coins/coin_S.tscn")
+	coins.append("res://Scenes/rooms/coins/coin_W.tscn")
 
 func find_adjacent_rooms():
 	adjacent_rooms[dir.N] = null
@@ -214,6 +220,7 @@ func assign_rooms():
 				AntHillGenerator.tile_type.CARPENTER:	choose_one_door_rooms("carpenter")
 				AntHillGenerator.tile_type.WATER:		choose_one_door_rooms("water")
 				AntHillGenerator.tile_type.FOOD:		choose_one_door_rooms("food")
+				AntHillGenerator.tile_type.COIN:		choose_one_door_rooms("coin")
 				_:										current_room.scene = null
 	current_room = start_room #set it to start room so we can start in the right room... maybe we should use something else but whatever
 
@@ -226,6 +233,7 @@ func choose_one_door_rooms(kind: String):
 		"carpenter":	room_array = carpenters
 		"queen":		room_array = queens
 		"water":		room_array = waters
+		"coin":			room_array = coins
 	if adjacent_rooms[dir.N] != null:
 		current_room.scene = room_array[0]
 	if adjacent_rooms[dir.E] != null:

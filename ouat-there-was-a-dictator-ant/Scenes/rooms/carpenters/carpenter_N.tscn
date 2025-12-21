@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cncnrs1mo7sce"]
+[gd_scene load_steps=27 format=3 uid="uid://cncnrs1mo7sce"]
 
 [ext_resource type="Script" uid="uid://3ugwl7hub5eu" path="res://Scripts/room.gd" id="1_fi174"]
 [ext_resource type="PackedScene" uid="uid://gl42iurx0r8d" path="res://Scenes/level design/terrain_rectangle.tscn" id="2_uomfg"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" path="res://Scenes/level design/carpenter.tscn" id="9_jwe5y"]
 [ext_resource type="PackedScene" uid="uid://dcioych7p8gul" path="res://Scenes/npc/npc_carpenter.tscn" id="10_jwe5y"]
 [ext_resource type="PackedScene" uid="uid://bjkyp44b6ihsi" path="res://Scenes/player.tscn" id="11_iiabm"]
+[ext_resource type="PackedScene" uid="uid://dpgosjlqkwyn0" path="res://Scenes/item_instance.tscn" id="12_rfute"]
+[ext_resource type="Resource" uid="uid://crtebwq7d3cgc" path="res://Resource/Item Resources/stick.tres" id="13_0m2rl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_of7bs"]
 size = Vector2(22.25333, 20)
@@ -169,6 +171,16 @@ shape = SubResource("RectangleShape2D_xm825")
 
 [node name="player" parent="." instance=ExtResource("11_iiabm")]
 position = Vector2(990, 545)
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="stick" parent="items" instance=ExtResource("12_rfute")]
+position = Vector2(1603, 814)
+item_type = ExtResource("13_0m2rl")
+
+[node name="stick2" parent="items" instance=ExtResource("12_rfute")]
+position = Vector2(361, 529)
+item_type = ExtResource("13_0m2rl")
 
 [connection signal="area_entered" from="Loading_Zones/North" to="." method="_on_north_area_entered"]
 [connection signal="area_entered" from="Loading_Zones/South" to="." method="_on_south_area_entered"]
