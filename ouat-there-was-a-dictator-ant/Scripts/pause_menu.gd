@@ -1,6 +1,7 @@
-extends CanvasLayer
+extends Control
 
 func _ready():
+	grab_focus()
 	visible = false
 
 func resume():
