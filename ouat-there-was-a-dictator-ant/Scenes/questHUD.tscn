@@ -17,3 +17,23 @@ grow_vertical = 2
 [node name="QuestLabel" type="Label" parent="ListOfQuests"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 1801.0
+offset_top = 182.0
+offset_right = 1841.0
+offset_bottom = 205.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1656.0
+offset_top = 212.0
+offset_right = 1879.0
+offset_bottom = 261.0
+text = "Watch out for the time...
+Queen is already suspicious. "
+horizontal_alignment = 2
