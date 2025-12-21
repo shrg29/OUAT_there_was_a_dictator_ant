@@ -6,7 +6,7 @@
 script = ExtResource("1_803pc")
 map_transparency = 0.75
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="minimap" type="TextureRect" parent="."]
 offset_left = 1748.0
 offset_top = 8.0
 offset_right = 1788.0
