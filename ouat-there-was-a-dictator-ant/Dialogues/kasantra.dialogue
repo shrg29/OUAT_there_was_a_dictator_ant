@@ -3,7 +3,6 @@ do GameState.low = 0.9
 do GameState.high = 1.4
 
 if GameState.recruited_ants.has("Kasantra"):
-	do QuestManager.add_quest(GameState.kasantra_quest)
 	Kasantra: The queen's rule is about to end!
 	=> resolve
 else:
@@ -37,17 +36,18 @@ else:
 			=> quest_one
 	else:
 		=> quest_two
-do QuestManager.add_quest(GameState.kasantra_quest_two)
 ~ quest_one
 if GameState.kasantra_first_quest_complete == true
 	=> quest_two
 else:
+	do QuestManager.add_quest(GameState.kasantra_quest)
 	Kasantra: Nursery | Needs | {{GameState.kasantra_demand_amount}} | {{GameState.kasantra_demand_item.item_name}} | For | Children
 	if GameState.count_item(GameState.kasantra_demand_item) >= GameState.kasantra_demand_amount:
 		- I have everything you need here (give {{GameState.kasantra_demand_amount}} {{GameState.kasantra_demand_item.item_name}}).
 			do GameState.give_item(GameState.kasantra_demand_item, GameState.kasantra_demand_amount)
 			set GameState.kasantra_demand_amount = 0
 			set GameState.kasantra_first_quest_complete = true
+			do QuestManager.remove_quest(GameState.kasantra_quest)
 			do AudioManager.play_sfx("task_completed")
 			Kasantra: Help | Appreciated
 			=> quest_two
@@ -68,12 +68,14 @@ else:
 			=> resolve
 
 ~ quest_two
+do QuestManager.add_quest(GameState.kasantra_quest_two)
 Kasantra: One | More | Thing | . | Need | Weapon
 Kasantra: Bring | {{GameState.kasantra_second_amount}} | {{GameState.kasantra_second_item.item_name}}
 if GameState.count_item(GameState.kasantra_second_item) >= GameState.kasantra_second_amount:
 	- Here you go (give {{GameState.kasantra_second_amount}} {{GameState.kasantra_second_item.item_name}})
 		do GameState.give_item(GameState.kasantra_second_item, GameState.kasantra_second_amount)
 		do GameState.recruit_ant("Kasantra")
+		do QuestManager.remove_quest(GameState.kasantra_quest_two)
 		do AudioManager.play_sfx("task_completed")
 		=> resolve
 	- Another Time.

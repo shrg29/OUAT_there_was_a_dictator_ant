@@ -171,5 +171,5 @@ func recruit_ant(name: String) -> Array[String]:
 	recruited_ants.push_back(name)
 	if print_mode:
 		print("Recruited Ants: ", recruited_ants)
-	RecruitedAnts.update_ant_display(name)
+	#RecruitedAnts.update_ant_display(name)
 	return recruited_ants

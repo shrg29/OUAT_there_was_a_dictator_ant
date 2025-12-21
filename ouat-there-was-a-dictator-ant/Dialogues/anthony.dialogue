@@ -14,7 +14,6 @@ elif GameState.has_met_anthony == false:
 	- I am trying to recruit enough of us to overthrow her.
 		Anthony: That sounds great, but we need to be intimidating.
 		Anthony: Can you bring me a weapon, like {{GameState.anthony_demand_amount}} {{GameState.anthony_demand_item.item_name}}?
-		do QuestManager.add_quest(GameState.anthony_quest)
 		=> quest
 
 	- What should we do?
@@ -35,6 +34,7 @@ elif GameState.has_met_anthony == false:
 			=> resolve
 
 ~ quest
+do QuestManager.add_quest(GameState.anthony_quest)
 if GameState.count_item(GameState.anthony_demand_item) >= GameState.anthony_demand_amount:
 	- Here you go (Give him {{GameState.anthony_demand_amount}} {{GameState.anthony_demand_item.item_name}}).
 		do GameState.give_item(GameState.anthony_demand_item, GameState.anthony_demand_amount)

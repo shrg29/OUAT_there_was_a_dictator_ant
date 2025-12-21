@@ -23,56 +23,56 @@ var screen_index: int = 1
 
 
 func _ready() -> void:
-	
-	await get_tree().process_frame
-	print("Checking nodes:")
-	print("HBoxContainer children: ", $HBoxContainer.get_children())
-	print("Control2 children: ", $HBoxContainer/Control2.get_children())
-	print("SubViewportContainer children: ", $HBoxContainer/Control2/SubViewportContainer.get_children())
+	pass
+	#await get_tree().process_frame
+	#print("Checking nodes:")
+	#print("HBoxContainer children: ", $HBoxContainer.get_children())
+	#print("Control2 children: ", $HBoxContainer/Control2.get_children())
+	#print("SubViewportContainer children: ", $HBoxContainer/Control2/SubViewportContainer.get_children())
 
-
-func update_ant_display(name: String):
-	await get_tree().process_frame
-	var new_screen
-	screen_index = GameState.recruited_ants.size()
-	print(GameState.recruited_ants.size())
-	match screen_index:
-		1:
-			new_screen = screen_one
-		2:
-			new_screen = screen_two
-			print("hello")
-		3:
-			new_screen = screen_three
-		4:
-			new_screen = screen_four
-		5:
-			new_screen = screen_five
-	print("New Screen: ", str(new_screen))
-	
-	match name:
-		"Anthony":
-			var scene = anthony.instantiate()
-			scene.position = Vector2(150,150)
-			new_screen.add_child(scene)
-		"Antdrew":
-			var scene = antdrew.instantiate()
-			scene.position = Vector2(150,150)
-			new_screen.add_child(scene)
-		"Antonia":
-			var scene = antonia.instantiate()
-			scene.position = Vector2(150,150)
-			new_screen.add_child(scene)
-		"Anta Maria":
-			var scene = anta.instantiate()
-			scene.position = Vector2(150,150)
-			new_screen.add_child(scene)
-		"Samanta":
-			var scene = samanta.instantiate()
-			scene.position = Vector2(150,150)
-			new_screen.add_child(scene)
-		"Kasantra":
-			var scene = kasantra.instantiate()
-			scene.position = Vector2(150,150)
-			new_screen.add_child(scene)
+#
+#func update_ant_display(name: String):
+	#await get_tree().process_frame
+	#var new_screen
+	#screen_index = GameState.recruited_ants.size()
+	#print(GameState.recruited_ants.size())
+	#match screen_index:
+		#1:
+			#new_screen = screen_one
+		#2:
+			#new_screen = screen_two
+			#print("hello")
+		#3:
+			#new_screen = screen_three
+		#4:
+			#new_screen = screen_four
+		#5:
+			#new_screen = screen_five
+	#print("New Screen: ", str(new_screen))
+	#
+	#match name:
+		#"Anthony":
+			#var scene = anthony.instantiate()
+			#scene.position = Vector2(150,150)
+			#new_screen.add_child(scene)
+		#"Antdrew":
+			#var scene = antdrew.instantiate()
+			#scene.position = Vector2(150,150)
+			#new_screen.add_child(scene)
+		#"Antonia":
+			#var scene = antonia.instantiate()
+			#scene.position = Vector2(150,150)
+			#new_screen.add_child(scene)
+		#"Anta Maria":
+			#var scene = anta.instantiate()
+			#scene.position = Vector2(150,150)
+			#new_screen.add_child(scene)
+		#"Samanta":
+			#var scene = samanta.instantiate()
+			#scene.position = Vector2(150,150)
+			#new_screen.add_child(scene)
+		#"Kasantra":
+			#var scene = kasantra.instantiate()
+			#scene.position = Vector2(150,150)
+			#new_screen.add_child(scene)
 			
