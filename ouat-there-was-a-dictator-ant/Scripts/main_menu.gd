@@ -3,10 +3,9 @@ extends Control
 func _ready():
 	$AnimatedSprite2D.play("default")
 
-
 #go to main scene
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/tutorial_room.tscn")
+	get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
 
 #quit
 func _on_quit_pressed():

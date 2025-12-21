@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dy7i0idebxsn7"]
+[gd_scene load_steps=10 format=3 uid="uid://difcqb47bmdp0"]
 
 [ext_resource type="Script" uid="uid://cavwgx1cy2u6y" path="res://Scripts/AudioManager.gd" id="1_dygvs"]
 [ext_resource type="AudioStream" uid="uid://cwkt5radt7o6g" path="res://Music/background_music.mp3" id="2_x8qvj"]
 [ext_resource type="AudioStream" uid="uid://cb17fnmh3hdcc" path="res://Music/game_complete.mp3" id="3_vbys1"]
 [ext_resource type="AudioStream" uid="uid://bcmdrebx8ifwd" path="res://Music/walking.mp3" id="4_va48u"]
+[ext_resource type="AudioStream" uid="uid://byfoduep4opge" path="res://Music/game_over.mp3" id="4_xb6i0"]
 [ext_resource type="AudioStream" uid="uid://dgx4uhf34uwwr" path="res://Music/item_collected.mp3" id="5_xb6i0"]
 [ext_resource type="AudioStream" uid="uid://jc53kjt3fkc4" path="res://Music/yapping.mp3" id="6_rw622"]
 [ext_resource type="AudioStream" uid="uid://s58yuhkaqd7q" path="res://Music/task_completed.mp3" id="7_vbys1"]
@@ -12,8 +13,10 @@
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_dygvs")
 music_tracks = Dictionary[String, AudioStream]({
+"": null,
 "background_music": ExtResource("2_x8qvj"),
-"game_complete": ExtResource("3_vbys1")
+"game_complete": ExtResource("3_vbys1"),
+"game_over": ExtResource("4_xb6i0")
 })
 sfx = Dictionary[String, AudioStream]({
 "drop": ExtResource("8_va48u"),
